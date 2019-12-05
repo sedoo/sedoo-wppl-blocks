@@ -31,5 +31,6 @@ function sedoo_blocks_load_plugin_textdomain() {
 }
 add_action( 'plugins_loaded', 'sedoo_blocks_load_plugin_textdomain' );
 
-include 'inc/sedoo-wppl-blocks-acf.php';
+include 'sedoo-wppl-blocks-functions.php';
+include 'sedoo-wppl-blocks-acf.php';
 include 'inc/sedoo-wppl-blocks-acf-fields.php';
