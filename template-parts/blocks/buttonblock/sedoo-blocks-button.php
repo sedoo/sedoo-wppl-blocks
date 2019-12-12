@@ -19,7 +19,7 @@ if( !empty($block['align']) ) {
 // ---------------  REPEATER FIELD LOOP  -----------/
 if( have_rows('sedoo_blocks_vectorbutton_group') ) {
 ?>
-<div class="<?php if( !empty($block['className']) ) {echo $className;}?>">
+<div class="<?php echo $className;?>">
 <?php
 while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
 
