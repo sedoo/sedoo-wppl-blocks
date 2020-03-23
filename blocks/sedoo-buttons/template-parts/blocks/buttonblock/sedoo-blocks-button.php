@@ -33,11 +33,11 @@ while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
 
     if ( get_sub_field('sedoo_blocks_vectorButton_svg') ) { 
         $icon = get_sub_field('sedoo_blocks_vectorButton_svg');
-        $svg_file = file_get_contents($icon['url']);
-        $find_string   = '<svg';
-        $position = strpos($svg_file, $find_string);
-
-        $svg_file_new = substr($svg_file, $position);
+        $svg_file = wp_remote_get($icon['url']);
+        if ( is_array( $svg_file ) && ! is_wp_error( $svg_file ) ) {
+            //$headers = $svg_file['headers']; // array of http header lines
+            $bodySVG    = $svg_file['body']; // use the content
+        }
     } 
     if ( get_sub_field( 'sedoo_blocks_vectorButton_border' ) == 1 ) { 
     $borderStyle = "border-on";
@@ -49,7 +49,7 @@ while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
         <a class="sedoo-button-block <?php echo $borderStyle; ?>" href="<?php echo $link; ?>">
             <?php 
             if ( get_sub_field('sedoo_blocks_vectorButton_svg') ) { 
-            echo $svg_file_new ; 
+            echo $bodySVG ; 
             }
             ?>
             <span><?php echo $text; ?></span>
