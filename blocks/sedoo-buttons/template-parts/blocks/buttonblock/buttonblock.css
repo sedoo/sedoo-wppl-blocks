@@ -31,3 +31,7 @@ div.sedoo-button-block-group a.sedoo-button-block > svg {
 div.sedoo-button-block-group a.sedoo-button-block > svg + span {
     margin-left:5px;
 }
+
+div.sedoo_button_display_row {
+    flex-direction: column;
+}

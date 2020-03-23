@@ -27,25 +27,24 @@ if( function_exists('acf_add_options_page') ) {
  * ACF gutenberg Block
  */
 
-function sedoo_blocks_register_acf_block_types() {
+function register_sedoo_buttons_block_types() {
 
     // register related block content.
     acf_register_block_type(array(
         'name'              => 'sedoo_blocks_vectorButton',
-        'title'             => __('Sedoo button'),
-        'description'       => __('Add button with SVG icon.'),
-        'render_callback'	=> 'sedoo_blocks_vectorButton_render_callback',
-        'enqueue_style'     => plugin_dir_url( __FILE__ ) . 'template-parts/blocks/buttonblock/buttonblock.css',
-        'category'          => 'widgets',
+        'title'             => __('Boutons'),
+        'description'       => __('Ajouter un bouton avec icone SVG'),
+        'render_callback'	=> 'sedoo_blocks_buttons_render_callback',
+        'category'          => 'sedoo-block-category',
         'icon'              => 'button',
-        'keywords'          => array( 'button', 'svg' ),
+        'keywords'          => array( 'button', 'svg' , 'sedoo'),
     ));
 
 }
 
 // Check if function exists and hook into setup.
 if( function_exists('acf_register_block_type') ) {
-    add_action('acf/init', 'sedoo_blocks_register_acf_block_types');
+    add_action('acf/init', 'register_sedoo_buttons_block_types');
 }
 
 ?>

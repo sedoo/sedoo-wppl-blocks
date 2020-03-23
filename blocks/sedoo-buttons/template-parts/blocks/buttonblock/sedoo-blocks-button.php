@@ -7,7 +7,7 @@ if( !empty($block['anchor']) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'sedoo-button-block-group';
+$className = 'sedoo_blocks_vectorButton';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }
@@ -15,11 +15,13 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+$display = get_field('sedoo_blocks_vectorButton_display');
+
 
 // ---------------  REPEATER FIELD LOOP  -----------/
 if( have_rows('sedoo_blocks_vectorbutton_group') ) {
 ?>
-<div class="<?php echo $className;?>">
+<div class="sedoo-button-block-group sedoo_button_display_<?php echo $display; ?>">
 <?php
 while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
 
@@ -31,11 +33,11 @@ while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
 
     if ( get_sub_field('sedoo_blocks_vectorButton_svg') ) { 
         $icon = get_sub_field('sedoo_blocks_vectorButton_svg');
-        $svg_file = wp_remote_get($icon['url']);
-        if ( is_array( $svg_file ) && ! is_wp_error( $svg_file ) ) {
-            //$headers = $svg_file['headers']; // array of http header lines
-            $bodySVG    = $svg_file['body']; // use the content
-        }
+        $svg_file = file_get_contents($icon['url']);
+        $find_string   = '<svg';
+        $position = strpos($svg_file, $find_string);
+
+        $svg_file_new = substr($svg_file, $position);
     } 
     if ( get_sub_field( 'sedoo_blocks_vectorButton_border' ) == 1 ) { 
     $borderStyle = "border-on";
@@ -47,7 +49,7 @@ while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
         <a class="sedoo-button-block <?php echo $borderStyle; ?>" href="<?php echo $link; ?>">
             <?php 
             if ( get_sub_field('sedoo_blocks_vectorButton_svg') ) { 
-            echo $bodySVG ; 
+            echo $svg_file_new ; 
             }
             ?>
             <span><?php echo $text; ?></span>
