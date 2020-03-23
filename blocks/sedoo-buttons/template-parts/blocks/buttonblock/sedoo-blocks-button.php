@@ -7,7 +7,7 @@ if( !empty($block['anchor']) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'sedoo_blocks_vectorButton';
+$className = 'sedoo-button-block-group';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }
@@ -21,7 +21,7 @@ $display = get_field('sedoo_blocks_vectorButton_display');
 // ---------------  REPEATER FIELD LOOP  -----------/
 if( have_rows('sedoo_blocks_vectorbutton_group') ) {
 ?>
-<div class="sedoo-button-block-group sedoo_button_display_<?php echo $display; ?>">
+<div class="<?php if( !empty($block['className']) ) {echo $className;}?> sedoo_button_display_<?php echo $display; ?>">
 <?php
 while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
 
