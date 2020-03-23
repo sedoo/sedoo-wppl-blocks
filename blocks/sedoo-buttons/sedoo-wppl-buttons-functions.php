@@ -1,7 +1,7 @@
 <?php
 
 
-function sedoo_blocks_vectorButton_render_callback( $block ) {
+function sedoo_blocks_buttons_render_callback( $block ) {
 	
 	// convert name ("acf/testimonial") into path friendly slug ("testimonial")
 	$slug = str_replace('acf/', '', $block['name']);
