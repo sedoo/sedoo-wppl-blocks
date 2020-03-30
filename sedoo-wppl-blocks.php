@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sedoo - Blocks
  * Description: Permet l'ajout de différents blocks
- * Version: 0.2.6
+ * Version: 0.2.7
  * Author: Nicolas Gruwe 
  * GitHub Plugin URI: sedoo/sedoo-wppl-blocks
  * GitHub Branch:     master
@@ -63,6 +63,10 @@ if ( ! function_exists('get_field') ) {
 
 	if(get_field('sedoo_activation_boutons', 'option') == 1) {
 		include 'blocks/sedoo-buttons/sedoo-wppl-buttons.php';
+	}
+
+	if(get_field('sedoo_activation_relatedcontents', 'option') == 1) {
+		include 'blocks/sedoo-relatedcontents/sedoo-wppl-relatedcontents.php';
 	}
 }
 

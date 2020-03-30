@@ -5,7 +5,7 @@ function register_sedoo_listearticle_block_types() {
     // register a testimonial block.
     acf_register_block_type(array(
         'name'              => 'postlist',
-        'title'             => __('Liste d\'articles'),
+        'title'             => __('Sedoo Liste d\'articles'),
         'description'       => __('List post by categories and choose layout.'),
         'render_callback'   => 'sedoo_blocks_listearticle_render_callback',
         'category'          => 'sedoo-block-category',
