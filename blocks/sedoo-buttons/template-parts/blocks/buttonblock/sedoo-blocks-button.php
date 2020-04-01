@@ -21,7 +21,7 @@ $display = get_field('sedoo_blocks_vectorButton_display');
 // ---------------  REPEATER FIELD LOOP  -----------/
 if( have_rows('sedoo_blocks_vectorbutton_group') ) {
 ?>
-<div class="sedoo-button-block-group sedoo_button_display_<?php echo $display; ?>">
+<div class="sedoo-button-block-group sedoo_button_display_<?php echo $display; ?> <?php echo $className; ?>">
 <?php
 while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
 
