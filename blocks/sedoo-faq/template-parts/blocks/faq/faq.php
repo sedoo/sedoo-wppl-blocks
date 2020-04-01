@@ -22,6 +22,7 @@ if($nombre == 0) {
 $questions = get_posts(array(
     'post_type' => 'faq',
     'orderby' => 'title',
+    'order'          => 'ASC',
     'numberposts' => $nombre,
     'tax_query' => array( $tax_query
     )
