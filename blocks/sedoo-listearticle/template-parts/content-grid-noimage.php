@@ -38,9 +38,7 @@
                 ?>
                 <p><?php the_date('M / d / Y') ?></p>
             <?php endif; ?>
-            <?php if($button == true) { ?>
-                <a href="<?php the_permalink(); ?>"><?php echo $buttonLabel; ?> →</a>
-            <?php } ?>
+            <a href="<?php the_permalink(); ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
         </footer><!-- .entry-footer -->
     </div>
 </article><!-- #post-->
