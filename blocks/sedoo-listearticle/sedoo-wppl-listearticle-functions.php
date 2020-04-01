@@ -47,16 +47,34 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
         }
 
     switch ($layout) {
-        case "grid" :
+        // case "grid" :
+        //     $listingClass = "post-wrapper";
+        //     break;
+
+        // case "grid-noimage" :
+        //     $listingClass = "post-wrapper noimage";
+        //     break;
+
+        // default:
+        //     $listingClass = "content-list";
+        case "grid":
             $listingClass = "post-wrapper";
             break;
 
-        case "grid-noimage" :
+        case "grid-noimage":
             $listingClass = "post-wrapper noimage";
             break;
-
-        default:
+        
+        case "list":
             $listingClass = "content-list";
+            break;
+        
+        case "list-full":
+            $listingClass = "content-list";
+            break;
+             
+        default:
+            $listingClass = "post-wrapper";
     }    
 
     $postsList = get_posts ($argsListPost);
@@ -71,7 +89,9 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
          // setup_postdata( $post );
             ?>
             <?php
-     			include('template-parts/content-'.$layout.'.php');
+                setup_postdata( $post );
+                 include('template-parts/content-'.$layout.'.php');
+                 wp_reset_postdata();
             ?>
             <?php
         endforeach;
@@ -87,6 +107,6 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
     
     <?php 
     the_posts_navigation();
-    wp_reset_postdata();
+    
     }
 }
