@@ -5,22 +5,32 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
-if (has_post_thumbnail()) {
-    $postThumbnail = "<figure>";
-    if (has_post_thumbnail()) {
-        $postThumbnail .= get_the_post_thumbnail($post->ID, 'thumbnail-loop');
-    }
-    $postThumbnail .= "</figure>";
-}
-
+$postType=get_post_type();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <a href="<?php the_permalink(); ?>"></a>
 	<header class="entry-header">
         <?php 
-        if (isset($postThumbnail)){ echo $postThumbnail; }
+        // if (isset($postThumbnail)){ echo $postThumbnail; }
         ?>
+        <figure>
+        <?php 
+            if (has_post_thumbnail()) {
+                the_post_thumbnail('thumbnail-loop');
+            } else {
+                if (labs_by_sedoo_catch_that_image() ==  "no_image" ){
+                   ?>
+                   <img src="<?php echo get_template_directory_uri() .'/images/empty-mode-'.$postType.'.svg'; ?>" alt="" />
+                   <?php
+                } else {
+                    echo '<img src="';
+                    echo labs_by_sedoo_catch_that_image();
+                    echo '" alt="" />'; 
+                } 
+            }?>            
+        </figure>
+
         <?php
         if (!is_front_page()) {
         ?>
@@ -45,9 +55,7 @@ if (has_post_thumbnail()) {
                 ?>
                 <p><?php the_date('M / d / Y') ?></p>
             <?php endif; ?>
-            <?php if($button == true) { ?>
-                <a href="<?php the_permalink(); ?>"><?php echo $buttonLabel; ?> →</a>
-            <?php } ?>
+            <a href="<?php the_permalink(); ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
         </footer><!-- .entry-footer -->
     </div>
 </article><!-- #post-->

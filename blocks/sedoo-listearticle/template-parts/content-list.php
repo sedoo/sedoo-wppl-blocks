@@ -25,10 +25,7 @@
             
             <?php the_excerpt(); ?>
             <p class="date"><?php the_date('M / d / Y') ?>
-            
-            <?php if($button == true) { ?>
-                <a href="<?php the_permalink(); ?>"><?php echo $buttonLabel; ?> →</a>
-            <?php } ?>
+            <a href="<?php the_permalink(); ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
         </div><!-- .entry-content -->
         <?php
 			edit_post_link(
