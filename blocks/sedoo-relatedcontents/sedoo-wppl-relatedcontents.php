@@ -66,9 +66,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         'sectionTitle'    => $title,
         );
         if (function_exists('pll_current_language')) {
-            $lang = pll_current_language();
-        } else {
-            $lang = 'fr';
+            $args['lang']=pll_current_language();
         }
 
         if ($type_of_content== 'post') {
@@ -102,7 +100,6 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         'post_status'           => array( 'publish' ),
         'posts_per_page'        => $post_number,            // -1 no limit
         'orderby'               => $orderby,
-       'lang'			        => $lang,
         'order'                 => $order,
         'tax_query'             => array(
                                 array(
