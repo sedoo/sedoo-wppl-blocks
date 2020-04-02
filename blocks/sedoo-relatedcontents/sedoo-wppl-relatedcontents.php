@@ -61,14 +61,7 @@ if(!function_exists('sedoo_labtools_acf_populate_post_type')) {
 
 if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
     function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset) {
-        $categories_field = get_the_terms( get_the_id(), $taxonomy);  // recup des terms de la taxonomie $parameters['category']
-        $terms_fields=array();
-        if (is_array($categories_field) || is_object($categories_field))
-        {
-            foreach ($categories_field as $term_slug) {        
-                array_push($terms_fields, $term_slug->slug);
-            }
-        }
+        
         $parameters = array(
         'sectionTitle'    => $title,
         );
@@ -86,12 +79,30 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
             $order = 'ASC';
         }
 
+        $terms_fields=array();
+        
+        if (!is_archive()) {
+            $args['post__not_in']=array(get_the_id()); //exclude current post if not archive template
+
+            $categories_field = get_the_terms( get_the_id(), $taxonomy);  // get terms of taxonomy
+            if (is_array($categories_field) || is_object($categories_field))
+            {
+            foreach ($categories_field as $term_slug) {        
+                array_push($terms_fields, $term_slug->slug);
+                }
+            }
+        } else {
+            // If archive, get only term slug , not post ID! 
+            $term = get_queried_object();
+            array_push($terms_fields, $term->slug);
+        }    
+
         $args = array(
         'post_type'             => $type_of_content,
         'post_status'           => array( 'publish' ),
         'posts_per_page'        => $post_number,            // -1 no limit
         'orderby'               => $orderby,
-       // 'lang'			        => $lang,
+       'lang'			        => $lang,
         'order'                 => $order,
         'tax_query'             => array(
                                 array(
@@ -101,10 +112,6 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
                                 ),
                                 ),
         );
-        //exclude current post if not archive template
-        if (!is_archive()) {
-            $args['post__not_in']=array(get_the_id());
-        }
 
         sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
     }
