@@ -1,9 +1,10 @@
 <?php
 /**
  * Plugin Name: Sedoo - Blocks
- * Description: Permet l'ajout de différents blocks
- * Version: 0.3.1
- * Author: Nicolas Gruwe 
+ * Description: Blocs d'édition : annuaire, boutons SVG, FAQ, liste d'articles, iframe, contenus en relation
+ * Version: 0.3.2
+ * Author: Nicolas Gruwe & Pierre Vert - SEDOO DATA CENTER
+ * Author URI:      https://www.sedoo.fr 
  * GitHub Plugin URI: sedoo/sedoo-wppl-blocks
  * GitHub Branch:     master
  */
