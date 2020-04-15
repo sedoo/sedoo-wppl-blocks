@@ -97,7 +97,7 @@ if( function_exists('acf_add_local_field_group') ):
                 ),
                 'default_value' => '',
                 'min' => '',
-                'max' => 12,
+                'max' => '',
                 'step' => '',
                 'prepend' => '',
                 'append' => '',
