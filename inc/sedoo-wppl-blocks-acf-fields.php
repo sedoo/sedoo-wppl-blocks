@@ -6,6 +6,24 @@ if( function_exists('acf_add_local_field_group') ):
         'title' => 'Activation des blocs',
         'fields' => array(
             array(
+                'key' => 'field_5e6b87eb0bd85',
+                'label' => 'Bloc Apirest',
+                'name' => 'sedoo_activation_apirest',
+                'type' => 'true_false',
+                'instructions' => 'Active ou désactive le bloc Apirest',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ), array(
                 'key' => 'field_5e6b87eb0bd23',
                 'label' => 'Bloc Iframe',
                 'name' => 'sedoo_activation_iframe',
