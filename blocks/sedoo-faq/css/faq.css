@@ -4,32 +4,33 @@
 .faq-tabs {
 	list-style-type:none;
 	position:relative;
-	max-width:1200px;
+	margin-bottom: 40px;
 }
 
 .faq-tabs label {
-	display:block;
+	display:flex;
 	padding:5px 20px;
     border-radius:5px;
-    background: #979797;
+    background: #DDD;
 	margin-top:5px;
-	cursor:pointer; /* changement de curseur de souris */
-    font-size: 1.1em;
+    cursor:pointer;
 }
 
 [type="radio"]:checked + label {
 	border-radius:5px 5px 0 0;
 }
 
-.faq-tabs label:hover,
-.faq-tabs [type="radio"]:checked + label {
+.faq-tabs label:hover {
     color:#FFF;
+}
+.faq-tabs [type="radio"]:checked + label {
+    font-weight: bold;
 }
 
 .faq-tabs article,
 .faq-page .faq-tabs [type="radio"] {
 	display:none;
-	padding:20px;
+	padding:10px 20px;
 }
 
 .faq-tabs label span {
@@ -42,8 +43,7 @@
 	border-radius:0 0 5px 5px;
     margin-bottom:10px;
     background: white;
-    font-size: 14px;
-    transform: rotate(0deg);
+    /* transform: rotate(0deg); */
 }
 
 .faq-tabs [type="radio"]:checked+label span {

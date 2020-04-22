@@ -75,7 +75,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => 'Limite',
 				'name' => 'sedoo-block-post-list-limit',
 				'type' => 'number',
-				'instructions' => '',
+				'instructions' => 'Set 0 for unlimited',
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -87,8 +87,8 @@ if( function_exists('acf_add_local_field_group') ):
 				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',
-				'min' => 0,
-				'max' => 9,
+				'min' => '',
+				'max' => '',
 				'step' => '',
 			),
 			array(

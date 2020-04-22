@@ -1,5 +1,20 @@
 <?php
 
+// Create id attribute allowing for custom "anchor" value.
+$id = 'sedoo_iframe-' . $block['id'];
+if( !empty($block['anchor']) ) {
+    $id = $block['anchor'];
+}
+
+// Create class attribute allowing for custom "className" and "align" values.
+$className = 'sedoo_blocks_iframe';
+if( !empty($block['className']) ) {
+    $className .= ' ' . $block['className'];
+}
+if( !empty($block['align']) ) {
+    $className .= ' align' . $block['align'];
+}
+
 $url = get_field('url');
 $requete = get_field('requete');
 $hauteur = get_field('hauteur');
@@ -30,6 +45,6 @@ if($attributs != NULL && $attributs != "") {
     $attributsiframe = $attributs;
 }
 
-echo '<iframe src="'. $url .'" width="'. $largeur .'%" height="'. $hauteur .'px" '.$attributsiframe.' frameborder="0" scrolling='.$scrollable_iframe.'></iframe>';
+echo '<iframe src="'. $url .'" width="'. $largeur .'%" height="'. $hauteur .'px" '.$attributsiframe.' frameborder="0" scrolling='.$scrollable_iframe.' class="'.$className.'"></iframe>';
 
 ?>
