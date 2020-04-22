@@ -1,5 +1,20 @@
 <?php
 
+// Create id attribute allowing for custom "anchor" value.
+$id = 'sedoo_faq-' . $block['id'];
+if( !empty($block['anchor']) ) {
+    $id = $block['anchor'];
+}
+
+// Create class attribute allowing for custom "className" and "align" values.
+$className = 'sedoo_blocks_faq';
+if( !empty($block['className']) ) {
+    $className .= ' ' . $block['className'];
+}
+if( !empty($block['align']) ) {
+    $className .= ' align' . $block['align'];
+}
+
 $categorie = get_field('faq_categories');
 $nombre = get_field('faq_nombre');
 
@@ -29,7 +44,7 @@ $questions = get_posts(array(
 ));
 ?>
 
-<nav class="faq-tabs" role="tablist">
+<nav class="faq-tabs <?php echo $className; ?>" role="tablist">
     <?php 
     foreach($questions as $question) {
     ?>
@@ -37,7 +52,7 @@ $questions = get_posts(array(
             <input type="radio" name="tabs" id="<?php echo $question->ID;?>" />
             <label for="<?php echo $question->ID;?>" id="<?php echo $question->ID;?>Tab" role="tab" aria-controls="<?php echo $question->ID;?>panel"><span class="dashicons dashicons-arrow-right-alt2"></span><?php echo $question->post_title;?></label>
             <article id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
-                <?php echo $question->post_content; ?>
+                <p><?php echo $question->post_content; ?></p>
             </article>
         </section>
     <?php 

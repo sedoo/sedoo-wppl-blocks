@@ -16,9 +16,11 @@ function sedoo_blocks_listearticle_render_callback( $block ) {
 
 
 
-function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button) {
+function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className ) {
     global $post;
-    
+    if ($limit == 0) {
+        $limit = -1;
+    }
     $argsListPost = array(
         'posts_per_page'   => $limit,
         'offset'           => $offset,
@@ -47,16 +49,6 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
         }
 
     switch ($layout) {
-        // case "grid" :
-        //     $listingClass = "post-wrapper";
-        //     break;
-
-        // case "grid-noimage" :
-        //     $listingClass = "post-wrapper noimage";
-        //     break;
-
-        // default:
-        //     $listingClass = "content-list";
         case "grid":
             $listingClass = "post-wrapper";
             break;
@@ -79,34 +71,34 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
 
     $postsList = get_posts ($argsListPost);
     
-    if ($postsList){       
-    ?>
-    <h2><?php echo __($title, 'sedoo-wpth-labs') ?></h2>
-    <section role="listNews" class="<?php echo $listingClass;?>">
-        
+    if ($postsList) {      
+        if ($title !== "") {
+        ?>
+        <h2><?php echo __($title, 'sedoo-wpth-labs') ?></h2>
         <?php
-        foreach ($postsList as $post) :
-         // setup_postdata( $post );
-            ?>
-            <?php
-                setup_postdata( $post );
-                 include('template-parts/content-'.$layout.'.php');
-                 wp_reset_postdata();
-            ?>
-            <?php
-        endforeach;
-        ?>	
-    </section>
-    <?php if ($button == 1) { ?>    
-        <div class="wp-block-button aligncenter">
-            <a href="<?php echo $url; ?>" class="wp-block-button__link btn"><?php echo $buttonLabel; ?></a>
-        </div>
-    <?php
         }
-    ?>
+        ?>
+        <section role="listNews" class="<?php echo $listingClass." ".$className;?>">
+            <?php
+            foreach ($postsList as $post) :
+                ?>
+                <?php
+                    setup_postdata( $post );
+                    include('template-parts/content-'.$layout.'.php');
+                    wp_reset_postdata();
+                ?>
+                <?php
+            endforeach;
+            ?>	
+        </section>
+        <?php 
+        if ($button == 1) { ?>    
+            <div class="wp-block-button aligncenter">
+                <a href="<?php echo $url; ?>" class="wp-block-button__link btn"><?php echo $buttonLabel; ?></a>
+            </div>
+        <?php
+        }
+    } 
+    //the_posts_navigation();
     
-    <?php 
-    the_posts_navigation();
-    
-    }
 }

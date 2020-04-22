@@ -60,10 +60,11 @@ if(!function_exists('sedoo_labtools_acf_populate_post_type')) {
 }
 
 if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
-    function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset) {
+    function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset, $className) {
         
         $parameters = array(
         'sectionTitle'    => $title,
+        'className'       => $className,
         );
         if (function_exists('pll_current_language')) {
             $args['lang']=pll_current_language();
@@ -95,6 +96,10 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
             array_push($terms_fields, $term->slug);
         }    
 
+        if ($post_number == 0) {
+            $post_number = -1;
+        }
+
         $args = array(
         'post_type'             => $type_of_content,
         'post_status'           => array( 'publish' ),
@@ -117,7 +122,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         // The Loop
         if ( $the_query->have_posts() ) {
             echo '<h2>'.__( $parameters['sectionTitle'], 'sedoo-wppl-labtools' ).'</h2>';
-            echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT">';
+            echo "<section role=\"listNews\" class=\"post-wrapper sedoo-labtools-listCPT ".$parameters['className']."\">";
             while ( $the_query->have_posts() ) {
                 $the_query->the_post();
 
