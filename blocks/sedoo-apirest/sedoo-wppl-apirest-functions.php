@@ -18,8 +18,6 @@ function recuperationmedia($url) {
     $imageJson = json_decode(file_get_contents($url),true);
 	$urlimage = $imageJson['guid']['rendered'];
 	?>
-	<div class="item-img">
 		<img src="<?php echo $urlimage; ?>" alt="" />
-	</div>
 	<?php 
 }
