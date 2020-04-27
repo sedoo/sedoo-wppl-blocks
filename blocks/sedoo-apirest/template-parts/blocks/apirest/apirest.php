@@ -14,21 +14,50 @@ foreach($donnees as $donnee) {
 
 
     $layout = get_field('sedoo-apirest-list-layout');
+    
+    ?>
+    <?php 
     if($layout == 'grid' || $layout == "grid-noimage"){
         ?>
-        <a class="item-link" href="<?php echo $url; ?>" title="<?php echo $title; ?>"> 
-            <?php if($layout == 'grid' ) { 
-              recuperationmedia($urlJsonThumbnail);
-            } ?>
-            <h3><?php echo $title; ?></h3>
-        </a>    
+        <article class="post type-post">
+            <a href="<?php echo $url; ?>"></a>
+            <header class="entry-header">
+                <figure>
+                <?php if($layout == 'grid' ) { 
+                    recuperationmedia($urlJsonThumbnail);
+                    } 
+                ?>          
+                </figure>
+            </header><!-- .entry-header -->
+            <div class="group-content">
+                <div class="entry-content">
+                    <h2><?php echo $title; ?></h2>
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    <a href="<?php echo $url; ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
+                </footer><!-- .entry-footer -->
+            </div>
+        </article><!-- #post-->
         <?php 
     } 
     elseif($layout == 'list') {
     ?>
-        <a href="<?php echo $url; ?>" title="<?php echo $title; ?>"> 
-            <h3><?php echo $title; ?></h3>
-        </a>   
+        <article <?php post_class(); ?>>
+            <header class="entry-header">
+                <?php     
+                // $categories = get_the_category();
+                // if ( ! empty( $categories ) ) {
+                // echo esc_html( $categories[0]->name );   
+                // }; 
+                ?>
+                <h2><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h2>
+            </header><!-- .entry-header -->
+            <div class="group-content">
+                <div class="entry-content">
+                    <a href="<?php echo $url; ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
+                </div><!-- .entry-content -->
+            </div>
+        </article><!-- #post-->
     <?php 
     }
 }
