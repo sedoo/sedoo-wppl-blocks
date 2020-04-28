@@ -4,14 +4,17 @@ $url = get_field('url_de_recuperation');
 $json = file_get_contents($url);
 $donnees = json_decode($json,true);
 $zonetitle = get_field('apiresttitle');
+$affichagebouton = get_field('afficher_bouton_en_savoir_plus_');
+$affichageextrait = get_field('afficher_lextrait_');
+
 
 echo '<h2>'.$zonetitle.'</h2>';
 echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT">';
 foreach($donnees as $donnee) {
     $url = $donnee['link'];
     $title = $donnee['title']['rendered'];
+    $extrait = $donnee['excerpt']['rendered'];
     $urlJsonThumbnail = $donnee["_links"]['wp:featuredmedia'][0]['href'];
-
 
     $layout = get_field('sedoo-apirest-list-layout');
     
@@ -32,10 +35,21 @@ foreach($donnees as $donnee) {
             <div class="group-content">
                 <div class="entry-content">
                     <h2><?php echo $title; ?></h2>
+                    <?php 
+                    if($affichageextrait == true) {
+                        echo $extrait;
+                    }
+                    ?>
                 </div><!-- .entry-content -->
+                <?php 
+                if($affichagebouton == true) {
+                ?>
                 <footer class="entry-footer">
                     <a href="<?php echo $url; ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
                 </footer><!-- .entry-footer -->
+                <?php 
+                }
+                ?>
             </div>
         </article><!-- #post-->
         <?php 
@@ -52,10 +66,23 @@ foreach($donnees as $donnee) {
                 ?>
                 <h2><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h2>
             </header><!-- .entry-header -->
-            <div class="group-content">
+            <div class="group-content"> 
                 <div class="entry-content">
+                    <?php 
+                    if($affichageextrait == true) {
+                        echo $extrait;
+                    }
+                    ?>
+                </div>
+                <?php 
+                if($affichagebouton == true) {
+                ?>
+                <footer class="entry-footer">
                     <a href="<?php echo $url; ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
-                </div><!-- .entry-content -->
+                </footer><!-- .entry-footer -->
+                <?php 
+                }
+                ?>
             </div>
         </article><!-- #post-->
     <?php 
