@@ -1,5 +1,20 @@
 <?php
 
+// Create id attribute allowing for custom "anchor" value.
+$id = 'sedoo_blocks_apirest-' . $block['id'];
+if( !empty($block['anchor']) ) {
+    $id = $block['anchor'];
+}
+
+// Create class attribute allowing for custom "className" and "align" values.
+$className = 'sedoo_blocks_apirest';
+if( !empty($block['className']) ) {
+    $className .= ' ' . $block['className'];
+}
+if( !empty($block['align']) ) {
+    $className .= ' align' . $block['align'];
+}
+
 $url = get_field('url_de_recuperation');
 $json = file_get_contents($url);
 $donnees = json_decode($json,true);
@@ -9,7 +24,7 @@ $affichageextrait = get_field('afficher_lextrait_');
 
 
 echo '<h2>'.$zonetitle.'</h2>';
-echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT">';
+echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT '.$className.'">';
 foreach($donnees as $donnee) {
     $url = $donnee['link'];
     $title = $donnee['title']['rendered'];
