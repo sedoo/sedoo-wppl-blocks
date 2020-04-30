@@ -44,7 +44,6 @@
                                 if(taxoducpt) {
                                     jQuery('.acf-field-5e9ef4bfb9e24 select').append('<option value=""> Selectionner une taxonomie </option>');
                                     for (const property_tax in taxoducpt) {
-                                        console.log(property_tax);
                                         jQuery('.acf-field-5e9ef4bfb9e24 select').append('<option value="'+taxoducpt[property_tax]+'">'+property_tax+'</option>');
                                     }
                                 } else {
