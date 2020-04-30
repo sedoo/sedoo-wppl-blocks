@@ -11,7 +11,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => 'Titre',
 				'name' => 'sedoo-apirest-block-list-title',
 				'type' => 'text',
-				'instructions' => '',
+				'instructions' => 'N\'est pas affiché si vide',
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -39,7 +39,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'message' => '',
-                'default_value' => 0,
+                'default_value' => 1,
                 'ui' => 1,
                 'ui_on_text' => 'Avancé',
                 'ui_off_text' => 'Pas à Pas',
@@ -197,7 +197,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Terme à récupérer',
                 'name' => 'term_a_recuperer',
                 'type' => 'select',
-                'instructions' => '',
+                'instructions' => 'Peut mettre quelques secondes à charger.',
                 'required' => 0,
                 'conditional_logic' => array(
                     array(
@@ -261,6 +261,26 @@ if( function_exists('acf_add_local_field_group') ):
                 'ui' => 1,
                 'ui_on_text' => '',
                 'ui_off_text' => '',
+            ),
+            array(
+                'key' => 'field_5eaacc52d53f4',
+                'label' => 'Exclusion de contenu',
+                'name' => 'exclusion_de_contenu',
+                'type' => 'text',
+                'instructions' => 'Par identifiant séparés d\'une virgule
+    Ex : 25,27,28',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
             ),
         ),
         'location' => array(

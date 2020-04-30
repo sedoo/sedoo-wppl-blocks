@@ -41,12 +41,15 @@
                                 taxoducpt = JSON.parse(taxoducpt);
                                 jQuery('.acf-field-5e9ef4bfb9e24 select').empty();
                                 jQuery('.acf-field-5e9efed45552f select').empty();
-                                jQuery('.acf-field-5e9ef4bfb9e24 select').append('<option value=""> Selectionner une taxonomie </option>');
-                                function addCtxToSelect(ctx) {
-                                    jQuery('.acf-field-5e9ef4bfb9e24 select').append('<option value="'+ctx+'">'+ctx+'</option>');
+                                if(taxoducpt) {
+                                    jQuery('.acf-field-5e9ef4bfb9e24 select').append('<option value=""> Selectionner une taxonomie </option>');
+                                    for (const property_tax in taxoducpt) {
+                                        console.log(property_tax);
+                                        jQuery('.acf-field-5e9ef4bfb9e24 select').append('<option value="'+taxoducpt[property_tax]+'">'+property_tax+'</option>');
+                                    }
+                                } else {
+                                    jQuery('.acf-field-5e9ef4bfb9e24 select').append('<option value=""> Aucune taxonomie </option>');
                                 }
-                                taxoducpt.forEach(addCtxToSelect);
-                                console.log(taxoducpt);
 
                                 //////
                                 // REMPLIR LE CHAMPS TERM EN FONCTION DU CTX
@@ -58,14 +61,19 @@
                                         dataType:'text', //or HTML, JSON, etc.
                                         data: {
                                             'action': 'sedoo_labtools_acf_populate_termlist',
-                                            'ctx' : ctxchoix
+                                            'ctx' : ctxchoix,
+                                            'cpt' : cptchoix
                                         },
                                         success:function(terms_list) {
                                             terms = JSON.parse(terms_list);
                                             jQuery('.acf-field-5e9efed45552f select').empty();
-                                            jQuery('.acf-field-5e9efed45552f select').append('<option value=""> Selectionner un terme </option>');
-                                            for (const property_term in terms) {
-                                                jQuery('.acf-field-5e9efed45552f select').append('<option value="'+property_term+'">'+terms[property_term]+'</option>');
+                                            if(terms) {
+                                                jQuery('.acf-field-5e9efed45552f select').append('<option value=""> Selectionner un terme </option>');
+                                                for (const property_term in terms) {
+                                                    jQuery('.acf-field-5e9efed45552f select').append('<option value="'+property_term+'">'+terms[property_term]+'</option>');
+                                                }
+                                            } else {
+                                                jQuery('.acf-field-5e9efed45552f select').append('<option value=""> Aucun terme </option>');
                                             }
                                         },
                                         error: function(errorThrown){
