@@ -19,6 +19,7 @@ function sedoo_labtools_acf_populate_sitelist($field) {
     $content_site_list = [];
     $sites = get_sites();   
     foreach($sites as $site) {
+        $content_site_list[''] = 'Selectionner un site';
         $content_site_list[$site->blog_id] = get_blog_details($site->blog_id)->blogname;
     }
 
@@ -31,7 +32,10 @@ add_filter('acf/load_field/name=site_a_recuperer', 'sedoo_labtools_acf_populate_
 // j'enregistre une variable dans la session car je me suis rendu compte qu'il me la fallait une fois que j'avais fini tout le merdi..
 session_start();
 
-
+function startsWith($string, $startString) { 
+    $len = strlen($startString); 
+    return (substr($string, 0, $len) === $startString); 
+} 
 
 //
 // la fonction qui remplis le select cpt en fonction du site
@@ -53,9 +57,12 @@ function sedoo_labtools_acf_populate_cptlist() {
         $tableau_cpt;
         $tableau_ctx_par_cpt;
         foreach($liste_cpt as $cpt) {
-            $tableau_cpt[$cpt['rest_base']] = $cpt['name'];
-            // j'enregistre un tableau des taxonomies par cpt pour l'utiliser sur le prochain select
-            $tableau_ctx_par_cpt[$cpt['rest_base']] = $cpt['taxonomies'];
+            // je check si c'est un cpt sedoo
+            if(startsWith($cpt['slug'], "sedoo")) {
+                $tableau_cpt[$cpt['rest_base']] = $cpt['name'];
+                // j'enregistre un tableau des taxonomies par cpt pour l'utiliser sur le prochain select
+                $tableau_ctx_par_cpt[$cpt['rest_base']] = $cpt['taxonomies'];    
+            }
         }
         
         echo json_encode(array($tableau_cpt, $tableau_ctx_par_cpt));
@@ -73,7 +80,16 @@ function sedoo_labtools_acf_populate_ctxlist() {
     if ( isset($_REQUEST) ) {
         $cpt = $_REQUEST['cpt'];
         $taxo_tableau = $_REQUEST['taxo_tableau'];
-        echo json_encode($taxo_tableau[$cpt]);
+        $tableau_xtx_name_restbase;
+        // je vais recuperer le name de chaque taxo plutot que le restbase
+        foreach($taxo_tableau[$cpt] as $cpt_rest_base) {
+                $taxo_url_for_name = $_SESSION['siteurl'].'/wp-json/wp/v2/taxonomies/'.$cpt_rest_base;
+                $json_for_taxo_name = file_get_contents($taxo_url_for_name);
+                $json_for_taxo_name = json_decode($json_for_taxo_name,true);  
+                $tableau_xtx_name_restbase[$json_for_taxo_name['name']] = $cpt_rest_base;
+        }
+
+        echo json_encode($tableau_xtx_name_restbase);
     }
     die();
 }
@@ -92,16 +108,25 @@ add_action( 'wp_ajax_sedoo_labtools_acf_populate_ctxlist', 'sedoo_labtools_acf_p
 function sedoo_labtools_acf_populate_termlist() {
     if ( isset($_REQUEST) ) {
         $ctx = $_REQUEST['ctx'];
+        $cpt = $_REQUEST['cpt'];
         $taxo_url = $_SESSION['siteurl'].'/wp-json/wp/v2/taxonomies';
         $termlistjson = file_get_contents($taxo_url);
         $terms = json_decode($termlistjson,true);  
         $cpt_rest_base = $_SESSION['link_slug_rest_base_sedoo_cpt_name'];
         $taxo_api_name = $terms[$ctx]['rest_base'];
         $taxo_selectionnee_url = $taxo_url = $_SESSION['siteurl'].'/wp-json/wp/v2/'.$taxo_api_name;
+
         $term_list = file_get_contents($taxo_selectionnee_url);
         $term_list = json_decode($term_list,true); 
         foreach($term_list as $term_ctx) {
-            $tableau_term[$term_ctx['id']] = $term_ctx['name'];
+
+            // on fait un truc propre : afficher le nombre de contenu correspondant à chaque terme (c'est possible donc on le fait)
+            $url_decompte = $_SESSION['siteurl'].'/wp-json/wp/v2/'.$cpt.'?'.$taxo_api_name.'='.$term_ctx['id'];
+            $decomptejson = file_get_contents($url_decompte);
+            $tab_decompte = json_decode($decomptejson, true);
+            $i = 0;
+            foreach($tab_decompte as $t) { $i++; }            
+            $tableau_term[$term_ctx['id']] = $term_ctx['name'].' ('.$i.')';
         }
         echo json_encode($tableau_term);
     }
@@ -116,15 +141,13 @@ add_action( 'wp_ajax_sedoo_labtools_acf_populate_termlist', 'sedoo_labtools_acf_
 /////  TO DO
 /////////////
 
-///
-// Edition du block en mode normal
-//  - Bug à l'édition (obligé de delete et remettre le bloc car les infos ne sont pas changées, et ne sont pas chargées car non existantes dans les select surement)
-//  - Afficher le nom des taxo et non le slug
-// 
-// Ajout du block
-//  - Lenteur à l'ajout car il doit charger les sites, possibilité d'accelerer le process ? (problème apparu après l'ajout du champs titre)
+//////
 //
-// Affichage liste
-//  - Retour à la ligne
-//  Affichage image grille
-// - Image par défaut
+//  Soucis uniquement d'affichage :
+//      - quelque fois le champs Terme se remet sur 'selectionner un terme' mais garde en mémoire le champs et l'url de requete change bien
+//
+//  Améliorer le système d'exclusion peut etre ?
+//
+//  A l'édition les données ne sont pas chargée en mode pas à pas
+//      - en temps réel après l'avoir posé ok
+//      - a l'édition post création aussi mais on doit refaire tous les champs
