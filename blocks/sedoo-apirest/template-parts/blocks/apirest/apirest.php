@@ -21,12 +21,12 @@ if($mode_edition == true) {
     $url = get_field('url_de_recuperation');
 } else {
     $site = get_field('site_a_recuperer');
-    $site_url = get_blog_details($site);
     $cpt = get_field('contenus_a_recuperer');
     $ctx = get_field('taxonomie_a_recuperer');
     $term = get_field('term_a_recuperer');
-    $url = $site_url->siteurl.'/wp-json/wp/v2/'.$cpt.'?'.$ctx.'='.$term;
+    $url = get_field('site_a_recuperer').'/wp-json/wp/v2/'.$cpt.'?'.$ctx.'='.$term;
 }
+
 
 $json = file_get_contents($url);
 $donnees = json_decode($json,true);

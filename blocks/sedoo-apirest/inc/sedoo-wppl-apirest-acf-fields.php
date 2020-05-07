@@ -197,7 +197,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Terme à récupérer',
                 'name' => 'term_a_recuperer',
                 'type' => 'select',
-                'instructions' => 'Peut mettre quelques secondes à charger.',
+                'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => array(
                     array(
