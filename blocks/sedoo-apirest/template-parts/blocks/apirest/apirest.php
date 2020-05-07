@@ -27,6 +27,7 @@ if($mode_edition == true) {
     $url = get_field('site_a_recuperer').'/wp-json/wp/v2/'.$cpt.'?'.$ctx.'='.$term;
 }
 
+echo $url;
 
 $json = file_get_contents($url);
 $donnees = json_decode($json,true);
