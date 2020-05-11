@@ -27,8 +27,6 @@ if($mode_edition == true) {
     $url = get_field('site_a_recuperer').'/wp-json/wp/v2/'.$cpt.'?'.$ctx.'='.$term;
 }
 
-echo $url;
-
 $affichagebouton = get_field('afficher_bouton_en_savoir_plus_');
 $affichageextrait = get_field('afficher_lextrait_');
 $exclusion = get_field('exclusion_de_contenu');
