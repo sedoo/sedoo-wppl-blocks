@@ -29,100 +29,98 @@ if($mode_edition == true) {
 
 echo $url;
 
-$json = file_get_contents($url);
-$donnees = json_decode($json,true);
-$api_rest_title = get_field('sedoo-apirest-block-list-title');
 $affichagebouton = get_field('afficher_bouton_en_savoir_plus_');
 $affichageextrait = get_field('afficher_lextrait_');
-
-
 $exclusion = get_field('exclusion_de_contenu');
+$layout = get_field('sedoo-apirest-list-layout');
 $tableau_exclusion = explode(",", $exclusion);
-    
-if($api_rest_title != '') {
-    echo '<h2 class="'.$className.'">'.__($api_rest_title, 'sedoo-wpth-labs').'</h2>';
-}
-echo '<section role="listNews" class="post-wrapper sedoo-labtools-listCPT '.$className.'">';
-foreach($donnees as $donnee) {
 
-    // si la donnée est dans la liste d'exclusion
-    if(!in_array($donnee['id'], $tableau_exclusion)) {
-        $url = $donnee['link'];
-        $title = $donnee['title']['rendered'];
-        $extrait = $donnee['excerpt']['rendered'];
-        $urlJsonThumbnail = $donnee["_links"]['wp:featuredmedia'][0]['href'];
-
-        $layout = get_field('sedoo-apirest-list-layout');
-        
-        ?>
-        <?php 
-        if($layout == 'grid' || $layout == "grid-noimage"){
-            ?>
-            <article class="post type-post">
-                <a href="<?php echo $url; ?>"></a>
-                <header class="entry-header">
-                    <figure>
-                    <?php if($layout == 'grid' ) { 
-                        recuperationmedia($urlJsonThumbnail);
-                        } 
-                    ?>          
-                    </figure>
-                </header><!-- .entry-header -->
-                <div class="group-content">
-                    <div class="entry-content">
-                        <h2><?php echo $title; ?></h2>
-                        <?php 
-                        if($affichageextrait == true) {
-                            echo $extrait;
-                        }
-                        ?>
-                    </div><!-- .entry-content -->
-                    <?php 
-                    if($affichagebouton == true) {
-                    ?>
-                    <footer class="entry-footer">
-                        <a href="<?php echo $url; ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
-                    </footer><!-- .entry-footer -->
-                    <?php 
-                    }
-                    ?>
-                </div>
-            </article><!-- #post-->
-            <?php 
-        } 
-        elseif($layout == 'list') {
-        ?>
-            <article <?php post_class(); ?>>
-                <header class="entry-header">
-                    <?php     
-                    // $categories = get_the_category();
-                    // if ( ! empty( $categories ) ) {
-                    // echo esc_html( $categories[0]->name );   
-                    // }; 
-                    ?>
-                    <h2><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h2>
-                </header><!-- .entry-header -->
-                <div class="group-content"> 
-                    <div class="entry-content">
-                        <?php 
-                        if($affichageextrait == true) {
-                            echo $extrait;
-                        }
-                        ?>
-                    </div>
-                    <?php 
-                    if($affichagebouton == true) {
-                    ?>
-                    <footer class="entry-footer">
-                        <a href="<?php echo $url; ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
-                    </footer><!-- .entry-footer -->
-                    <?php 
-                    }
-                    ?>
-                </div>
-            </article><!-- #post-->
-        <?php 
-        }
-    }
-}
+echo '<section id="sedoo-blocks-apirest-content" role="listNews" class="post-wrapper sedoo-labtools-listCPT '.$className.'">';
 echo '</section>';
+?>
+
+
+<script>
+var url = <?php echo json_encode($url); ?>;
+var tableau_exclusion = <?php echo json_encode($tableau_exclusion); ?>;
+var layout = <?php echo json_encode($layout); ?>;
+var affichagebouton = <?php echo json_encode($affichagebouton); ?>;
+var affichageextrait = <?php echo json_encode($affichageextrait); ?>;
+
+jQuery.ajax({
+        url: url,
+        dataType:'text', 
+        success:function(donnees) {
+            donnees = JSON.parse(donnees);
+            var arrayLength = donnees.length;
+            for (var i = 0; i < arrayLength; i++) {
+                if(tableau_exclusion.includes(donnees[i].id.toString())) {} 
+                else {
+                    var url = donnees[i].link;
+                    var title = donnees[i].title.rendered;
+                    var extrait = '';
+                    if(affichageextrait == true) {
+                        extrait = donnees[i].excerpt.rendered;
+                    }
+                    var bouton = '';
+                    if(affichagebouton == true) {
+                        bouton =  '<a href="'+url+'">Lire plus →</a> ';
+                    }
+                    var urlJsonThumbnail = donnees[i]._links['wp:featuredmedia'][0].href;
+
+                    if(layout == 'grid' ) {
+                        jQuery.ajax({
+                            url: urlJsonThumbnail,
+                            async: false,
+                            dataType:'text', 
+                            success:function(donneesimg) {
+                                var urlimage = JSON.parse(donneesimg).guid.rendered;
+                                jQuery('#sedoo-blocks-apirest-content').append('<article class="post type-post"> \
+                                    <a href="'+url+'"></a>\
+                                    <header class="entry-header">\
+                                       <img src="'+urlimage+'">\
+                                    </header>\
+                                    <div class="group-content"> \
+                                        <h2>'+title+'</h2>\
+                                        <div class="entry-content">'+extrait+'\
+                                        </div> \
+                                        <footer class="entry-footer">\
+                                            '+bouton+'\
+                                        </footer>\
+                                    </div>\
+                                </article><!-- #post-->');
+                            }
+                        });
+                    }
+                    if(layout == "grid-noimage") {
+                        jQuery('#sedoo-blocks-apirest-content').append('<article class="post type-post"> \
+                            <a href="'+url+'"></a>\
+                            <div class="group-content"> \
+                                <h2>'+title+'</h2>\
+                                <div class="entry-content">'+extrait+'\
+                                </div> \
+                                <footer class="entry-footer">\
+                                    '+bouton+'\
+                                </footer>\
+                            </div>\
+                        </article><!-- #post-->');
+                    }
+                    if(layout == 'list') {
+                        jQuery('#sedoo-blocks-apirest-content').append('<article>\
+                            <header class="entry-header">\
+                                <h2><a href="'+url+'">'+title+'</a></h2>\
+                            </header><!-- .entry-header -->\
+                            <div class="group-content"> \
+                                <div class="entry-content">'+extrait+'\
+                                </div> \
+                                <footer class="entry-footer">\
+                                   '+bouton+'\
+                                </footer>\
+                            </div>\
+                        </article><!-- #post-->');
+                    }
+                }
+            }
+        }
+});
+</script>

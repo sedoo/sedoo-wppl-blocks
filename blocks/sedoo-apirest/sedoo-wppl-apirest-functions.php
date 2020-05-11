@@ -13,11 +13,3 @@ function sedoo_blocks_apirest_render_callback( $block ) {
 		include $templateURL;
     }
 }
-
-function recuperationmedia($url) {
-    $imageJson = json_decode(file_get_contents($url),true);
-	$urlimage = $imageJson['guid']['rendered'];
-	?>
-		<img src="<?php echo $urlimage; ?>" alt="" />
-	<?php 
-}
