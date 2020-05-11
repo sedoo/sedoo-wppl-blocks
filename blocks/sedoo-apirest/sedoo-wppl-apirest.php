@@ -30,4 +30,3 @@ function sedoo_labtools_acf_populate_sitelist($field) {
     return $field;
 }
 add_filter('acf/load_field/name=site_a_recuperer', 'sedoo_labtools_acf_populate_sitelist');
-
