@@ -76,7 +76,9 @@ jQuery.ajax({
                                 jQuery('#sedoo-blocks-apirest-content').append('<article class="post type-post"> \
                                     <a href="'+url+'"></a>\
                                     <header class="entry-header">\
-                                       <img src="'+urlimage+'">\
+                                        <figure>\
+                                            <img src="'+urlimage+'">\
+                                       </figure>\
                                     </header>\
                                     <div class="group-content"> \
                                         <h2>'+title+'</h2>\
