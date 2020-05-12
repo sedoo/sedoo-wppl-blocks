@@ -7,11 +7,16 @@ include 'inc/sedoo-wppl-apirest-acf-fields.php';
 function enqueuapirestscript() {
     // le fichier js qui contient les fonctions tirgger au change des select
     $src_ctp = plugins_url().'/sedoo-wppl-blocks/blocks/sedoo-apirest/js/populatecpt.js';
-    wp_enqueue_script('sedoo_apirest', $src_ctp,  array ( 'jquery' ));
-    wp_localize_script( 'sedoo_apirest', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
+    wp_enqueue_script('sedoo_apirest', $src_ctp,  array ( 'jquery' ));                 
+    wp_localize_script( 'sedoo_apirest', 'ajaxurl', admin_url( 'admin-ajax.php' ) );      
 }
 add_action( 'admin_head', 'enqueuapirestscript' );
 
+function enqueuefrontcss() {
+    wp_register_style( 'sedoo_apirest_css', plugins_url('css/apirest.css', __FILE__) );
+    wp_enqueue_style( 'sedoo_apirest_css' );
+}
+add_action( 'wp_head', 'enqueuefrontcss' );
 //
 // la fonction qui remplis le select site
 //

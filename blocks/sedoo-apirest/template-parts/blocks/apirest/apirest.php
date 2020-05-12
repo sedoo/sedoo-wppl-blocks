@@ -34,7 +34,8 @@ $layout = get_field('sedoo-apirest-list-layout');
 $tableau_exclusion = explode(",", $exclusion);
 
 echo '<section id="sedoo-blocks-apirest-content" role="listNews" class="post-wrapper sedoo-labtools-listCPT '.$className.'">';
-echo '<div id="sedoo-block-loader"><h2> Loading... Please Wait</h2></div>';
+echo '<div id="sedoo-block-loader"><object type="image/svg+xml" data="'.plugins_url("../../img/loader.svg", dirname(__FILE__)).'">Your browser does not support SVG</object>';
+echo '<p> Loading... Please Wait</p></div>';
 echo '</section>';
 ?>
 
@@ -74,8 +75,7 @@ jQuery.ajax({
                             dataType:'text', 
                             success:function(donneesimg) {
                                 var urlimage = JSON.parse(donneesimg).guid.rendered;
-                                jQuery('#sedoo-block-loader').remove();
-                                jQuery('#sedoo-blocks-apirest-content').append('<article class="post type-post"> \
+                                    jQuery('#sedoo-blocks-apirest-content').append('<article class="post type-post"> \
                                     <a href="'+url+'"></a>\
                                     <header class="entry-header">\
                                         <figure>\
@@ -95,7 +95,6 @@ jQuery.ajax({
                         });
                     }
                     if(layout == "grid-noimage") {
-                        jQuery('#sedoo-block-loader').remove();
                         jQuery('#sedoo-blocks-apirest-content').append('<article class="post type-post"> \
                             <a href="'+url+'"></a>\
                             <div class="group-content"> \
@@ -109,7 +108,6 @@ jQuery.ajax({
                         </article><!-- #post-->');
                     }
                     if(layout == 'list') {
-                        jQuery('#sedoo-block-loader').remove();
                         jQuery('#sedoo-blocks-apirest-content').append('<article>\
                             <header class="entry-header">\
                                 <h2><a href="'+url+'">'+title+'</a></h2>\
@@ -125,6 +123,7 @@ jQuery.ajax({
                     }
                 }
             }
+            jQuery('#sedoo-block-loader').fadeOut(400);
         }
 });
 </script>
