@@ -18,8 +18,9 @@ if(is_admin()) {
         $className .= ' align' . $block['align'];
     }
     
+    $layout = get_field('sedoo-relatedcontent-list-layout');
     // if( get_field('relatedContentTitle') ):
-    sedoo_labtools_get_associate_content_arguments( get_field('relatedContentTitle'), get_field('relatedContentTypeOfContent'), get_field('relatedContentTaxonomies'), get_field('post_number'), get_field('post_offset'), $className );
+    sedoo_labtools_get_associate_content_arguments( get_field('relatedContentTitle'), get_field('relatedContentTypeOfContent'), get_field('relatedContentTaxonomies'), get_field('post_number'), get_field('post_offset'), $layout, $className );
         
     // endif;
 }
