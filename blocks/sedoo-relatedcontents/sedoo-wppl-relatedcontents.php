@@ -60,11 +60,34 @@ if(!function_exists('sedoo_labtools_acf_populate_post_type')) {
 }
 
 if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
-    function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset, $className) {
+    function sedoo_labtools_get_associate_content_arguments($title, $type_of_content, $taxonomy, $post_number, $post_offset, $layout, $className) {
         
+        switch ($layout) {
+            case "grid":
+                $listingClass = "post-wrapper";
+                break;
+    
+            case "grid-noimage":
+                $listingClass = "post-wrapper noimage";
+                break;
+            
+            case "list":
+                $listingClass = "content-list";
+                break;
+            
+            case "list-full":
+                $listingClass = "content-list";
+                break;
+                 
+            default:
+                $listingClass = "post-wrapper";
+        }
+
         $parameters = array(
-        'sectionTitle'    => $title,
-        'className'       => $className,
+        'sectionTitle'       => $title,
+        'className'          => $className,
+        'layout'             => $layout,
+        'listingClass'       => $listingClass,
         );
         if (function_exists('pll_current_language')) {
             $args['lang']=pll_current_language();
@@ -118,11 +141,15 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         sedoo_labtools_get_associate_content($parameters, $args, $type_of_content);
     }
     function sedoo_labtools_get_associate_content($parameters, $args, $type_of_content) {
+
         $the_query = new WP_Query( $args );
         // The Loop
         if ( $the_query->have_posts() ) {
             echo '<h2>'.__( $parameters['sectionTitle'], 'sedoo-wppl-labtools' ).'</h2>';
-            echo "<section role=\"listNews\" class=\"post-wrapper sedoo-labtools-listCPT ".$parameters['className']."\">";
+            ?>
+            <section role="listNews" class="sedoo-labtools-listCPT <?php echo $parameters['className'];?> <?php echo $parameters['listingClass'];?>">
+
+            <?php
             while ( $the_query->have_posts() ) {
                 $the_query->the_post();
 
