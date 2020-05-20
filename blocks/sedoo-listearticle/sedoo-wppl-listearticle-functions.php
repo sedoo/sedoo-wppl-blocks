@@ -94,7 +94,7 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
         <?php 
         if ($button == 1) { ?>    
             <div class="wp-block-button aligncenter">
-                <a href="<?php echo $url; ?>" class="wp-block-button__link btn"><?php echo $buttonLabel; ?></a>
+                <a href="<?php echo $url; ?>" class="wp-block-button__link"><?php echo $buttonLabel; ?></a>
             </div>
         <?php
         }
