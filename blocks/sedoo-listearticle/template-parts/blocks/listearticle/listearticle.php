@@ -32,7 +32,9 @@ if (empty($term)) {
 if (empty($buttonLabel)) {
     $buttonLabel = "More";
 }
+
+$terms = get_field('sedoo-block-post-list-showterms-button');
 // SHOW POST LIST
-sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className);
+sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $terms);
 
 ?>

@@ -21,7 +21,7 @@ $postType=get_post_type();
             } else {
                 if (labs_by_sedoo_catch_that_image() ==  "no_image" ){
                    ?>
-                   <img src="<?php echo get_template_directory_uri() .'/images/empty-mode-'.$postType.'.svg'; ?>" alt="" />
+                   <img src="<?php echo get_template_directory_uri().'/images/empty-mode-'.$postType.'.svg'; ?>" alt="" />
                    <?php
                 } else {
                     echo '<img src="';
@@ -32,7 +32,7 @@ $postType=get_post_type();
         </figure>
 
         <?php
-        if (!is_front_page()) {
+        if ($term_displayed == 1 && $term_displayed != false) {
         ?>
         <p>
         <?php     $categories = get_the_category();
