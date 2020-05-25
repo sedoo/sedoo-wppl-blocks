@@ -55,3 +55,9 @@
 .sedoo_liste_article_container article {
     background-color: white;
 }
+
+.content-list.sedoo_blocks_listearticle .entry-header p{
+    display: inline;
+    top: initial;
+    position: initial;
+}

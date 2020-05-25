@@ -15,14 +15,20 @@
     if (!is_front_page()) {
     ?>
 	<header class="entry-header">
-        <p>
-        <?php     
-            $categories = get_the_category();
-            if ( ! empty( $categories ) ) {
-            echo esc_html( $categories[0]->name );   
-        }; 
+        <?php
+        if ($term_displayed == 1 && $term_displayed != false) {
         ?>
-        </p>
+            <p>
+            <?php     
+                $categories = get_the_category();
+                if ( ! empty( $categories ) ) {
+                echo esc_html( $categories[0]->name );   
+            }; 
+            ?>
+            </p>
+        <?php 
+        }
+        ?>
     </header><!-- .entry-header -->
     <?php    
     }
