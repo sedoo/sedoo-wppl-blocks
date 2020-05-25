@@ -12,17 +12,22 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php //the_permalink(); ?>
 	<header class="entry-header">
-        <?php     
-        // $categories = get_the_category();
-        // if ( ! empty( $categories ) ) {
-        // echo esc_html( $categories[0]->name );   
-        // }; 
-        ?>
         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<?php
+        if ($term_displayed == 1 && $term_displayed != false) {
+        ?>
+        <p>
+        <?php     $categories = get_the_category();
+            if ( ! empty( $categories ) ) {
+            echo esc_html( $categories[0]->name );   
+        }; ?>
+        </p>
+        <?php
+        }
+        ?>
 	</header><!-- .entry-header -->
     <div class="group-content">
         <div class="entry-content">
-            
             <?php the_excerpt(); ?>
             <p class="date"><?php the_date('M / d / Y') ?>
             <a href="<?php the_permalink(); ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
