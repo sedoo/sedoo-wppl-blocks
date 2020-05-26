@@ -16,6 +16,7 @@ function sedoo_relatedblocks_load_more_content(button) {
     var sm = jQuery(button).attr('sm');
     var sm_text = jQuery(button).attr('smt');
     var sm_layout = jQuery(button).attr('layout');
+    jQuery('.sedoo_blocks_relatedcontents').append('<div class="sedoo_related_block_loader"> <p> Loading... Please Wait </p> </div>');
     jQuery(button).remove();
     jQuery.ajax({
         url: ajaxurl,
@@ -36,5 +37,6 @@ function sedoo_relatedblocks_load_more_content(button) {
         }
       }).done(function(response) {
           jQuery('.sedoo_blocks_relatedcontents').append(response);
+          jQuery('.sedoo_related_block_loader').remove();
       });
 }

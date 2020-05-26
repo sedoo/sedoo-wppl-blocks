@@ -18,3 +18,15 @@ div.sedoo_related_block_admin_block {
     width: 30%;
     text-align: center;
 }
+
+.sedoo_related_block_loader {
+    background: #e4e4e4;
+    padding: 5em;
+    font-size: 1em;
+    margin-top: 1em;
+    color: #595959;
+}
+
+.sedoo_related_block_loader p {
+    text-align: center;
+}
