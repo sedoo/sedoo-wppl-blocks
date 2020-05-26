@@ -9,23 +9,57 @@
 
 $titleItem=mb_strimwidth(get_the_title(), 0, 70, '...');  
 $postType=get_post_type();
-$layout = get_field('sedoo-relatedcontent-list-layout');
 if($layout == 'grid' || $layout == "grid-noimage"){
     ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"> 
-            <?php if($layout == 'grid' ) { ?>
-                <div class="item-img">
-                    <?php if(has_post_thumbnail()){ ?>
-                        <?php the_post_thumbnail('thumbnail-plugin'); ?>
-                    <?php } else { ?>
-                        <img src="<?php echo esc_url( plugins_url( 'images/empty-mode-'.$postType.'.svg', dirname(__FILE__)) )  ; ?>" alt="" />
-                    <?php } ?>
-                </div>
+   <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
+    <a href="<?php the_permalink(); ?>"></a>
+	<header class="entry-header">
+         <?php if($layout == 'grid') { ?>
+            <figure>
+                <?php 
+                if (has_post_thumbnail()) {
+                    the_post_thumbnail('thumbnail-loop');
+                } else {
+                    if (labs_by_sedoo_catch_that_image() ==  "no_image" ){
+                    ?>
+                    <img src="<?php echo get_template_directory_uri() .'/images/empty-mode-'.$postType.'.svg'; ?>" alt="" />
+                    <?php
+                    } else {
+                        echo '<img src="';
+                        echo labs_by_sedoo_catch_that_image();
+                        echo '" alt="" />'; 
+                    } 
+                }?>
+                
+            </figure>
             <?php } ?>
-            <h3><?php echo $titleItem; ?></h3>
-        </a>    
-    </article>
+        <?php     $categories = get_the_category();
+            if ( ! empty( $categories ) ) {
+                ?> 
+                <p><?php 
+            echo esc_html( $categories[0]->name );   
+            ?>
+
+        </p>
+        <?php
+        }; ?>
+	</header><!-- .entry-header -->
+    <div class="group-content">
+        <div class="entry-content">
+            <h3><?php the_title(); ?></h3>
+            <?php the_excerpt(); ?>
+        </div><!-- .entry-content -->
+        <footer class="entry-footer">
+            <?php
+            if ( 'post' === get_post_type() ) :
+                ?>
+                <p><?php the_date('d.m.Y') ?></p>
+            <?php endif; ?>
+            <a href="<?php the_permalink(); ?>"><?php echo __('Lire la suite', 'sedoo-wpth-labs'); ?> →</a>
+        </footer><!-- .entry-footer -->
+    </div>
+</article><!-- #post-->
+
     <?php 
 } 
 elseif($layout == 'list') {
@@ -40,18 +74,54 @@ elseif($layout == 'list') {
 // pour les blocks déja posés qui n'ont pas d'affichage je met en grid par défaut
 else {
 ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <a class="item-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"> 
-            <div class="item-img">
-                <?php if(has_post_thumbnail()){ ?>
-                    <?php the_post_thumbnail('thumbnail-plugin'); ?>
-                <?php } else { ?>
-                    <img src="<?php echo esc_url( plugins_url( 'images/empty-mode-'.$postType.'.svg', dirname(__FILE__)) )  ; ?>" alt="" />
-                <?php } ?>
-            </div>
-            <h3><?php echo $titleItem; ?></h3>
-        </a>
-    </article>
+   <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
+    <a href="<?php the_permalink(); ?>"></a>
+	<header class="entry-header">
+         <?php if($layout == 'grid') { ?>
+            <figure>
+                <?php 
+                if (has_post_thumbnail()) {
+                    the_post_thumbnail('thumbnail-loop');
+                } else {
+                    if (labs_by_sedoo_catch_that_image() ==  "no_image" ){
+                    ?>
+                    <img src="<?php echo get_template_directory_uri() .'/images/empty-mode-'.$postType.'.svg'; ?>" alt="" />
+                    <?php
+                    } else {
+                        echo '<img src="';
+                        echo labs_by_sedoo_catch_that_image();
+                        echo '" alt="" />'; 
+                    } 
+                }?>
+                
+            </figure>
+            <?php } ?>
+        <?php     $categories = get_the_category();
+            if ( ! empty( $categories ) ) {
+                ?> 
+                <p><?php 
+            echo esc_html( $categories[0]->name );   
+            ?>
+
+        </p>
+        <?php
+        }; ?>
+	</header><!-- .entry-header -->
+    <div class="group-content">
+        <div class="entry-content">
+            <h3><?php the_title(); ?></h3>
+            <?php the_excerpt(); ?>
+        </div><!-- .entry-content -->
+        <footer class="entry-footer">
+            <?php
+            if ( 'post' === get_post_type() ) :
+                ?>
+                <p><?php the_date('d.m.Y') ?></p>
+            <?php endif; ?>
+            <a href="<?php the_permalink(); ?>"><?php echo __('Lire la suite', 'sedoo-wpth-labs'); ?> →</a>
+        </footer><!-- .entry-footer -->
+    </div>
+</article><!-- #post--> 
 <?php 
 }
 ?>
