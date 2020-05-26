@@ -64,7 +64,7 @@ if($layout == 'grid' || $layout == "grid-noimage"){
 } 
 elseif($layout == 'list') {
 ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"> 
             <h3><?php echo $titleItem; ?></h3>
         </a>
