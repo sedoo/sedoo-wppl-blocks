@@ -24,6 +24,8 @@ div.sedoo_related_block_admin_block {
     padding: 5em;
     font-size: 1em;
     margin-top: 1em;
+    width: 100%;
+    display: block;
     color: #595959;
 }
 
