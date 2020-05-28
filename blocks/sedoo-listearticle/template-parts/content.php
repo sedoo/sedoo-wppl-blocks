@@ -18,24 +18,14 @@
             if (has_post_thumbnail()) {
                 the_post_thumbnail('thumbnail-loop');
             } else {
-                if (catch_that_image() ==  "no_image" ){
-                    $logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'thumbnail-loop', false);
-                    echo '<img src="'.$logo[0].'" alt="" class="custom-logo">';
-                } else {
-                    echo '<img src="';
-                    echo catch_that_image();
-                    echo '" alt="" />'; 
-                }
-                
-            }?>
-            
+                labs_by_sedoo_catch_that_image();                
+            }?>            
         </figure>
-        <p>
-        <?php  $categories = get_the_category();
+        <?php     
+        $categories = get_the_category();
             if ( ! empty( $categories ) ) {
-            echo esc_html( $categories[0]->name );   
+            echo "<p>".esc_html( $categories[0]->name )."</p>";   
         }; ?>
-        </p>
 	</header><!-- .entry-header -->
     <div class="group-content">
         <div class="entry-content">
