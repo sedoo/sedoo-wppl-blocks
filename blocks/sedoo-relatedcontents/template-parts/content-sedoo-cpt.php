@@ -68,25 +68,24 @@ else {
    <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
     <a href="<?php the_permalink(); ?>"></a>
 	<header class="entry-header">
-         <?php if($layout == 'grid') { ?>
-            <figure>
+        <figure>
+            <?php 
+            if (has_post_thumbnail()) {
+                the_post_thumbnail('thumbnail-loop');
+            } else {
+                labs_by_sedoo_catch_that_image();
+            }?>            
+        </figure>
+        <?php     
+        $categories = get_the_category();
+        if ( ! empty( $categories ) ) {
+            ?> 
+            <p>
                 <?php 
-                if (has_post_thumbnail()) {
-                    the_post_thumbnail('thumbnail-loop');
-                } else {
-                    labs_by_sedoo_catch_that_image();
-                }?>            
-            </figure>
-            <?php } ?>
-        <?php     $categories = get_the_category();
-            if ( ! empty( $categories ) ) {
-                ?> 
-                <p><?php 
-            echo esc_html( $categories[0]->name );   
-            ?>
-
-        </p>
-        <?php
+                echo esc_html( $categories[0]->name );   
+                ?>
+            </p>
+            <?php
         }; ?>
 	</header><!-- .entry-header -->
     <div class="group-content">
