@@ -74,7 +74,7 @@ else {
                 if (has_post_thumbnail()) {
                     the_post_thumbnail('thumbnail-loop');
                 } else {
-                    labs_by_sedoo_catch_that_image();                
+                    labs_by_sedoo_catch_that_image();
                 }?>            
             </figure>
             <?php } ?>
