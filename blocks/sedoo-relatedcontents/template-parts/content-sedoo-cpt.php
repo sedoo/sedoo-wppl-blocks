@@ -20,17 +20,8 @@ if($layout == 'grid' || $layout == "grid-noimage"){
                 if (has_post_thumbnail()) {
                     the_post_thumbnail('thumbnail-loop');
                 } else {
-                    if (labs_by_sedoo_catch_that_image() ==  "no_image" ){
-                    ?>
-                    <img src="<?php echo get_template_directory_uri() .'/images/empty-mode-'.$postType.'.svg'; ?>" alt="" />
-                    <?php
-                    } else {
-                        echo '<img src="';
-                        echo labs_by_sedoo_catch_that_image();
-                        echo '" alt="" />'; 
-                    } 
-                }?>
-                
+                    labs_by_sedoo_catch_that_image();                
+                }?>            
             </figure>
             <?php } ?>
         <?php     $categories = get_the_category();
@@ -83,17 +74,8 @@ else {
                 if (has_post_thumbnail()) {
                     the_post_thumbnail('thumbnail-loop');
                 } else {
-                    if (labs_by_sedoo_catch_that_image() ==  "no_image" ){
-                    ?>
-                    <img src="<?php echo get_template_directory_uri() .'/images/empty-mode-'.$postType.'.svg'; ?>" alt="" />
-                    <?php
-                    } else {
-                        echo '<img src="';
-                        echo labs_by_sedoo_catch_that_image();
-                        echo '" alt="" />'; 
-                    } 
-                }?>
-                
+                    labs_by_sedoo_catch_that_image();                
+                }?>            
             </figure>
             <?php } ?>
         <?php     $categories = get_the_category();
