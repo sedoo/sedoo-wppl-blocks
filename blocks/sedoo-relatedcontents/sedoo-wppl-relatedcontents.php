@@ -118,7 +118,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
                     $sm_post_number = $args['posts_per_page'];
                     $sm_order_by = $args['orderby'];
                     $sm_terms = implode(", ", $args['tax_query'][0]['terms']);
-                    echo '<a class="sedoo_load_more" id="show_more" order="'.$sm_order.'" layout="'.$layout.'" cpt="'.$cpt.'" terms="'.$sm_terms.'" orderby="'.$sm_order_by.'"  post_number="'.$sm_post_number.'" taxo="'.$sm_taxo.'" offset="'.$offset_for_js.'" sm="'.$sm.'" smt="'.$sm_text.'" cpt="'.$type_of_content.'"> '.$sm_text.' </a>';
+                    echo '<div class="wp-block-button aligncenter sedoo_load_more" id="show_more"><a class="wp-block-button__link" order="'.$sm_order.'" layout="'.$layout.'" cpt="'.$cpt.'" terms="'.$sm_terms.'" orderby="'.$sm_order_by.'"  post_number="'.$sm_post_number.'" taxo="'.$sm_taxo.'" offset="'.$offset_for_js.'" sm="'.$sm.'" smt="'.$sm_text.'" cpt="'.$type_of_content.'">'.$sm_text.'</a></div>';
                 }
             } else {
                 // no posts found
@@ -235,7 +235,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
                 $sm_post_number = $args['posts_per_page'];
                 $sm_order_by = $args['orderby'];
                 $sm_terms = implode(", ", $args['tax_query'][0]['terms']);
-                echo '<a class="sedoo_load_more" id="show_more" order="'.$sm_order.'" layout="'.$layout.'" terms="'.$sm_terms.'" orderby="'.$sm_order_by.'"  post_number="'.$sm_post_number.'" taxo="'.$sm_taxo.'" offset="'.$offset_for_js.'" sm="'.$show_more.'" smt="'.$show_more_text.'" cpt="'.$type_of_content.'"> '.$show_more_text.' </a>';
+                echo '<div class="wp-block-button aligncenter sedoo_load_more" id="show_more"><a class="wp-block-button__link" order="'.$sm_order.'" layout="'.$layout.'" terms="'.$sm_terms.'" orderby="'.$sm_order_by.'"  post_number="'.$sm_post_number.'" taxo="'.$sm_taxo.'" offset="'.$offset_for_js.'" sm="'.$show_more.'" smt="'.$show_more_text.'" cpt="'.$type_of_content.'"> '.$show_more_text.'</a></div>';
             }
             echo '</section>';
             /* Restore original Post Data */
