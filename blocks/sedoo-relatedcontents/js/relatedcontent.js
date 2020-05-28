@@ -36,7 +36,8 @@ function sedoo_relatedblocks_load_more_content(button) {
           'layout': sm_layout,
         }
       }).done(function(response) {
-          jQuery('.sedoo_blocks_relatedcontents').append(response);
+          console.log(cpt);
+          jQuery('.sedoo_blocks_relatedcontents-'+cpt).append(response);
           jQuery('.sedoo_related_block_loader').remove();
       });
 }
