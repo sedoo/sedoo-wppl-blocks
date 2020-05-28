@@ -1,6 +1,6 @@
 
 jQuery(document).ready(function() {
-    jQuery(document).on('click','#show_more',function() {
+    jQuery(document).on('click','#show_more a',function() {
         sedoo_relatedblocks_load_more_content(this);
     });
 });
