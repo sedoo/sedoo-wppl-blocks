@@ -1,6 +1,6 @@
 <?php
-
-if(!is_page()) {
+$admin_or_not = $_COOKIE['related_Admin'];
+if($admin_or_not == 1) {
     echo '<div class="sedoo_related_block_admin_block"><h2> Related content block </h2> <span> Edit to display settings </span></div>';
 } else {
     ?>
