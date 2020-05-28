@@ -219,7 +219,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
             echo '<h2>'.__( $parameters['sectionTitle'], 'sedoo-wppl-labtools' ).'</h2>';
             $offset_for_js = $post_offset;
             ?>
-            <section role="listNews" class="sedoo-labtools-listCPT <?php echo $parameters['className'];?> <?php echo $parameters['listingClass'];?>">
+            <section role="listNews" class="sedoo-labtools-listCPT <?php echo $parameters['className'].'-'.$type_of_content;?> <?php echo $parameters['listingClass'];?>">
 
             <?php
             $layout = $parameters['layout'];
