@@ -13,3 +13,10 @@ function sedoo_blocks_relatedBlock_render_callback( $block ) {
 		include $templateURL;
     }
 }
+
+setcookie('related_Admin', 0);
+function set_admin_or_not_var_for_relatedblock() {
+    // Do stuff. Say we will echo "Hello World".
+    setcookie('related_Admin', 1);
+}
+add_action( 'admin_init', 'set_admin_or_not_var_for_relatedblock' );
