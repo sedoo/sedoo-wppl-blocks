@@ -28,6 +28,15 @@ while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
     $borderStyle = "";
     // --------   One Block button   -----------/
 
+
+    $new_tab = get_sub_field('ouvrir_dans_un_nouvel_onglet');
+    if($new_tab == true) {
+        $target = 'target="_blank"';
+    } else {
+        $target = '';
+    }
+    
+
     $text = get_sub_field('sedoo_blocks_vectorButton_text');
     $link = get_sub_field('sedoo_blocks_vectorButton_link');
 
@@ -46,7 +55,7 @@ while( have_rows('sedoo_blocks_vectorbutton_group') ): the_row();
     $borderStyle .= " rounded";
     }
     ?>
-        <a class="sedoo-button-block <?php echo $borderStyle; ?>" href="<?php echo $link; ?>">
+        <a class="sedoo-button-block <?php echo $borderStyle; ?>" href="<?php echo $link; ?>" <?php echo $target; ?> >
             <?php 
             if ( get_sub_field('sedoo_blocks_vectorButton_svg') ) { 
             echo $bodySVG ; 
