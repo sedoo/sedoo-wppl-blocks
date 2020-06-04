@@ -30,7 +30,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'sedoo_blocks_vectorButton_text',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -49,7 +49,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'name' => 'sedoo_blocks_vectorButton_link',
                         'type' => 'link',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -57,6 +57,25 @@ if( function_exists('acf_add_local_field_group') ):
                             'id' => '',
                         ),
                         'return_format' => 'url',
+                    ),
+                    array(
+                        'key' => 'field_5ed8b3d6832ab',
+                        'label' => 'Ouvrir dans un nouvel onglet ?',
+                        'name' => 'ouvrir_dans_un_nouvel_onglet',
+                        'type' => 'true_false',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'message' => '',
+                        'default_value' => 0,
+                        'ui' => 1,
+                        'ui_on_text' => '',
+                        'ui_off_text' => '',
                     ),
                     array(
                         'key' => 'field_5de8ddd101ac4',
