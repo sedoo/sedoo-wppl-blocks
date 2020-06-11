@@ -32,6 +32,11 @@ $affichageextrait = get_field('afficher_lextrait_');
 $exclusion = get_field('exclusion_de_contenu');
 $layout = get_field('sedoo-apirest-list-layout');
 $tableau_exclusion = explode(",", $exclusion);
+$titre = get_field('sedoo-apirest-block-list-title');
+
+if($titre) {
+    echo '<h2>'.$titre.'</h2>';
+}
 
 echo '<section id="sedoo-blocks-apirest-content" role="listNews" class="post-wrapper sedoo-labtools-listCPT '.$className.'">';
 echo '<div id="sedoo-block-loader"><object type="image/svg+xml" data="'.plugins_url("../../img/loader.svg", dirname(__FILE__)).'">Your browser does not support SVG</object>';
