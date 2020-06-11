@@ -24,16 +24,18 @@ if($layout == 'grid' || $layout == "grid-noimage"){
                 }?>            
             </figure>
             <?php } ?>
-        <?php     $categories = get_the_category();
+        <?php     
+            $categories = get_the_category();
             if ( ! empty( $categories ) ) {
-                ?> 
-                <p><?php 
-            echo esc_html( $categories[0]->name );   
+        ?> 
+            <p>
+                <?php 
+                echo esc_html( $categories[0]->name );   
+                ?>
+            </p>
+            <?php
+            }; 
             ?>
-
-        </p>
-        <?php
-        }; ?>
 	</header><!-- .entry-header -->
     <div class="group-content">
         <div class="entry-content">
