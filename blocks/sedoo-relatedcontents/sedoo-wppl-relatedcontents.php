@@ -10,7 +10,7 @@ add_action('wp_enqueue_scripts','sedoo_relatedcontents_scripts');
 function enqueue_search_script_relatedjs() {
     // le fichier js qui contient les fonctions tirgger au change des select
     $scrpt_search = plugins_url('js/relatedcontent.js', __FILE__);
-    wp_enqueue_script('sedoo_search', $scrpt_search,  array ( 'jquery' ));                    
+    wp_enqueue_script('sedoo_related', $scrpt_search,  array ( 'jquery' ));                    
 }
 add_action( 'wp_head', 'enqueue_search_script_relatedjs' );
 
