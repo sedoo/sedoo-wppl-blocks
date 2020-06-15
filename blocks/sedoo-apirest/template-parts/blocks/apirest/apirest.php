@@ -69,7 +69,7 @@ jQuery.ajax({
                     }
                     var bouton = '';
                     if(affichagebouton == true) {
-                        bouton =  '<a href="'+url+'">Lire plus →</a> ';
+                        bouton =  '<a href="'+url+'">Read more →</a> ';
                     }
                     var urlJsonThumbnail = donnees[i]._links['wp:featuredmedia'][0].href;
 
