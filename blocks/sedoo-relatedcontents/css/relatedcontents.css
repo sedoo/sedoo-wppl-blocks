@@ -23,3 +23,12 @@ div.sedoo_related_block_admin_block {
 .sedoo_related_block_loader p {
     text-align: center;
 }
+
+section.sedoo-labtools-listCPT .isNotPost.post {
+    box-shadow: none;
+    padding: 0;
+}
+
+section.sedoo-labtools-listCPT .isNotPost.post .group-content .entry-content {
+    margin-bottom:0;
+}
