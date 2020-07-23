@@ -21,6 +21,7 @@ $hauteur = get_field('hauteur');
 $largeur = get_field('largeur');
 $scrolling = get_field('scrolling');
 $attributs = get_field('attributs_supplementaires');
+$cont_class = get_field('classe_du_container');
 
 if($requete != NULL && $requete != "") {
     $url = $url.'?'.$requete;
@@ -45,6 +46,6 @@ if($attributs != NULL && $attributs != "") {
     $attributsiframe = $attributs;
 }
 
-echo '<iframe src="'. $url .'" width="'. $largeur .'%" height="'. $hauteur .'px" '.$attributsiframe.' frameborder="0" scrolling='.$scrollable_iframe.' class="'.$className.'"></iframe>';
+echo '<div class="sedoo_iframe '.$cont_class.'"><iframe src="'. $url .'" width="'. $largeur .'%" height="'. $hauteur .'px" '.$attributsiframe.' frameborder="0" scrolling='.$scrollable_iframe.' class="'.$className.'"></iframe></div>';
 
 ?>
