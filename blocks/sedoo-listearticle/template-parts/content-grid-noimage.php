@@ -10,26 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <a href="<?php the_permalink(); ?>"></a>
-    <?php
-    if (!is_front_page()) {
-    ?>
-	<header class="entry-header">
-        <?php
-        if ($term_displayed == 1 && $term_displayed != false) {
-        ?>
-             <?php 
-            $categories = get_the_category();
-            if (( ! empty( $categories ) )&&(!is_archive())) {
-                echo "<p>".esc_html( $categories[0]->name )."</p>";   
-            }; ?>
-            <?php 
-        }
-        ?>
-    </header><!-- .entry-header -->
-    <?php    
-    }
-    ?>
     <div class="group-content">
         <div class="entry-content">
             <h2><?php the_title(); ?></h2>
