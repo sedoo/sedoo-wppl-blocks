@@ -79,6 +79,10 @@ if ( ! function_exists('get_field') ) {
 		include 'blocks/sedoo-listearticle/sedoo-wppl-listearticle.php';
 	}
 
+	if(get_field('sedoo_activation_listepages', 'option') == 1) {
+		include 'blocks/sedoo-listepages/sedoo-wppl-listepages.php';
+	}
+
 	if(get_field('sedoo_activation_boutons', 'option') == 1) {
 		include 'blocks/sedoo-buttons/sedoo-wppl-buttons.php';
 	}
