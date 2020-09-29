@@ -23,8 +23,9 @@ if( function_exists('acf_add_local_field_group') ):
                 'ui' => 1,
                 'ui_on_text' => '',
                 'ui_off_text' => '',
-            ), array(
-                'key' => 'field_5e6b87eb0bd23',
+            ), 
+            array(
+                'key' => 'field_5e6b87eb0bd91',
                 'label' => 'Bloc Iframe',
                 'name' => 'sedoo_activation_iframe',
                 'type' => 'true_false',
