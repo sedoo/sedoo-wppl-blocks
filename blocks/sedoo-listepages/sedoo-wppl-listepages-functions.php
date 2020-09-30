@@ -17,13 +17,13 @@ function sedoo_blocks_listepages_render_callback( $block ) {
 function sedoo_listpages_display_items($layout) {
     switch ($layout) {
         case 'grid':
-            include('template-parts/content-grid.php');
+            include plugin_dir_path(__FILE__) ."../../template-parts/content-grid.php";
             break;
         case 'grid-noimage':
-            include('template-parts/content-grid-noimage.php');
+            include plugin_dir_path(__FILE__) ."../../template-parts/content-grid-noimage.php";
             break;
         case 'list':
-            include('template-parts/content-list.php');
+            include plugin_dir_path(__FILE__) ."../../template-parts/content-list.php";
         break;
         default:
             break;

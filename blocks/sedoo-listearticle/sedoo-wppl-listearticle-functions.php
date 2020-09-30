@@ -84,7 +84,7 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
                 ?>
                 <?php
                     setup_postdata( $post );
-                    include('template-parts/content-'.$layout.'.php');
+                    include plugin_dir_path(__FILE__) ."../../template-parts/content-".$layout.".php";
                     // get_template_part('template-parts/content', $layout);
                     wp_reset_postdata();
                 ?>

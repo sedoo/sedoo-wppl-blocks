@@ -211,6 +211,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
 
         sedoo_labtools_get_associate_content($parameters, $args, $type_of_content, $show_more, $show_more_text, $post_offset);
     }
+    
     function sedoo_labtools_get_associate_content($parameters, $args, $type_of_content, $show_more, $show_more_text, $post_offset) {
 
         $the_query = new WP_Query( $args );
