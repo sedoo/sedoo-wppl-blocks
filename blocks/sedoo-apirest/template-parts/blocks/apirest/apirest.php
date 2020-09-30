@@ -38,6 +38,8 @@ if($titre) {
     echo '<h2>'.$titre.'</h2>';
 }
 
+
+// the loading section
 echo '<section id="sedoo-blocks-apirest-content" role="listNews" class="post-wrapper sedoo-labtools-listCPT '.$className.'">';
 echo '<div id="sedoo-block-loader"><object type="image/svg+xml" data="'.plugins_url("../../img/loader.svg", dirname(__FILE__)).'">Your browser does not support SVG</object>';
 echo '<p> Loading... Please Wait</p></div>';
