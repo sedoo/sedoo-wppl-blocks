@@ -57,13 +57,6 @@ add_filter('acf/load_field/name=type_de_contenu_a_lister', 'sedoo_listecpt_block
 ////////////////////
 
 
-function sedoo_listecpt_prefill_tags($field) {
-    var_dump($field);
-}
-add_filter('acf/load_field/name=sedoo_listecpt_tags_liste', 'sedoo_listecpt_prefill_tags');
-
-
-
 ////////////////////
 // LOAD ALL CATEGORIES TERM FOR THE SELECTED POST TYPE
 //////////////
