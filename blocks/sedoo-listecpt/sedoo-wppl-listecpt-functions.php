@@ -15,19 +15,7 @@ function sedoo_blocks_listecpt_render_callback( $block ) {
 }
 
 function sedoo_listcpt_display_items($layout) {
-    switch ($layout) {
-        case 'grid':
-            include plugin_dir_path(__FILE__) ."../../template-parts/content-grid.php";
-            break;
-        case 'grid-noimage':
-            include plugin_dir_path(__FILE__) ."../../template-parts/content-grid-noimage.php";
-            break;
-        case 'list':
-            include plugin_dir_path(__FILE__) ."../../template-parts/content-list.php";
-        break;
-        default:
-            break;
-    }
+    include plugin_dir_path(__FILE__) ."../../template-parts/content-".$layout.".php";
 }
 
 
