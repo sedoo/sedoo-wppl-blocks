@@ -130,6 +130,7 @@ if( function_exists('acf_add_local_field_group') ):
 						'grid' => 'En grille',
 						'grid-noimage' => 'En grille sans image',
 						'list' => 'En liste',
+						'minilist' => 'En liste simplifiée',
 					),
 					'default_value' => array(
 					),
