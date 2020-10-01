@@ -87,11 +87,10 @@ add_action( 'wp_ajax_sedoo_listecpt_blocks_acf_populate_tagslist', 'sedoo_listec
 
 function sedoo_listecpt_blocks_acf_populate_tagslist() {
     $cpt = $_POST['post_type'];
-    $term_tags = get_tags(array(
-        'hide_empty' => 'false'
-      ));
+    $term_tags = get_terms( 'cestag', array(
+        'hide_empty' => false,
+    ) );
     $tableau_term_tags;
-   
     foreach($term_tags as $term) {
        $tableau_term_tags[$term->slug] = $term->name;
     }
