@@ -48,9 +48,15 @@ $display = get_field('sedoo_listecpt_mode_daffichage');
 
         $the_query = new WP_Query( $args );
         if ( $the_query->have_posts() ) {
+            if($display == 'minilist') {
+                echo '<ul>';
+            }
             while ( $the_query->have_posts() ) {
                 $the_query->the_post();
                 echo sedoo_listcpt_display_items($display);
+            }
+            if($display == 'minilist') {
+                echo '</ul>';
             }
         wp_reset_postdata();
         }
