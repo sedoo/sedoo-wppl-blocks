@@ -18,8 +18,9 @@ if( !empty($block['align']) ) {
 $post_Type = get_field('type_de_contenu_a_lister');
 $type_filtre = get_field('type_de_filtres');
 
+
 if($type_filtre == true) {
-    $taxonomie = 'post_tag';
+    $taxonomie = 'cestag';
     $term = get_field('sedoo_listecpt_tags_liste');
 } else {
     $taxonomie = 'category';
