@@ -72,7 +72,8 @@ if( function_exists('acf_add_local_field_group') ):
 					),
 					'choices' => array(
 					),
-					'default_value' => array(
+					'default_value' =>  array(
+						0 => 'Selectionner une catégorie',
 					),
 					'allow_null' => 0,
 					'multiple' => 0,
@@ -104,7 +105,8 @@ if( function_exists('acf_add_local_field_group') ):
 					),
 					'choices' => array(
 					),
-					'default_value' => array(
+					'default_value' =>  array(
+						0 => 'Selectionner un tag',
 					),
 					'allow_null' => 0,
 					'multiple' => 0,
