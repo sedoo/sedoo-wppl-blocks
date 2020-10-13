@@ -47,8 +47,7 @@ if(!function_exists('sedoo_labtools_acf_populate_post_type')) {
         $args = array(
             // 'name' => array('sedoo-platform', 'sedoo-research-team'),
             // 'labels' => array('Research team', 'Platform'),
-            'public'   => true,
-            '_builtin' => false
+            'public'   => true
         );
         $output = 'object'; // names or objects, note names is the default
         $operator = 'and'; // 'and' or 'or'

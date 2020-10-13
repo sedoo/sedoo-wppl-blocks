@@ -8,4 +8,4 @@
 
 
 ?>
-<li><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></li>
+<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
