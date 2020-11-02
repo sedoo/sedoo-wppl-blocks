@@ -16,7 +16,7 @@ function sedoo_blocks_listearticle_render_callback( $block ) {
 
 
 
-function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $term_displayed ) {
+function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $term_displayed, $tag) {
     global $post;
     if ($limit == 0) {
         $limit = -1;
@@ -37,16 +37,27 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
 
     if ($term !== "all") {
         $argsListPost['tax_query'] = array(
-                        array(
-                            "taxonomy" => "category",
-                            "field"    => "slug",
-                            "terms"    => $term,
-                        )
-                        );
+            array(
+                "taxonomy" => "category",
+                "field"    => "slug",
+                "terms"    => $term,
+            )
+        );
         $url = get_term_link($term, 'category');
-        } else {
+    } else {
         $url = get_permalink( get_option( 'page_for_posts' ) );
-        }
+    }
+    if ($tag !== "all") {
+        $argsListPost['tax_query'][] =
+            array(
+                "taxonomy" => "post_tag",
+                "field"    => "slug",
+                "terms"    => $tag,
+        );
+        $url = get_term_link($tag, 'post_tag');
+    } else {
+        $url = get_permalink( get_option( 'page_for_posts' ) );
+    }
 
     switch ($layout) {
         case "grid":
