@@ -46,7 +46,7 @@ add_filter('acf/load_field/name=type_de_contenu_a_lister', 'sedoo_listecpt_block
 
 
 function sedoo_listecpt_blocks_categorie_acf_populate_cptlist( $value, $post_id, $field ) {
-    echo '<div class="hidden edoo_hidded_field_value field_5f733e10e91fb">'.str_replace('-', ' ', ucfirst($value)).'</div>';
+    echo '<div class="hidden sedoo_hidded_field_value field_5f733e10e91fb">'.str_replace('-', ' ', ucfirst($value)).'</div>';
     return $value;
 }
 add_filter('acf/load_value/name=sedoo_listecpt_categories_liste', 'sedoo_listecpt_blocks_categorie_acf_populate_cptlist', get_the_ID(), 3);

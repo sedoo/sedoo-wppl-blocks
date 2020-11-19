@@ -27,6 +27,10 @@ if($type_filtre == true) {
     $term = get_field('sedoo_listecpt_categories_liste');
 }
 
+$limit = -1;
+if(get_field('sedoo_listecpt_limit')) {
+    $limit = get_field('sedoo_listecpt_limit');
+}
 $display = get_field('sedoo_listecpt_mode_daffichage');
 
 ?>
@@ -36,7 +40,7 @@ $display = get_field('sedoo_listecpt_mode_daffichage');
         $args = array(
             'post_type'             => $post_Type,
             'post_status'           => array( 'publish' ),
-            'posts_per_page'        => -1, 
+            'posts_per_page'        => $limit, 
             'tax_query'             => array(
                                 array(
                                     'taxonomy' => $taxonomie,
