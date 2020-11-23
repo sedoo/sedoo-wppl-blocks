@@ -61,3 +61,7 @@
     top: initial;
     position: initial;
 }
+
+.sedoo_blocks_listearticle article:hover .entry-content h3 {
+    color:var(--theme-color);
+}

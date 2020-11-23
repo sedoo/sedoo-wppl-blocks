@@ -5,14 +5,14 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
-
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
+
+    <a href="<?php the_permalink(); ?>"></a>
     <div class="group-content">
         <div class="entry-content">
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <h3><?php the_title(); ?></h3>
             <?php the_excerpt(); ?>
         </div><!-- .entry-content -->
         <footer class="entry-footer">
