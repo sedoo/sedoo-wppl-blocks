@@ -16,7 +16,7 @@ function sedoo_blocks_listearticle_render_callback( $block ) {
 
 
 
-function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $term_displayed, $tag) {
+function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $term_displayed, $tag, $lang) {
     global $post;
     if ($limit == 0) {
         $limit = -1;
@@ -28,6 +28,7 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
         'order'            => 'DESC',
         'include'          => '',
         'exclude'          => '',
+        'lang'             => $lang,
         'meta_key'         => '',
         'meta_value'       => '',
         'post_type'        => 'post',
@@ -35,15 +36,20 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
         'suppress_filters' => true 
     );
 
+    $term_id = $term;
+    if(function_exists('pll_get_term')) {
+        $term_id = pll_get_term($term, $lang);
+    }
+
     if ($term !== "all") {
         $argsListPost['tax_query'] = array(
             array(
                 "taxonomy" => "category",
                 "field"    => "slug",
-                "terms"    => $term,
+                "terms"    => $term_id,
             )
         );
-        $url = get_term_link($term, 'category');
+        $url = get_term_link($term_id, 'category');
     } else {
         $url = get_permalink( get_option( 'page_for_posts' ) );
     }
@@ -114,3 +120,20 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
     //the_posts_navigation();
     
 }
+
+
+function sedoo_list_post_prefill_language_field( $field ) {
+    
+    $languages = pll_languages_list();
+    $lang_array = [];
+    foreach($languages as $lang) {
+        $lang_array[$lang] = $lang;
+    }
+    
+    $field['choices'] = $lang_array;
+    // return the field
+    return $field;
+    
+}
+
+add_filter('acf/load_field/name=sedoo-block-post-list-langue_des_contenus', 'sedoo_list_post_prefill_language_field');
