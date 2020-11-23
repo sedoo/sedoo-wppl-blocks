@@ -34,9 +34,15 @@ $offset = get_field( 'sedoo-block-post-list-offset' );
 $buttonLabel = get_field( 'sedoo-block-post-list-showmore-button-label' );
 $button = get_field( 'sedoo-block-post-list-showmore-button' );
 
+$lang = 'fr'; // I set the default language to fr
+if(function_exists('pll_current_language')) { // but if there is polylang I use the current pll language
+    $lang = pll_current_language('slug');
+}
+$field_lang = get_field( 'sedoo-block-post-list-langue_des_contenus' );
 
-
-
+if(!empty($field_lang)) { // except it user field the language field, then I use this
+    $lang = get_field('sedoo-block-post-list-langue_des_contenus');
+}
 
 if (empty($buttonLabel)) {
     $buttonLabel = "More";
@@ -44,6 +50,6 @@ if (empty($buttonLabel)) {
 
 $terms = get_field('sedoo-block-post-list-showterms-button');
 // SHOW POST LIST
-sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $terms, $tags);
+sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $terms, $tags, $lang);
 
 ?>
