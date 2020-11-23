@@ -68,30 +68,6 @@ if( function_exists('acf_add_local_field_group') ):
 				'multiple' => 0,
 			),
 			array(
-				'key' => 'field_5fbb7a5d4b183',
-				'label' => 'Langue des contenus',
-				'name' => 'sedoo-block-post-list-langue_des_contenus',
-				'type' => 'select',
-				'instructions' => 'Sélectionnez ici la langue des contenus que vous voulez afficher (si plusieurs langues disponibles)',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'choices' => array(
-				),
-				'default_value' => array(
-				),
-				'allow_null' => 0,
-				'multiple' => 0,
-				'ui' => 0,
-				'return_format' => 'value',
-				'ajax' => 0,
-				'placeholder' => '',
-			),
-			array(
 				'key' => 'field_5dd2cdab2dce8',
 				'label' => 'Affichage',
 				'name' => 'sedoo-block-post-list-layout',
