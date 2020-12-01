@@ -45,6 +45,10 @@ $postType=get_post_type();
             if ( 'post' === get_post_type() ) :
                 ?>
                 <p><?php the_date('M / d / Y') ?></p>
+            <?php endif; 
+            if ( 'tribe_events' === get_post_type() ) :
+                ?>
+                <p><?php echo tribe_get_start_date(get_the_ID(), false, 'd M Y - g:i'); ?></p>
             <?php endif; ?>
             <a href="<?php the_permalink(); ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
         </footer><!-- .entry-footer -->
