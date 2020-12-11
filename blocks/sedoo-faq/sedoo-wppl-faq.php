@@ -4,6 +4,7 @@ function register_sedoo_faq() {
     $args = array(
         'public'    => true,
         'label'     => __( 'FAQ', 'textdomain' ),
+		'show_in_rest'			=> true,
         'menu_icon' => 'dashicons-format-chat',
     );
     register_post_type( 'faq', $args );
