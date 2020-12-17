@@ -49,7 +49,7 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
             $url = get_permalink( get_option( 'page_for_posts' ) );
         }
     }
-    if($filter = 'tag') {
+    if($filter == 'tag') {
         if ($tag !== "all") {
             $argsListPost['tax_query'][] =
                 array(
