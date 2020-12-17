@@ -24,13 +24,47 @@ if( function_exists('acf_add_local_field_group') ):
 				'maxlength' => '',
 			),
 			array(
+				'key' => 'field_5fdb36641a72e',
+				'label' => 'type de filtre',
+				'name' => 'type_de_filtre',
+				'type' => 'select',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'category' => 'Catégories',
+					'tag' => 'Tags',
+				),
+				'default_value' => array(
+					0 => 'category: Catégories',
+				),
+				'allow_null' => 0,
+				'multiple' => 0,
+				'ui' => 0,
+				'return_format' => 'value',
+				'ajax' => 0,
+				'placeholder' => '',
+			),
+			array(
 				'key' => 'field_5dd2cab92dce7',
 				'label' => 'Categories',
 				'name' => 'sedoo-block-post-list-categories',
 				'type' => 'taxonomy',
 				'instructions' => '<strong>Si vide, aucun filtre sur les catégories ne sera effectué </strong>',
-				'required' => 0,
-				'conditional_logic' => 0,
+				'required' => 0,'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5fdb36641a72e',
+							'operator' => '==',
+							'value' => 'category',
+						),
+					),
+				),
 				'wrapper' => array(
 					'width' => '',
 					'class' => '',
@@ -52,7 +86,15 @@ if( function_exists('acf_add_local_field_group') ):
 				'type' => 'taxonomy',
 				'instructions' => '<strong>Si vide, aucun filtre sur les tags ne sera effectué </strong>',
 				'required' => 0,
-				'conditional_logic' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5fdb36641a72e',
+							'operator' => '==',
+							'value' => 'tag',
+						),
+					),
+				),
 				'wrapper' => array(
 					'width' => '',
 					'class' => '',
