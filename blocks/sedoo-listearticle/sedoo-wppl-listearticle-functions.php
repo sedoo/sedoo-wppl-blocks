@@ -35,32 +35,17 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
         'suppress_filters' => true 
     );
 
-    if($filter == "category") {
-        if ($term !== "all") {
-            $argsListPost['tax_query'] = array(
-                array(
-                    "taxonomy" => "category",
-                    "field"    => "slug",
-                    "terms"    => $term,
-                )
-            );
-            $url = get_term_link($term, 'category');
-        } else {
-            $url = get_permalink( get_option( 'page_for_posts' ) );
-        }
-    }
-    if($filter == 'tag') {
-        if ($tag !== "all") {
-            $argsListPost['tax_query'][] =
-                array(
-                    "taxonomy" => "post_tag",
-                    "field"    => "slug",
-                    "terms"    => $tag,
-            );
-            $url = get_term_link($tag, 'post_tag');
-        } else {
-            $url = get_permalink( get_option( 'page_for_posts' ) );
-        }
+    if ($term !== "all") {
+        $argsListPost['tax_query'] = array(
+            array(
+                "taxonomy" => $filter,
+                "field"    => "slug",
+                "terms"    => $term,
+            )
+        );
+        $url = get_term_link($term, $filter);
+    } else {
+        $url = get_permalink( get_option( 'page_for_posts' ) );
     }
 
     switch ($layout) {
@@ -108,7 +93,7 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
             ?>	
         </section>
         <?php 
-        if ($button == 1) { ?>    
+        if ($button == 1) { ?>   
             <div class="wp-block-button aligncenter">
                 <a href="<?php echo $url; ?>" class="wp-block-button__link"><?php echo $buttonLabel; ?></a>
             </div>
