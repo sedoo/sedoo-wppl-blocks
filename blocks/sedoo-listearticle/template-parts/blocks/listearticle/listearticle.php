@@ -16,18 +16,26 @@ if( !empty($block['align']) ) {
 }
 
 $title = get_field( 'sedoo-block-post-list-title');
-$term = get_field( 'sedoo-block-post-list-categories' );
+
+switch (get_field('type_de_filtre')) {
+    case 'cestag':
+            $term = get_field( 'sedoo-block-post-list-tags' );
+        break;
+    case 'post_tag':  
+        $term = get_field( 'sedoo-block-post-list-posttags' );
+        break;
+    case 'category':
+        $term = get_field( 'sedoo-block-post-list-categories' );
+        break;
+}
+
 if (empty($term)) {
     $term = "all";
 } else {
     $term = $term->slug;
 }
-$tags = get_field( 'sedoo-block-post-list-tags' );
-if (empty($tags)) {
-    $tags = "all";
-} else {
-    $tags = $tags->slug;
-}
+
+$filter = get_field('type_de_filtre');
 $layout = get_field( 'sedoo-block-post-list-layout' );
 $limit = get_field( 'sedoo-block-post-list-limit' );
 $offset = get_field( 'sedoo-block-post-list-offset' );
@@ -39,11 +47,6 @@ if (empty($buttonLabel)) {
     $buttonLabel = "More";
 }
 
-$filter = get_field('sedoo-block-post-list-showterms-button');
-if(empty($filter)) {
-    $filter = 'category';
-}
-$terms = get_field('sedoo-block-post-list-showterms-button');
 // SHOW POST LIST
 sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $terms, $tags, $filter);
 

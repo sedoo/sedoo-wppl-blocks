@@ -38,7 +38,8 @@ if( function_exists('acf_add_local_field_group') ):
 				),
 				'choices' => array(
 					'category' => 'Catégories',
-					'tag' => 'Tags',
+					'cestag' => 'CES Tags',
+					'post_tag' => 'Tags',
 				),
 				'default_value' => array(
 					0 => 'category: Catégories',
@@ -91,7 +92,37 @@ if( function_exists('acf_add_local_field_group') ):
 						array(
 							'field' => 'field_5fdb36641a72e',
 							'operator' => '==',
-							'value' => 'tag',
+							'value' => 'cestag',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'taxonomy' => 'cestag',
+				'field_type' => 'radio',
+				'allow_null' => 1,
+				'add_term' => 0,
+				'save_terms' => 0,
+				'load_terms' => 0,
+				'return_format' => 'object',
+				'multiple' => 0,
+			),
+			array(
+				'key' => 'field_4dh4cab51dce9',
+				'label' => 'Tags',
+				'name' => 'sedoo-block-post-list-posttags',
+				'type' => 'taxonomy',
+				'instructions' => '<strong>Si vide, aucun filtre sur les tags ne sera effectué </strong>',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5fdb36641a72e',
+							'operator' => '==',
+							'value' => 'post_tag',
 						),
 					),
 				),
