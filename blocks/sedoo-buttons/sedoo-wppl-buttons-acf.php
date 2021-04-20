@@ -32,8 +32,8 @@ function register_sedoo_buttons_block_types() {
     // register related block content.
     acf_register_block_type(array(
         'name'              => 'sedoo_blocks_vectorButton',
-        'title'             => __('Sedoo Boutons'),
-        'description'       => __('Ajouter un bouton avec icone SVG'),
+        'title'             => __('Sedoo buttons', 'sedoo-wppl-blocks'),
+        'description'       => __('Add buttons with svg', 'sedoo-wppl-blocks'),
         'render_callback'	=> 'sedoo_blocks_buttons_render_callback',
         'category'          => 'sedoo-block-category',
         'icon'              => 'button',

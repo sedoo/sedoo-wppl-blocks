@@ -5,8 +5,8 @@ function register_sedoo_annuaire_block_types() {
     // register a testimonial block.
     acf_register_block_type(array(
         'name'              => 'sedoo_blocks_annuaire',
-        'title'             => __('Sedoo Annuaire'),
-        'description'       => __('Ajoute un block annuaire'),
+        'title'             => __('Sedoo member directory', 'sedoo-wppl-blocks'),
+        'description'       => __('Add a member directory', 'sedoo-wppl-blocks'),
         'render_callback'   => 'sedoo_blocks_annuaireHome_render_callback',
         'enqueue_style'     => plugin_dir_url( __FILE__ ) . 'template-parts/blocks/annuaire/annuaire.css',
         'category'          => 'sedoo-block-category',

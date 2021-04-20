@@ -8,10 +8,10 @@ if( function_exists('acf_add_local_field_group') ):
         'fields' => array(
             array(
 				'key' => 'field_5gd2c8342dce6',
-				'label' => 'Titre',
+				'label' => __('Title', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-apirest-block-list-title',
 				'type' => 'text',
-				'instructions' => 'N\'est pas affiché si vide',
+				'instructions' => __('Not show if empty', 'sedoo-wppl-blocks'),
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -27,7 +27,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
             array(
                 'key' => 'field_5e9dbc61cb643',
-                'label' => 'Mode d\'édition',
+                'label' => __('Setting mode', 'sedoo-wppl-blocks'),
                 'name' => 'mode_dedition',
                 'type' => 'true_false',
                 'instructions' => '',
@@ -41,15 +41,15 @@ if( function_exists('acf_add_local_field_group') ):
                 'message' => '',
                 'default_value' => 1,
                 'ui' => 1,
-                'ui_on_text' => 'Avancé',
-                'ui_off_text' => 'Pas à Pas',
+                'ui_on_text' => __('Expert', 'sedoo-wppl-blocks'),
+                'ui_off_text' => __('Beginner', 'sedoo-wppl-blocks'),
             ),
             array(
                 'key' => 'field_5e9dbc82cb644',
-                'label' => 'Url de récupération',
+                'label' => __('URl', 'sedoo-wppl-blocks'),
                 'name' => 'url_de_recuperation',
                 'type' => 'text',
-                'instructions' => 'Insérez ici l\'url sur laquelle sera effectuée la requête.',
+                'instructions' => __('Insert here the url where the request will be done.', 'sedoo-wppl-blocks'),
                 'required' => 0,
                 'conditional_logic' => array(
                     array(
@@ -73,7 +73,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
 				'key' => 'field_5dd2cdhg2dca8',
-				'label' => 'Affichage',
+				'label' => __('Layout', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-apirest-list-layout',
 				'type' => 'radio',
 				'instructions' => '',
@@ -85,9 +85,9 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'choices' => array(
-					'list' => 'Liste',
-					'grid' => 'Grille',
-					'grid-noimage' => 'Grille sans image',
+					'list' => __('List', 'sedoo-wppl-blocks'),
+					'grid' => __('Grid', 'sedoo-wppl-blocks'),
+					'grid-noimage' => __('Grid noimage', 'sedoo-wppl-blocks'),
 				),
 				'allow_null' => 0,
 				'other_choice' => 0,
@@ -98,7 +98,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e9eb8bab097a',
-                'label' => 'Site à recuperer',
+                'label' => __('Website', 'sedoo-wppl-blocks'),
                 'name' => 'site_a_recuperer',
                 'type' => 'select',
                 'instructions' => '',
@@ -130,7 +130,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e9ec0daae508',
-                'label' => 'Contenus à récupérer',
+                'label' => __('Content', 'sedoo-wppl-blocks'),
                 'name' => 'contenus_a_recuperer',
                 'type' => 'select',
                 'instructions' => '',
@@ -162,7 +162,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e9ef4bfb9e24',
-                'label' => 'Taxonomie à récupérer',
+                'label' => __('Taxonomy', 'sedoo-wppl-blocks'),
                 'name' => 'taxonomie_a_recuperer',
                 'type' => 'select',
                 'instructions' => '',
@@ -194,7 +194,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e9efed45552f',
-                'label' => 'Terme à récupérer',
+                'label' => __('Term', 'sedoo-wppl-blocks'),
                 'name' => 'term_a_recuperer',
                 'type' => 'select',
                 'instructions' => '',
@@ -226,7 +226,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5ea7ecfb22c80',
-                'label' => 'Afficher bouton \'En savoir plus\' ?',
+                'label' => __('Display "Show more" button ?', 'sedoo-wppl-blocks'),
                 'name' => 'afficher_bouton_en_savoir_plus_',
                 'type' => 'true_false',
                 'instructions' => '',
@@ -245,7 +245,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5ea7ed0f22c81',
-                'label' => 'Afficher l\'extrait ?',
+                'label' => __('Show excerpt ?', 'sedoo-wppl-blocks'),
                 'name' => 'afficher_lextrait_',
                 'type' => 'true_false',
                 'instructions' => '',
@@ -264,11 +264,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5eaacc52d53f4',
-                'label' => 'Exclusion de contenu',
+                'label' => __('Exclude content', 'sedoo-wppl-blocks'),
                 'name' => 'exclusion_de_contenu',
                 'type' => 'text',
-                'instructions' => 'Par identifiant séparés d\'une virgule
-    Ex : 25,27,28',
+                'instructions' => __('By ID, split by ,      Ex : 25,17,18', 'sedoo-wppl-blocks'),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(

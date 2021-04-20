@@ -5,8 +5,8 @@ function register_sedoo_listepages_block_types() {
     // register a testimonial block.
     acf_register_block_type(array(
         'name'              => 'sedoo_pageslist',
-        'title'             => __('Sedoo Liste de pages'),
-        'description'       => __('List pages.'),
+        'title'             => __('Sedoo page list', 'sedoo-wppl-blocks'),
+        'description'       => __('List pages.', 'sedoo-wppl-blocks'),
         'render_callback'   => 'sedoo_blocks_listepages_render_callback',
         'category'          => 'sedoo-block-category',
         'icon'              => 'grid-view',

@@ -7,7 +7,7 @@ if( function_exists('acf_add_local_field_group') ):
         'fields' => array(
             array(
                 'key' => 'field_5d80ab6e4602c',
-                'label' => 'Titre de la zone',
+                'label' => __('Zone title', 'sedoo-wppl-blocks'),
                 'name' => 'relatedContentTitle',
                 'type' => 'text',
                 'instructions' => '',
@@ -26,7 +26,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
 				'key' => 'field_5dd2cdab2dca8',
-				'label' => 'Affichage',
+				'label' => __('Layout', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-relatedcontent-list-layout',
 				'type' => 'radio',
 				'instructions' => '',
@@ -38,9 +38,9 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'choices' => array(
-					'list' => 'Liste',
-					'grid' => 'Grille',
-					'grid-noimage' => 'Grille sans image',
+					'list' => __('List', 'sedoo-wppl-blocks'),
+					'grid' => __('Grid', 'sedoo-wppl-blocks'),
+					'grid-noimage' => __('Grid noimage', 'sedoo-wppl-blocks'),
 				),
 				'allow_null' => 0,
 				'other_choice' => 0,
@@ -51,7 +51,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
             array(
                 'key' => 'field_5d80ab6e46017',
-                'label' => 'Type de contenu',
+                'label' => __('Content type', 'sedoo-wppl-blocks'),
                 'name' => 'relatedContentTypeOfContent',
                 'type' => 'select',
                 'instructions' => '',
@@ -63,11 +63,11 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'choices' => array(
-                    'location' => 'Emplacements',
-                    'event' => 'Évènements',
+                    'location' => __('Location', 'sedoo-wppl-blocks'),
+                    'event' => __('Events', 'sedoo-wppl-blocks'),
                     'feedzy_categories' => 'Feed Categories',
-                    'sedoo-platform' => 'Plateformes',
-                    'sedoo-research-team' => 'Équipes de recherche',
+                    'sedoo-platform' => __('Platforms', 'sedoo-wppl-blocks'),
+                    'sedoo-research-team' => __('Research team', 'sedoo-wppl-blocks'),
                 ),
                 'default_value' => array(
                 ),
@@ -109,7 +109,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                     'key' => 'field_5ecd14fbefc07',
-                    'label' => 'Tout afficher en une page ?',
+                    'label' => __('Display all in one page ?', 'sedoo-wppl-blocks'),
                     'name' => 'tout_afficher_en_une_page',
                     'type' => 'true_false',
                     'instructions' => '',
@@ -128,10 +128,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),    
             array(
                 'key' => 'field_5d84ab6e45462c',
-                'label' => 'Limite',
+                'label' => __('Limit', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_related_showmlimit',
                 'type' => 'range',
-				'instructions' => 'Le nombre de post affichés. 0 pour tous',
+				'instructions' => __('Amount of post displayed. 0 for all', 'sedoo-wppl-blocks'),
                 'required' => 0,
                 'conditional_logic' => array(
                     array(
@@ -156,10 +156,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5ecd150eefc08',
-                'label' => 'Nombre par page ?',
+                'label' => __('Amount per page', 'sedoo-wppl-blocks'),
                 'name' => 'post_number',
                 'type' => 'range',
-                'instructions' => 'Set 0 for unlimited, défault 10',
+                'instructions' => 'Set 0 for unlimited, default 10',
                 'required' => 0,
                 'conditional_logic' => array(
                     array(
@@ -183,7 +183,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5d80ab6e4752c',
-                'label' => 'Bouton Voir plus',
+                'label' => __('Show more buttons', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_related_showmorecontent',
                 'type' => 'true_false',
 				'instructions' => '',
@@ -210,7 +210,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5d80ab6e4842c',
-                'label' => 'Texte du bouton Voir plus',
+                'label' => __('Show more button text', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_related_showmorecontent_text',
                 'type' => 'text',
                 'instructions' => '',
