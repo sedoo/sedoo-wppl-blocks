@@ -7,10 +7,10 @@ if( function_exists('acf_add_local_field_group') ):
         'fields' => array(
             array(
                 'key' => 'field_5e6b9b7dad6c8',
-                'label' => 'Catégories',
+                'label' => __('Categories', 'sedoo-wppl-blocks'),
                 'name' => 'faq_categories',
                 'type' => 'taxonomy',
-                'instructions' => 'Filtre les questions par catégories',
+                'instructions' => __('Filters askings by categories', 'sedoo-wppl-blocks'),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -29,10 +29,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e6b9bf78c761',
-                'label' => 'Nombre',
+                'label' => __('Amount of Q&A', 'sedoo-wppl-blocks'),
                 'name' => 'faq_nombre',
                 'type' => 'text',
-                'instructions' => 'Nombre de questions / réponses a afficher (0 pour toutes)',
+                'instructions' => __('Amont of Q&A displayed (0 for all)', 'sedoo-wppl-blocks'),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(

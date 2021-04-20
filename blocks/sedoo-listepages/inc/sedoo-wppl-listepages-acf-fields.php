@@ -7,7 +7,7 @@ if( function_exists('acf_add_local_field_group') ):
 		'fields' => array(
 			array(
 				'key' => 'field_5f6c87e6c7208',
-				'label' => 'Pages à insérer',
+				'label' => __('Pages to display', 'sedoo-wppl-blocks'),
 				'name' => 'pages_a_inserer',
 				'type' => 'relationship',
 				'instructions' => '',
@@ -34,7 +34,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5f6c8800c7209',
-				'label' => 'Ajouter toutes les pages enfants ?',
+				'label' => __('Show child pages ?', 'sedoo-wppl-blocks'),
 				'name' => 'ajouter_toutes_les_pages_enfants_',
 				'type' => 'true_false',
 				'instructions' => '',
@@ -53,7 +53,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5gt2cdab4dce9',
-				'label' => 'Affichage',
+				'label' => __('Layout', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-pages-list-layout',
 				'type' => 'radio',
 				'instructions' => '',
@@ -65,9 +65,9 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'choices' => array(
-					'list' => 'Liste',
-					'grid' => 'Grille',
-					'grid-noimage' => 'Grille sans image',
+					'list' => __('List', 'sedoo-wppl-blocks'),
+					'grid' => __('Grid', 'sedoo-wppl-blocks'),
+					'grid-noimage' => __('Grid no image', 'sedoo-wppl-blocks'),
 				),
 				'allow_null' => 0,
 				'other_choice' => 0,

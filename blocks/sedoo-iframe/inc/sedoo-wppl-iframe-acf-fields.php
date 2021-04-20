@@ -23,10 +23,10 @@
 				),
 				array(
 					'key' => 'field_5e68e03cc0e3f',
-					'label' => 'Requête',
+					'label' => __('Request', 'sedoo-wppl-blocks'),
 					'name' => 'requete',
 					'type' => 'text',
-					'instructions' => 'A renseigner si vous désirez passer un élément de requête dans l\'url',
+					'instructions' => __('Needed to pass a custom request element in the url', 'sedoo-wppl-blocks'),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -43,9 +43,9 @@
 				array(
 					'key' => 'field_5e68dbc839c09',
 					'label' => 'hauteur',
-					'name' => 'hauteur',
+					'name' => __('Height', 'sedoo-wppl-blocks'),
 					'type' => 'number',
-					'instructions' => 'En pixel',
+					'instructions' => __('In px', 'sedoo-wppl-blocks'),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -64,9 +64,9 @@
 				array(
 					'key' => 'field_5e68dca56a00e',
 					'label' => 'Largeur',
-					'name' => 'largeur',
+					'name' => __('Width', 'sedoo-wppl-blocks'),
 					'type' => 'number',
-					'instructions' => 'En pourcentage',
+					'instructions' => __('In %', 'sedoo-wppl-blocks'),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -84,10 +84,10 @@
 				),
 				array(
 					'key' => 'field_5e68e29e3d477',
-					'label' => 'Attributs Supplémentaires',
+					'label' => __('Add custom attributes', 'sedoo-wppl-blocks'),
 					'name' => 'attributs_supplementaires',
 					'type' => 'text',
-					'instructions' => 'Permet d\'ajouter des attributs supplémentaires sous la forme attribut="valeur"',
+					'instructions' => __('Add cusotm attributes on the iframe with this format : key="value', 'sedoo-wppl-blocks'),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -103,10 +103,10 @@
 				),
 				array(
 					'key' => 'field_5f19582bd00ae',
-					'label' => 'Classe du container',
+					'label' => __('Container class', 'sedoo-wppl-blocks'),
 					'name' => 'classe_du_container',
 					'type' => 'text',
-					'instructions' => 'Ajoute une classe personnalisé au container de l\'iframe',
+					'instructions' => __('Add a custom class on the iframe container', 'sedoo-wppl-blocks'),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -125,7 +125,7 @@
 					'label' => 'Scrolling',
 					'name' => 'scrolling',
 					'type' => 'true_false',
-					'instructions' => 'Active le scroll ou non sur l\'iframe',
+					'instructions' => __('Activate or not the scroll on the Iframe', 'sedoo-wppl-blocks'),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
