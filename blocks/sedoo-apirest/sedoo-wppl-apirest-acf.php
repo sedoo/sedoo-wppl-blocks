@@ -5,8 +5,8 @@ function register_sedoo_apirest_block_types() {
     // register a testimonial block.
     acf_register_block_type(array(
         'name'              => 'sedoo_apirest',
-        'title'             => __('Sedoo apirest'),
-        'description'       => __('Ajoute un bloc apirest'),
+        'title'             => __('Sedoo apirest', 'sedoo-wppl-blocks'),
+        'description'       => __('Add a block apirest', 'sedoo-wppl-blocks'),
         'render_callback'   => 'sedoo_blocks_apirest_render_callback',
         'category'          => 'sedoo-block-category',
         'icon'              => 'format-chat',

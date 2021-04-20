@@ -7,7 +7,7 @@ if( function_exists('acf_add_local_field_group') ):
         'fields' => array(
             array(
                 'key' => 'field_5e62634a9042b',
-                'label' => 'Titre du bloc',
+                'label' => __('Bloc title', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_annuaire_titre',
                 'type' => 'text',
                 'instructions' => '',
@@ -18,7 +18,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => 'Vous recherchez quelqu\'un ?',
+                'default_value' => __('Looking for someone ?', 'sedoo-wppl-blocks'),
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
@@ -26,7 +26,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e6263b161245',
-                'label' => 'Phrase d\'accompagnement',
+                'label' => __('Subtitle', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_annuaire_phrase',
                 'type' => 'text',
                 'instructions' => '',
@@ -45,7 +45,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e6263c78498c',
-                'label' => 'Placeholder du champs',
+                'label' => __('Field placeholder', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_annuaire_placeholder',
                 'type' => 'text',
                 'instructions' => '',
@@ -64,7 +64,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e6263d2aa864',
-                'label' => 'Laboratoire',
+                'label' => __('Laboratory', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_annuaire_laboratoire',
                 'type' => 'text',
                 'instructions' => 'GET / Ecolab / ...',
@@ -83,7 +83,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e6267707ac17',
-                'label' => 'Texte bouton',
+                'label' => __('Button text', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_annuaire_bouton',
                 'type' => 'text',
                 'instructions' => '',

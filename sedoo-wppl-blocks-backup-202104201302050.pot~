@@ -1,0 +1,156 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sedoo - Blocks\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-20 10:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7.1\n"
+"X-Domain: sedoo-wppl-blocks"
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:13
+msgid "Activate or deactivate APIREST block"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:165
+msgid "Activate or deactivate buttons block"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:127
+msgid "Activate or deactivate content list block"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:32
+msgid "Activate or deactivate Iframe block"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:70
+msgid "Activate or deactivate member directory block"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:146
+msgid "Activate or deactivate page list block"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:108
+msgid "Activate or deactivate post list block"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:89
+msgid "Activate or deactivate Q&A block"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:51
+msgid "Activate or deactivate related content block"
+msgstr ""
+
+#: blocks/sedoo-apirest/sedoo-wppl-apirest-acf.php:9
+msgid "Add a block apirest"
+msgstr ""
+
+#: blocks/sedoo-iframe/sedoo-wppl-iframe-acf.php:9
+msgid "Add a customizable Iframe"
+msgstr ""
+
+#: blocks/sedoo-annuaire/sedoo-wppl-annuaire-acf.php:9
+msgid "Add a member directory"
+msgstr ""
+
+#: blocks/sedoo-faq/sedoo-wppl-faq-acf.php:9
+msgid "Add a Q&A block"
+msgstr ""
+
+#: blocks/sedoo-buttons/sedoo-wppl-buttons-acf.php:36
+msgid "Add buttons with svg"
+msgstr ""
+
+#: blocks/sedoo-relatedcontents/sedoo-wppl-relatedcontents-acf.php:13
+msgid "Add related content."
+msgstr ""
+
+#: sedoo-wppl-blocks.php:48 sedoo-wppl-blocks.php:49
+#: inc/sedoo-wppl-blocks-acf-fields.php:6
+msgid "Blocks activation"
+msgstr ""
+
+#: sedoo-wppl-blocks.php:41 sedoo-wppl-blocks.php:42
+msgid "Blocks settings"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Blocs d'édition : annuaire, boutons SVG, FAQ, liste d'articles, iframe, "
+"contenus en relation"
+msgstr ""
+
+#: sedoo-wppl-blocks.php:106
+msgid "Blocs Sedoo"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.sedoo.fr"
+msgstr ""
+
+#: blocks/sedoo-listecpt/sedoo-wppl-listecpt-acf.php:9
+msgid "List custom post types."
+msgstr ""
+
+#: blocks/sedoo-listepages/sedoo-wppl-listepages-acf.php:9
+msgid "List pages."
+msgstr ""
+
+#: blocks/sedoo-listearticle/sedoo-wppl-listearticle-acf.php:9
+msgid "List post by categories and choose layout."
+msgstr ""
+
+#. Author of the plugin
+msgid "Nicolas Gruwe & Pierre Vert - SEDOO DATA CENTER"
+msgstr ""
+
+#. Name of the plugin
+msgid "Sedoo - Blocks"
+msgstr ""
+
+#: blocks/sedoo-apirest/sedoo-wppl-apirest-acf.php:8
+msgid "Sedoo apirest"
+msgstr ""
+
+#: blocks/sedoo-buttons/sedoo-wppl-buttons-acf.php:35
+msgid "Sedoo buttons"
+msgstr ""
+
+#: blocks/sedoo-listecpt/sedoo-wppl-listecpt-acf.php:8
+msgid "Sedoo content list"
+msgstr ""
+
+#: blocks/sedoo-iframe/sedoo-wppl-iframe-acf.php:8
+msgid "Sedoo Iframe"
+msgstr ""
+
+#: blocks/sedoo-annuaire/sedoo-wppl-annuaire-acf.php:8
+msgid "Sedoo member directory"
+msgstr ""
+
+#: blocks/sedoo-listepages/sedoo-wppl-listepages-acf.php:8
+msgid "Sedoo page list"
+msgstr ""
+
+#: blocks/sedoo-listearticle/sedoo-wppl-listearticle-acf.php:8
+msgid "Sedoo post list"
+msgstr ""
+
+#: blocks/sedoo-faq/sedoo-wppl-faq-acf.php:8
+msgid "Sedoo Q&A"
+msgstr ""
+
+#: blocks/sedoo-relatedcontents/sedoo-wppl-relatedcontents-acf.php:12
+msgid "Sedoo Related Block"
+msgstr ""

@@ -7,7 +7,7 @@ if( function_exists('acf_add_local_field_group') ):
         'fields' => array(
             array(
                 'key' => 'field_5de9245ec8a46',
-                'label' => 'Groupe de boutons',
+                'label' => __('Buttons group', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_blocks_vectorbutton_group',
                 'type' => 'repeater',
                 'instructions' => '',
@@ -26,7 +26,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'sub_fields' => array(
                     array(
                         'key' => 'field_5de8dcc701ac2',
-                        'label' => 'Texte',
+                        'label' => __('Text', 'sedoo-wppl-blocks'),
                         'name' => 'sedoo_blocks_vectorButton_text',
                         'type' => 'text',
                         'instructions' => '',
@@ -45,7 +45,7 @@ if( function_exists('acf_add_local_field_group') ):
                     ),
                     array(
                         'key' => 'field_5de8dd7601ac3',
-                        'label' => 'Lien',
+                        'label' => __('Link', 'sedoo-wppl-blocks'),
                         'name' => 'sedoo_blocks_vectorButton_link',
                         'type' => 'link',
                         'instructions' => '',
@@ -60,7 +60,7 @@ if( function_exists('acf_add_local_field_group') ):
                     ),
                     array(
                         'key' => 'field_5ed8b3d6832ab',
-                        'label' => 'Ouvrir dans un nouvel onglet ?',
+                        'label' => __('Open in new tab ?', 'sedoo-wppl-blocks'),
                         'name' => 'ouvrir_dans_un_nouvel_onglet',
                         'type' => 'true_false',
                         'instructions' => '',
@@ -79,7 +79,7 @@ if( function_exists('acf_add_local_field_group') ):
                     ),
                     array(
                         'key' => 'field_5de8ddd101ac4',
-                        'label' => 'Icone SVG',
+                        'label' => __('SVG Icon', 'sedoo-wppl-blocks'),
                         'name' => 'sedoo_blocks_vectorButton_svg',
                         'type' => 'file',
                         'instructions' => 'Icone SVG requise !<br>
@@ -105,7 +105,7 @@ if( function_exists('acf_add_local_field_group') ):
                     ),
                     array(
                         'key' => 'field_5de91cc2b2ab8',
-                        'label' => 'Bordures',
+                        'label' => __('Border', 'sedoo-wppl-blocks'),
                         'name' => 'sedoo_blocks_vectorButton_border',
                         'type' => 'true_false',
                         'instructions' => 'To override default border style, use this CSS rule in your theme :
@@ -127,7 +127,7 @@ if( function_exists('acf_add_local_field_group') ):
                     ),
                     array(
                         'key' => 'field_5de91d9fb2ab9',
-                        'label' => 'Bordures arrondies',
+                        'label' => __('Border radius', 'sedoo-wppl-blocks'),
                         'name' => 'sedoo_blocks_vectorButton_borderStyle',
                         'type' => 'true_false',
                         'instructions' => 'Square by default.
@@ -160,7 +160,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e737022d0068',
-                'label' => 'Affichage',
+                'label' => __('Layout', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_blocks_vectorButton_display',
                 'type' => 'radio',
                 'instructions' => '',
@@ -172,8 +172,8 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'choices' => array(
-                    'line' => 'En lignes',
-                    'row' => 'En colonnes',
+                    'line' => __('In line', 'sedoo-wppl-blocks'),
+                    'row' => __('in Row', 'sedoo-wppl-blocks'),
                 ),
                 'allow_null' => 0,
                 'other_choice' => 0,

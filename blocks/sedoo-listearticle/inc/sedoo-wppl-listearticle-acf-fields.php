@@ -6,7 +6,7 @@ if( function_exists('acf_add_local_field_group') ):
 		'fields' => array(
 			array(
 				'key' => 'field_5dd2c8332dce6',
-				'label' => 'Titre',
+				'label' => __('Title', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-title',
 				'type' => 'text',
 				'instructions' => '',
@@ -25,7 +25,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5fdb36641a72e',
-				'label' => 'type de filtre',
+				'label' => __('Filter type', 'sedoo-wppl-blocks'),
 				'name' => 'type_de_filtre',
 				'type' => 'select',
 				'instructions' => '',
@@ -56,7 +56,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => 'Categories',
 				'name' => 'sedoo-block-post-list-categories',
 				'type' => 'taxonomy',
-				'instructions' => '<strong>Si vide, aucun filtre sur les catégories ne sera effectué </strong>',
+				'instructions' =>  __('No filter on categories will be done if this field is empty.', 'sedoo-wppl-blocks'),
 				'required' => 0,'conditional_logic' => array(
 					array(
 						array(
@@ -85,7 +85,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => 'Tags',
 				'name' => 'sedoo-block-post-list-tags',
 				'type' => 'taxonomy',
-				'instructions' => '<strong>Si vide, aucun filtre sur les tags ne sera effectué </strong>',
+				'instructions' =>  __('No filter on CES tags will be done if this field is empty.', 'sedoo-wppl-blocks'),
 				'required' => 0,
 				'conditional_logic' => array(
 					array(
@@ -115,7 +115,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => 'Tags',
 				'name' => 'sedoo-block-post-list-posttags',
 				'type' => 'taxonomy',
-				'instructions' => '<strong>Si vide, aucun filtre sur les tags ne sera effectué </strong>',
+				'instructions' => __('No filter on tags will be done if this field is empty.', 'sedoo-wppl-blocks'),
 				'required' => 0,
 				'conditional_logic' => array(
 					array(
@@ -142,7 +142,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5dd2cdab2dce8',
-				'label' => 'Affichage',
+				'label' =>  __('Layout', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-layout',
 				'type' => 'radio',
 				'instructions' => '',
@@ -154,9 +154,9 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'choices' => array(
-					'list' => 'Liste',
-					'grid' => 'Grille',
-					'grid-noimage' => 'Grille sans image',
+					'list' => __('List', 'sedoo-wppl-blocks'),
+					'grid' => __('Grid', 'sedoo-wppl-blocks'),
+					'grid-noimage' => __('Grid noimage', 'sedoo-wppl-blocks'),
 				),
 				'allow_null' => 0,
 				'other_choice' => 0,
@@ -167,7 +167,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5dd2ce1a2dce9',
-				'label' => 'Limite',
+				'label' => __('Limit', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-limit',
 				'type' => 'number',
 				'instructions' => 'Set 0 for unlimited',
@@ -209,7 +209,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5ddfed8767c61',
-				'label' => 'Texte du bouton "En savoir plus"',
+				'label' => __('Show more button label', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-showmore-button-label',
 				'type' => 'text',
 				'instructions' => '',
@@ -220,7 +220,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'class' => '',
 					'id' => '',
 				),
-				'default_value' => 'En savoir plus',
+				'default_value' => __('Show more', 'sedoo-wppl-blocks'),
 				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',
@@ -228,7 +228,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5dd6a71dc219d',
-				'label' => 'Afficher le bouton "En savoir plus"',
+				'label' => __('Show "Show more" button ?', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-showmore-button',
 				'type' => 'true_false',
 				'instructions' => '',
@@ -247,7 +247,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5dd6a71dc225d',
-				'label' => 'Afficher les catégories ?',
+				'label' => __('Show categories ?', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-showterms-button',
 				'type' => 'true_false',
 				'instructions' => '',

@@ -7,6 +7,8 @@
  * Author URI:      https://www.sedoo.fr 
  * GitHub Plugin URI: sedoo/sedoo-wppl-blocks
  * GitHub Branch:     master
+ * Text Domain:     sedoo-wppl-blocks
+ * Domain Path:     /languages
  */
 
 if ( ! function_exists('get_field') ) {
@@ -36,14 +38,14 @@ if ( ! function_exists('get_field') ) {
 	if( function_exists('acf_add_options_page') ) {
 	
 		acf_add_options_page(array(
-			'page_title' 	=> 'Gestion de Blocs',
+			'page_title' 	=> __( 'Blocks settings', 'sedoo-wppl-blocks' ),
 			'menu_title'	=> 'Gestion de Blocs',
 			'menu_slug' 	=> 'sedoo-blocks-settings',
 			'redirect'		=> true
 		));
 		
 		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Activation des blocks',
+			'page_title' 	=> __( 'Blocks activation', 'sedoo-wppl-blocks' ),
 			'menu_title'	=> 'Activation des blocks',
 			'parent_slug'	=> 'sedoo-blocks-settings',
 		));
@@ -112,3 +114,9 @@ if ( ! function_exists('get_field') ) {
 	include 'inc/sedoo-wppl-blocks-acf-fields.php';
 
 }
+
+// LOAD LANGUAGES FILES
+function sedoo_blocks_load_language() {
+    load_plugin_textdomain( 'sedoo-wppl-blocks', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+}
+add_action( 'plugins_loaded', 'sedoo_blocks_load_language' );
