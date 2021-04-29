@@ -49,8 +49,8 @@ $questions = get_posts(array(
     foreach($questions as $question) {
     ?>
         <section id="<?php echo $question->ID;?>_section">
-            <input type="radio" name="tabs" id="<?php echo $question->ID;?>" />
-            <label for="<?php echo $question->ID;?>" id="<?php echo $question->ID;?>Tab" role="tab" aria-controls="<?php echo $question->ID;?>panel"><span class="dashicons dashicons-arrow-right-alt2"></span><?php echo $question->post_title;?></label>
+            <input type="radio" name="tabs" checked="false" class="input_<?php echo $question->ID;?>" id="<?php echo $question->ID;?>" />
+            <label data_q="<?php echo $question->ID;?>" for="<?php echo $question->ID;?>" id="<?php echo $question->ID;?>Tab" role="tab" aria-controls="<?php echo $question->ID;?>panel"><span class="dashicons dashicons-arrow-right-alt2"></span><?php echo $question->post_title;?></label>
             <article id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
                 <p><?php echo $question->post_content; ?></p>
             </article>
@@ -59,3 +59,16 @@ $questions = get_posts(array(
     }
     ?>
 </nav>
+<script>
+
+jQuery('.sedoo_blocks_faq label').click(function() {
+    var faq_id = jQuery(this).attr('data_q');
+    if(jQuery( "#"+faq_id+"panel" ).css('display') !== 'none') {
+        jQuery( "#"+faq_id+"panel" ).hide();
+        jQuery( this).children('span').css('transform', 'rotate(0deg)');
+    } else {
+        jQuery( "#"+faq_id+"panel" ).show();
+        jQuery( this).children('span').css('transform', 'rotate(90deg)');
+    }
+});
+</script>
