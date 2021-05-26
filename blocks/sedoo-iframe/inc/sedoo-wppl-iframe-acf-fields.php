@@ -42,8 +42,8 @@
 				),
 				array(
 					'key' => 'field_5e68dbc839c09',
-					'label' => 'hauteur',
-					'name' => __('Height', 'sedoo-wppl-blocks'),
+					'label' => __('Height', 'sedoo-wppl-blocks'),
+					'name' => 'hauteur',
 					'type' => 'number',
 					'instructions' => __('In px', 'sedoo-wppl-blocks'),
 					'required' => 0,
@@ -63,8 +63,8 @@
 				),
 				array(
 					'key' => 'field_5e68dca56a00e',
-					'label' => 'Largeur',
-					'name' => __('Width', 'sedoo-wppl-blocks'),
+					'label' => __('Width', 'sedoo-wppl-blocks'),
+					'name' => 'largeur',
 					'type' => 'number',
 					'instructions' => __('In %', 'sedoo-wppl-blocks'),
 					'required' => 0,
@@ -87,7 +87,7 @@
 					'label' => __('Add custom attributes', 'sedoo-wppl-blocks'),
 					'name' => 'attributs_supplementaires',
 					'type' => 'text',
-					'instructions' => __('Add cusotm attributes on the iframe with this format : key="value', 'sedoo-wppl-blocks'),
+					'instructions' => __('Add custom attributes on the iframe with this format : key="value', 'sedoo-wppl-blocks'),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
