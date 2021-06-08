@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sedoo - Blocks
  * Description: Blocs d'édition : annuaire, boutons SVG, FAQ, liste d'articles, iframe, contenus en relation
- * Version: 1.1.13
+ * Version: 1.1.14
  * Author: Nicolas Gruwe & Pierre Vert - SEDOO DATA CENTER
  * Author URI:      https://www.sedoo.fr 
  * GitHub Plugin URI: sedoo/sedoo-wppl-blocks

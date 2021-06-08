@@ -53,7 +53,14 @@
                         'post_type'             => $post_Type,
                         'post_status'           => array( 'publish' ),
                         'posts_per_page'        => $limit, 
-                        'meta_key'=> '_EventStartDate',
+                        'meta_query' => array( 
+                            array(
+                                'key' => '_EventEndDate', 
+                                'value' => date("Y-m-d"), 
+                                'compare' => '>=', 
+                                'type' => 'NUMERIC,' 
+                            )
+                        ),
                         'orderby'=> '_EventStartDate',
                         'order'=> 'ASC',
                         'tax_query'             => $tax_query
@@ -74,13 +81,7 @@
                         }
                         while ( $the_query->have_posts() ) {
                             $the_query->the_post();
-                            if($post_Type == 'tribe_events') {
-                                if(tribe_is_past_event(get_the_ID()) != 1) {
-                                    echo sedoo_listcpt_display_items($display);
-                                }
-                            } else {
-                                echo sedoo_listcpt_display_items($display);
-                            }
+                            echo sedoo_listcpt_display_items($display);
                         }
                         if($display == 'minilist') {
                             echo '</ul>';
