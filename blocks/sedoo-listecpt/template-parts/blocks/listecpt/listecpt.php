@@ -74,7 +74,13 @@
                         }
                         while ( $the_query->have_posts() ) {
                             $the_query->the_post();
-                            echo sedoo_listcpt_display_items($display);
+                            if($post_Type == 'tribe_events') {
+                                if(tribe_is_past_event(get_the_ID()) != 1) {
+                                    echo sedoo_listcpt_display_items($display);
+                                }
+                            } else {
+                                echo sedoo_listcpt_display_items($display);
+                            }
                         }
                         if($display == 'minilist') {
                             echo '</ul>';
