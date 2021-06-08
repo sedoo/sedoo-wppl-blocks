@@ -48,12 +48,24 @@
             
             <section class="post-wrapper <?php echo $className; ?>">
                 <?php
+                if($post_Type == 'tribe_events') {
+                    $args = array(
+                        'post_type'             => $post_Type,
+                        'post_status'           => array( 'publish' ),
+                        'posts_per_page'        => $limit, 
+                        'meta_key'=> '_EventStartDate',
+                        'orderby'=> '_EventStartDate',
+                        'order'=> 'ASC',
+                        'tax_query'             => $tax_query
+                    );
+                } else {
                     $args = array(
                         'post_type'             => $post_Type,
                         'post_status'           => array( 'publish' ),
                         'posts_per_page'        => $limit, 
                         'tax_query'             => $tax_query
                     );
+                }
             
                     $the_query = new WP_Query( $args );
                     if ( $the_query->have_posts() ) {
