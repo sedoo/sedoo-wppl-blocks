@@ -61,7 +61,8 @@
                                 'type' => 'NUMERIC,' 
                             )
                         ),
-                        'orderby'=> '_EventStartDate',
+                        'orderby' =>'meta_value',
+                        'meta_key' => '_EventStartDate',
                         'order'=> 'ASC',
                         'tax_query'             => $tax_query
                     );
