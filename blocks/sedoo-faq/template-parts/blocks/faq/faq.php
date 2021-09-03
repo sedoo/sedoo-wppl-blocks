@@ -49,7 +49,7 @@ $questions = get_posts(array(
     foreach($questions as $question) {
     ?>
         <section id="<?php echo $question->ID;?>_section">
-            <input type="radio" name="tabs" checked="false" class="input_<?php echo $question->ID;?>" id="<?php echo $question->ID;?>" />
+            <input type="radio" name="tabs" class="input_<?php echo $question->ID;?>" id="<?php echo $question->ID;?>" />
             <label data_q="<?php echo $question->ID;?>" for="<?php echo $question->ID;?>" id="<?php echo $question->ID;?>Tab" role="tab" aria-controls="<?php echo $question->ID;?>panel"><span class="dashicons dashicons-arrow-right-alt2"></span><?php echo $question->post_title;?></label>
             <article id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
                 <p><?php echo $question->post_content; ?></p>
