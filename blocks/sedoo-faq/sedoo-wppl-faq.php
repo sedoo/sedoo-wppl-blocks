@@ -4,7 +4,7 @@ function register_sedoo_faq() {
     $args = array(
         'public'    => true,
         'label'     => __( 'FAQ', 'textdomain' ),
-		'show_in_rest'			=> true,
+		'show_in_rest'	=> true,
         'menu_icon' => 'dashicons-format-chat',
     );
     register_post_type( 'faq', $args );
@@ -13,9 +13,11 @@ function register_sedoo_faq() {
         'sedoo_faq_categorie',
         'faq',
         array(
-            'label' => __( 'Categories' ),
-            'rewrite' => array( 'slug' => 'faq_cat' ),
-            'hierarchical' => true,
+            'label'         => __( 'Categories FAQ' ),
+            'rewrite'       => array( 'slug' => 'faq_cat' ),
+            'hierarchical'  => true,
+            'show_ui'       => true,
+            'show_in_rest'	=> true,
         )
     );
 }

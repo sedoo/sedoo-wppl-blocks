@@ -61,14 +61,14 @@ $questions = get_posts(array(
 </nav>
 <script>
 
-jQuery('.sedoo_blocks_faq label').click(function() {
-    var faq_id = jQuery(this).attr('data_q');
-    if(jQuery( "#"+faq_id+"panel" ).css('display') !== 'none') {
-        jQuery( "#"+faq_id+"panel" ).hide();
-        jQuery( this).children('span').css('transform', 'rotate(0deg)');
-    } else {
-        jQuery( "#"+faq_id+"panel" ).show();
-        jQuery( this).children('span').css('transform', 'rotate(90deg)');
-    }
-});
+// jQuery('.sedoo_blocks_faq label').click(function() {
+//     var faq_id = jQuery(this).attr('data_q');
+//     if(jQuery( "#"+faq_id+"panel" ).css('display') !== 'none') {
+//         jQuery( "#"+faq_id+"panel" ).hide();
+//         jQuery( this).children('span').css('transform', 'rotate(0deg)');
+//     } else {
+//         jQuery( "#"+faq_id+"panel" ).show();
+//         jQuery( this).children('span').css('transform', 'rotate(90deg)');
+//     }
+// });
 </script>
