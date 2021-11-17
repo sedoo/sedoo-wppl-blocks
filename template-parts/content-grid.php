@@ -31,9 +31,21 @@ $postType=get_post_type();
             if (( ! empty( $categories ) )&&(!is_archive())) {
                 echo "<p>".esc_html( $categories[0]->name )."</p>";   
             }; ?>
+            
         <?php
         }
         ?>
+        <?php
+            // Tribe event condition 
+            if ( 'tribe_events' === $postType ){
+                $terms = get_the_terms( get_the_id(), 'tribe_events_cat');
+                if (! empty($terms)){
+                    foreach ($terms as $term) {
+                        echo "<p>".$term->name."</p>";
+                    }
+                }
+            }
+            ?>
 	</header><!-- .entry-header -->
     <div class="group-content">
         <div class="entry-content">
@@ -45,7 +57,8 @@ $postType=get_post_type();
             if ( 'post' === get_post_type() ) :
                 ?>
                 <p><?php the_date('M / d / Y') ?></p>
-            <?php endif; 
+            <?php endif;?>
+            <?php
             if ( 'tribe_events' === get_post_type() ) :
                 ?>
                 <p><?php echo tribe_get_start_date(get_the_ID(), false, 'd M Y - g:i'); ?></p>
