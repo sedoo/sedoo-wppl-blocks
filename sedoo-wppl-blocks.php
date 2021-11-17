@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sedoo - Blocks
  * Description: Blocs d'édition : annuaire, boutons SVG, FAQ, liste d'articles, iframe, contenus en relation
- * Version: 1.2.2
+ * Version: 1.3.0
  * Author: Nicolas Gruwe & Pierre Vert - SEDOO DATA CENTER
  * Author URI:      https://www.sedoo.fr 
  * GitHub Plugin URI: sedoo/sedoo-wppl-blocks
@@ -34,6 +34,7 @@ if ( ! function_exists('get_field') ) {
 	/***
 	 * ATTENTION, toutes les functions doivent aller ici 
 	 */
+	include 'inc/sedoo-wppl-blocks-acf-fields.php';
 
 	if( function_exists('acf_add_options_page') ) {
 	
@@ -72,7 +73,7 @@ if ( ! function_exists('get_field') ) {
 	if(get_field('sedoo_activation_annuaire', 'option') == 1) {
 		include 'blocks/sedoo-annuaire/sedoo-wppl-annuaire.php';
 	}
-	
+
 	if(get_field('sedoo_activation_faq', 'option') == 1) {
 		include 'blocks/sedoo-faq/sedoo-wppl-faq.php';
 	}
@@ -97,21 +98,22 @@ if ( ! function_exists('get_field') ) {
 		include 'blocks/sedoo-listecpt/sedoo-wppl-listecpt.php';
 	}
 
-	function sedoo_block_category( $categories, $post ) {
-		return array_merge(
-			$categories,
-			array(
+	function sedoo_block_category( $block_categories, $editor_context ) {
+		if ( ! empty( $editor_context->post ) ) {
+			array_push(
+				$block_categories,
 				array(
-					'slug' => 'sedoo-block-category',
+					'slug'  => 'sedoo-block-category',
 					'title' => __( 'Blocs Sedoo', 'sedoo-wppl-blocks' ),
-					'icon'  => '',
-				),
-			)
-		);
+					'icon'  => 'admin-tools',
+				)
+			);
+		}
+		return $block_categories;
 	}
-	add_filter( 'block_categories', 'sedoo_block_category', 10, 2 );
+	add_filter( 'block_categories_all', 'sedoo_block_category', 10, 2 );
 	
-	include 'inc/sedoo-wppl-blocks-acf-fields.php';
+
 
 }
 
