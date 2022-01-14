@@ -170,7 +170,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => __('Limit', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-limit',
 				'type' => 'number',
-				'instructions' => 'Set 0 for unlimited',
+				'instructions' => 'Default 6 items, max allowed 18 items ',
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -178,12 +178,12 @@ if( function_exists('acf_add_local_field_group') ):
 					'class' => '',
 					'id' => '',
 				),
-				'default_value' => 0,
+				'default_value' => 6,
 				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',
 				'min' => '',
-				'max' => '',
+				'max' => '18',
 				'step' => '',
 			),
 			array(
