@@ -29,10 +29,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e6b9bf78c761',
-                'label' => __('Amount of Q&A', 'sedoo-wppl-blocks'),
+                'label' => __('Amount of FAQ', 'sedoo-wppl-blocks'),
                 'name' => 'faq_nombre',
                 'type' => 'text',
-                'instructions' => __('Amont of Q&A displayed (0 for all)', 'sedoo-wppl-blocks'),
+                'instructions' => __('Amount of FAQ displayed (0 for all)', 'sedoo-wppl-blocks'),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(

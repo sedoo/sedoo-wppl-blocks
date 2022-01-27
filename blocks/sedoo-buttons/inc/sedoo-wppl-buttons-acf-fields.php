@@ -172,8 +172,8 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'choices' => array(
-                    'line' => __('In line', 'sedoo-wppl-blocks'),
-                    'row' => __('in Row', 'sedoo-wppl-blocks'),
+                    'line' => __('Row', 'sedoo-wppl-blocks'),
+                    'row' => __('Column', 'sedoo-wppl-blocks'),
                 ),
                 'allow_null' => 0,
                 'other_choice' => 0,

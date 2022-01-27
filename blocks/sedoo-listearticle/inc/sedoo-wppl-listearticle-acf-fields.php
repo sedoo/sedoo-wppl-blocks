@@ -156,7 +156,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'choices' => array(
 					'list' => __('List', 'sedoo-wppl-blocks'),
 					'grid' => __('Grid', 'sedoo-wppl-blocks'),
-					'grid-noimage' => __('Grid noimage', 'sedoo-wppl-blocks'),
+					'grid-noimage' => __('Grid no image', 'sedoo-wppl-blocks'),
 				),
 				'allow_null' => 0,
 				'other_choice' => 0,

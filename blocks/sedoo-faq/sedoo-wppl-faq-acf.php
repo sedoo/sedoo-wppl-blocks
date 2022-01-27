@@ -5,8 +5,8 @@ function register_sedoo_faq_block_types() {
     // register a testimonial block.
     acf_register_block_type(array(
         'name'              => 'sedoo_faq',
-        'title'             => __('Sedoo Q&A', 'sedoo-wppl-blocks'),
-        'description'       => __('Add a Q&A block', 'sedoo-wppl-blocks'),
+        'title'             => __('Sedoo FAQ', 'sedoo-wppl-blocks'),
+        'description'       => __('Add a FAQ block', 'sedoo-wppl-blocks'),
         'render_callback'   => 'sedoo_blocks_faq_render_callback',
         'category'          => 'sedoo-block-category',
         'icon'              => 'format-chat',
