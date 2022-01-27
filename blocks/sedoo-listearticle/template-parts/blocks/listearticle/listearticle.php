@@ -48,7 +48,7 @@ if (empty($buttonLabel)) {
 }
 
 $terms = get_field('sedoo-block-post-list-showterms-button');
-// SHOW POST LIST
+// Display POST LIST
 sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $terms, $tags, $filter);
 
 ?>

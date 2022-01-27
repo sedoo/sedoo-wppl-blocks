@@ -8,7 +8,7 @@ if( function_exists('acf_add_local_field_group') ):
 			'fields' => array(
 				array(
 					'key' => 'field_5f733cdde91f9',
-					'label' => __('Content type to show', 'sedoo-wppl-blocks'),
+					'label' => __('Content type to Display', 'sedoo-wppl-blocks'),
 					'name' => 'type_de_contenu_a_lister',
 					'type' => 'select',
 					'instructions' => '',
@@ -87,7 +87,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'label' => 'Tags',
 					'name' => 'sedoo_listecpt_tags_liste',
 					'type' => 'select',
-					'instructions' => __('Only non-empty tags will be shown', 'sedoo-wppl-blocks'),
+					'instructions' => __('Only non-empty tags will be displayed', 'sedoo-wppl-blocks'),
 					'required' => 0,
 					'conditional_logic' => array(
 						array(
@@ -148,7 +148,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'label' => __('Limit', 'sedoo-wppl-blocks'),
 					'name' => 'sedoo_listecpt_limit',
 					'type' => 'number',
-					'instructions' => __('Amount of posts to show', 'sedoo-wppl-blocks'),
+					'instructions' => __('Default 6 items, max allowed 18 items', 'sedoo-wppl-blocks'),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -156,12 +156,12 @@ if( function_exists('acf_add_local_field_group') ):
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => '',
+					'default_value' => '6',
 					'placeholder' => '',
 					'prepend' => '',
 					'append' => '',
 					'min' => '',
-					'max' => '',
+					'max' => '18',
 					'step' => '',
 				),
 			),

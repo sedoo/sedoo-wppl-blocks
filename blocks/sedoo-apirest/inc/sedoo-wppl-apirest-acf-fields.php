@@ -11,7 +11,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => __('Title', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-apirest-block-list-title',
 				'type' => 'text',
-				'instructions' => __('Not show if empty', 'sedoo-wppl-blocks'),
+				'instructions' => __('Not displayed if empty', 'sedoo-wppl-blocks'),
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -245,7 +245,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5ea7ed0f22c81',
-                'label' => __('Show excerpt ?', 'sedoo-wppl-blocks'),
+                'label' => __('Display excerpt ?', 'sedoo-wppl-blocks'),
                 'name' => 'afficher_lextrait_',
                 'type' => 'true_false',
                 'instructions' => '',

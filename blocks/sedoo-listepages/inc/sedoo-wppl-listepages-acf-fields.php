@@ -34,7 +34,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5f6c8800c7209',
-				'label' => __('Show child pages ?', 'sedoo-wppl-blocks'),
+				'label' => __('Display child pages ?', 'sedoo-wppl-blocks'),
 				'name' => 'ajouter_toutes_les_pages_enfants_',
 				'type' => 'true_false',
 				'instructions' => '',
