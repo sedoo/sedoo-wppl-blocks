@@ -18,13 +18,21 @@ if( !empty($block['align']) ) {
 $pages_a_afficher = get_field('pages_a_inserer');
 $afficher_enfants = get_field('ajouter_toutes_les_pages_enfants_');
 $layout = get_field('sedoo-block-pages-list-layout');
-
+$order = get_field('sedoo-block-pages-list-order');
+$orderby = get_field('sedoo-block-pages-list-orderby');
 ?>
 
 <section class="post-wrapper <?php echo $className; ?>">
 <?php 
 if(!empty($pages_a_afficher)) {
-    $displayed = new WP_Query( array( 'post_type' => 'page', 'post__in' => $pages_a_afficher ) );
+    $args = array(
+        'post_type'      => 'page',
+        'post__in'       => $pages_a_afficher,
+        'order'          => $order,
+        'orderby'        => $orderby
+    );
+    
+    $displayed = new WP_Query( $args );
 
     if ( $displayed->have_posts() ) :
         while ( $displayed->have_posts() ) : $displayed->the_post();
@@ -40,8 +48,8 @@ if($afficher_enfants == true) {
         'post_type'      => 'page',
         'posts_per_page' => -1,
         'post_parent'    => get_the_ID(),
-        'order'          => 'ASC',
-        'orderby'        => 'menu_order'
+        'order'          => $order,
+        'orderby'        => $orderby
     );
 
 
