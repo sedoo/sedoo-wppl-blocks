@@ -29,10 +29,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e6b9bf78c761',
-                'label' => __('Amount of Q&A', 'sedoo-wppl-blocks'),
+                'label' => __('Limit', 'sedoo-wppl-blocks'),
                 'name' => 'faq_nombre',
-                'type' => 'text',
-                'instructions' => __('Amont of Q&A displayed (0 for all)', 'sedoo-wppl-blocks'),
+                'type' => 'range',
+                'instructions' => __('Default 6 items, 0 = unlimited', 'sedoo-wppl-blocks'),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -40,7 +40,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => 0,
+                'default_value' => 6,
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',

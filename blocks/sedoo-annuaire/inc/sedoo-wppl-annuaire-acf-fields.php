@@ -7,7 +7,7 @@ if( function_exists('acf_add_local_field_group') ):
         'fields' => array(
             array(
                 'key' => 'field_5e62634a9042b',
-                'label' => __('Bloc title', 'sedoo-wppl-blocks'),
+                'label' => __('Title', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_annuaire_titre',
                 'type' => 'text',
                 'instructions' => '',
@@ -37,7 +37,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => 'Tapez le nom de la personne que vous recherchez et nous vous emmenerons vers l\'annuaire',
+                'default_value' => 'Tapez le nom de la personne que vous recherchez',
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',

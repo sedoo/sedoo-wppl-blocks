@@ -40,7 +40,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'choices' => array(
 					'list' => __('List', 'sedoo-wppl-blocks'),
 					'grid' => __('Grid', 'sedoo-wppl-blocks'),
-					'grid-noimage' => __('Grid noimage', 'sedoo-wppl-blocks'),
+					'grid-noimage' => __('Grid no image', 'sedoo-wppl-blocks'),
 				),
 				'allow_null' => 0,
 				'other_choice' => 0,
@@ -131,7 +131,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => __('Limit', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_related_showmlimit',
                 'type' => 'range',
-				'instructions' => __('Amount of post displayed. 0 for all', 'sedoo-wppl-blocks'),
+				'instructions' => __('Default 6 items, max allowed 18 items', 'sedoo-wppl-blocks'),
                 'required' => 0,
                 'conditional_logic' => array(
                     array(
@@ -148,18 +148,18 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'message' => '',
-				'default_value' => 0,
+				'default_value' => 6,
+                'max' => 18,
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
-                'maxlength' => '',
             ),
             array(
                 'key' => 'field_5ecd150eefc08',
-                'label' => __('Amount per page', 'sedoo-wppl-blocks'),
+                'label' => __('Limit', 'sedoo-wppl-blocks'),
                 'name' => 'post_number',
                 'type' => 'range',
-                'instructions' => 'Set 0 for unlimited, default 10',
+                'instructions' => __('Default 6 items, max allowed 18 items', 'sedoo-wppl-blocks'),
                 'required' => 0,
                 'conditional_logic' => array(
                     array(
@@ -175,15 +175,15 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => '10',
+                'default_value' => '6',
+                'max' => 18,
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
-                'maxlength' => '',
             ),
             array(
                 'key' => 'field_5d80ab6e4752c',
-                'label' => __('Show more buttons', 'sedoo-wppl-blocks'),
+                'label' => __('Display "Show more" button ?', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_related_showmorecontent',
                 'type' => 'true_false',
 				'instructions' => '',
@@ -210,7 +210,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5d80ab6e4842c',
-                'label' => __('Show more button text', 'sedoo-wppl-blocks'),
+                'label' => __('"Show more" button label', 'sedoo-wppl-blocks'),
                 'name' => 'sedoo_related_showmorecontent_text',
                 'type' => 'text',
                 'instructions' => '',

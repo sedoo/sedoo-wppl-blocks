@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sedoo - Blocks\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-20 13:02+0000\n"
+"POT-Creation-Date: 2022-01-27 16:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,6 +16,11 @@ msgstr ""
 "X-Loco-Version: 2.5.2; wp-5.7.1\n"
 "X-Domain: sedoo-wppl-blocks"
 
+#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:231
+#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:213
+msgid "\"Show more\" button label"
+msgstr ""
+
 #: inc/sedoo-wppl-blocks-acf-fields.php:13
 msgid "Activate or deactivate APIREST block"
 msgstr ""
@@ -26,6 +31,10 @@ msgstr ""
 
 #: inc/sedoo-wppl-blocks-acf-fields.php:127
 msgid "Activate or deactivate content list block"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:89
+msgid "Activate or deactivate FAQ block"
 msgstr ""
 
 #: inc/sedoo-wppl-blocks-acf-fields.php:32
@@ -42,10 +51,6 @@ msgstr ""
 
 #: inc/sedoo-wppl-blocks-acf-fields.php:108
 msgid "Activate or deactivate post list block"
-msgstr ""
-
-#: inc/sedoo-wppl-blocks-acf-fields.php:89
-msgid "Activate or deactivate Q&A block"
 msgstr ""
 
 #: inc/sedoo-wppl-blocks-acf-fields.php:51
@@ -68,56 +73,32 @@ msgstr ""
 msgid "Add a customizable Iframe"
 msgstr ""
 
-#: blocks/sedoo-annuaire/sedoo-wppl-annuaire-acf.php:9
-msgid "Add a member directory"
+#: blocks/sedoo-faq/sedoo-wppl-faq-acf.php:9
+msgid "Add a FAQ block"
 msgstr ""
 
-#: blocks/sedoo-faq/sedoo-wppl-faq-acf.php:9
-msgid "Add a Q&A block"
+#: blocks/sedoo-annuaire/sedoo-wppl-annuaire-acf.php:9
+msgid "Add a member directory"
 msgstr ""
 
 #: blocks/sedoo-buttons/sedoo-wppl-buttons-acf.php:36
 msgid "Add buttons with svg"
 msgstr ""
 
-#: blocks/sedoo-iframe/inc/sedoo-wppl-iframe-acf-fields.php:90
-msgid "Add cusotm attributes on the iframe with this format : key=\"value"
-msgstr ""
-
 #: blocks/sedoo-iframe/inc/sedoo-wppl-iframe-acf-fields.php:87
 msgid "Add custom attributes"
+msgstr ""
+
+#: blocks/sedoo-iframe/inc/sedoo-wppl-iframe-acf-fields.php:90
+msgid "Add custom attributes on the iframe with this format : key=\"value"
 msgstr ""
 
 #: blocks/sedoo-relatedcontents/sedoo-wppl-relatedcontents-acf.php:13
 msgid "Add related content."
 msgstr ""
 
-#: blocks/sedoo-faq/inc/sedoo-wppl-faq-acf-fields.php:35
-msgid "Amont of Q&A displayed (0 for all)"
-msgstr ""
-
-#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:134
-msgid "Amount of post displayed. 0 for all"
-msgstr ""
-
-#: blocks/sedoo-listecpt/inc/sedoo-wppl-listecpt-acf-fields.php:151
-msgid "Amount of posts to show"
-msgstr ""
-
-#: blocks/sedoo-faq/inc/sedoo-wppl-faq-acf-fields.php:32
-msgid "Amount of Q&A"
-msgstr ""
-
-#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:159
-msgid "Amount per page"
-msgstr ""
-
 #: blocks/sedoo-apirest/inc/sedoo-wppl-apirest-acf-fields.php:45
 msgid "Beginner"
-msgstr ""
-
-#: blocks/sedoo-annuaire/inc/sedoo-wppl-annuaire-acf-fields.php:10
-msgid "Bloc title"
 msgstr ""
 
 #: inc/sedoo-wppl-blocks-acf-fields.php:162
@@ -126,6 +107,10 @@ msgstr ""
 
 #: inc/sedoo-wppl-blocks-acf-fields.php:124
 msgid "Block content list"
+msgstr ""
+
+#: inc/sedoo-wppl-blocks-acf-fields.php:86
+msgid "Block FAQ"
 msgstr ""
 
 #: inc/sedoo-wppl-blocks-acf-fields.php:67
@@ -140,15 +125,11 @@ msgstr ""
 msgid "Block post list"
 msgstr ""
 
-#: inc/sedoo-wppl-blocks-acf-fields.php:86
-msgid "Block Q&A"
-msgstr ""
-
-#: sedoo-wppl-blocks.php:48 inc/sedoo-wppl-blocks-acf-fields.php:6
+#: sedoo-wppl-blocks.php:49 inc/sedoo-wppl-blocks-acf-fields.php:6
 msgid "Blocks activation"
 msgstr ""
 
-#: sedoo-wppl-blocks.php:41
+#: sedoo-wppl-blocks.php:42
 msgid "Blocks settings"
 msgstr ""
 
@@ -158,7 +139,7 @@ msgid ""
 "contenus en relation"
 msgstr ""
 
-#: sedoo-wppl-blocks.php:106
+#: sedoo-wppl-blocks.php:107
 msgid "Blocs Sedoo"
 msgstr ""
 
@@ -195,6 +176,10 @@ msgstr ""
 msgid "Choose a tag"
 msgstr ""
 
+#: blocks/sedoo-buttons/inc/sedoo-wppl-buttons-acf-fields.php:176
+msgid "Column"
+msgstr ""
+
 #: blocks/sedoo-iframe/inc/sedoo-wppl-iframe-acf-fields.php:106
 msgid "Container class"
 msgstr ""
@@ -208,15 +193,40 @@ msgid "Content type"
 msgstr ""
 
 #: blocks/sedoo-listecpt/inc/sedoo-wppl-listecpt-acf-fields.php:11
-msgid "Content type to show"
+msgid "Content type to Display"
 msgstr ""
 
+#: blocks/sedoo-faq/inc/sedoo-wppl-faq-acf-fields.php:35
+msgid "Default 6 items, 0 = unlimited"
+msgstr ""
+
+#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:173
+#: blocks/sedoo-listecpt/inc/sedoo-wppl-listecpt-acf-fields.php:151
+#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:134
+#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:162
+msgid "Default 6 items, max allowed 18 items"
+msgstr ""
+
+#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:212
+#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:186
 #: blocks/sedoo-apirest/inc/sedoo-wppl-apirest-acf-fields.php:229
 msgid "Display \"Show more\" button ?"
 msgstr ""
 
 #: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:112
 msgid "Display all in one page ?"
+msgstr ""
+
+#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:250
+msgid "Display categories ?"
+msgstr ""
+
+#: blocks/sedoo-listepages/inc/sedoo-wppl-listepages-acf-fields.php:37
+msgid "Display child pages ?"
+msgstr ""
+
+#: blocks/sedoo-apirest/inc/sedoo-wppl-apirest-acf-fields.php:248
+msgid "Display excerpt ?"
 msgstr ""
 
 #: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:67
@@ -252,18 +262,15 @@ msgstr ""
 msgid "Grid"
 msgstr ""
 
+#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:159
 #: blocks/sedoo-listepages/inc/sedoo-wppl-listepages-acf-fields.php:70
 #: blocks/sedoo-listecpt/inc/sedoo-wppl-listecpt-acf-fields.php:133
+#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:43
+#: blocks/sedoo-apirest/inc/sedoo-wppl-apirest-acf-fields.php:90
 msgid "Grid no image"
 msgstr ""
 
-#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:159
-#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:43
-#: blocks/sedoo-apirest/inc/sedoo-wppl-apirest-acf-fields.php:90
-msgid "Grid noimage"
-msgstr ""
-
-#: blocks/sedoo-iframe/inc/sedoo-wppl-iframe-acf-fields.php:46
+#: blocks/sedoo-iframe/inc/sedoo-wppl-iframe-acf-fields.php:45
 msgid "Height"
 msgstr ""
 
@@ -275,16 +282,8 @@ msgstr ""
 msgid "In %"
 msgstr ""
 
-#: blocks/sedoo-buttons/inc/sedoo-wppl-buttons-acf-fields.php:175
-msgid "In line"
-msgstr ""
-
 #: blocks/sedoo-iframe/inc/sedoo-wppl-iframe-acf-fields.php:48
 msgid "In px"
-msgstr ""
-
-#: blocks/sedoo-buttons/inc/sedoo-wppl-buttons-acf-fields.php:176
-msgid "in Row"
 msgstr ""
 
 #: blocks/sedoo-apirest/inc/sedoo-wppl-apirest-acf-fields.php:52
@@ -306,7 +305,9 @@ msgstr ""
 
 #: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:170
 #: blocks/sedoo-listecpt/inc/sedoo-wppl-listecpt-acf-fields.php:148
+#: blocks/sedoo-faq/inc/sedoo-wppl-faq-acf-fields.php:32
 #: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:131
+#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:159
 msgid "Limit"
 msgstr ""
 
@@ -355,19 +356,13 @@ msgid "Nicolas Gruwe & Pierre Vert - SEDOO DATA CENTER"
 msgstr ""
 
 #: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:59
-msgid "No filter on categories will be done if this field is empty."
-msgstr ""
-
 #: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:88
-msgid "No filter on CES tags will be done if this field is empty."
-msgstr ""
-
 #: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:118
-msgid "No filter on tags will be done if this field is empty."
+msgid "No filter if empty field"
 msgstr ""
 
 #: blocks/sedoo-apirest/inc/sedoo-wppl-apirest-acf-fields.php:14
-msgid "Not show if empty"
+msgid "Not displayed if empty"
 msgstr ""
 
 #: blocks/sedoo-listecpt/inc/sedoo-wppl-listecpt-acf-fields.php:57
@@ -375,7 +370,7 @@ msgid "Only non-empty categories will be shown"
 msgstr ""
 
 #: blocks/sedoo-listecpt/inc/sedoo-wppl-listecpt-acf-fields.php:90
-msgid "Only non-empty tags will be shown"
+msgid "Only non-empty tags will be displayed"
 msgstr ""
 
 #: blocks/sedoo-buttons/inc/sedoo-wppl-buttons-acf-fields.php:63
@@ -398,6 +393,10 @@ msgstr ""
 msgid "Research team"
 msgstr ""
 
+#: blocks/sedoo-buttons/inc/sedoo-wppl-buttons-acf-fields.php:175
+msgid "Row"
+msgstr ""
+
 #. Name of the plugin
 msgid "Sedoo - Blocks"
 msgstr ""
@@ -412,6 +411,10 @@ msgstr ""
 
 #: blocks/sedoo-listecpt/sedoo-wppl-listecpt-acf.php:8
 msgid "Sedoo content list"
+msgstr ""
+
+#: blocks/sedoo-faq/sedoo-wppl-faq-acf.php:8
+msgid "Sedoo FAQ"
 msgstr ""
 
 #: blocks/sedoo-iframe/sedoo-wppl-iframe-acf.php:8
@@ -430,10 +433,6 @@ msgstr ""
 msgid "Sedoo post list"
 msgstr ""
 
-#: blocks/sedoo-faq/sedoo-wppl-faq-acf.php:8
-msgid "Sedoo Q&A"
-msgstr ""
-
 #: blocks/sedoo-relatedcontents/sedoo-wppl-relatedcontents-acf.php:12
 msgid "Sedoo Related Block"
 msgstr ""
@@ -442,36 +441,8 @@ msgstr ""
 msgid "Setting mode"
 msgstr ""
 
-#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:231
-msgid "Show \"Show more\" button ?"
-msgstr ""
-
-#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:250
-msgid "Show categories ?"
-msgstr ""
-
-#: blocks/sedoo-listepages/inc/sedoo-wppl-listepages-acf-fields.php:37
-msgid "Show child pages ?"
-msgstr ""
-
-#: blocks/sedoo-apirest/inc/sedoo-wppl-apirest-acf-fields.php:248
-msgid "Show excerpt ?"
-msgstr ""
-
-#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:223
+#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:242
 msgid "Show more"
-msgstr ""
-
-#: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:212
-msgid "Show more button label"
-msgstr ""
-
-#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:213
-msgid "Show more button text"
-msgstr ""
-
-#: blocks/sedoo-relatedcontents/inc/sedoo-wppl-relatedcontents-acf-fields.php:186
-msgid "Show more buttons"
 msgstr ""
 
 #: blocks/sedoo-annuaire/inc/sedoo-wppl-annuaire-acf-fields.php:29
@@ -495,6 +466,7 @@ msgid "Text"
 msgstr ""
 
 #: blocks/sedoo-listearticle/inc/sedoo-wppl-listearticle-acf-fields.php:9
+#: blocks/sedoo-annuaire/inc/sedoo-wppl-annuaire-acf-fields.php:10
 #: blocks/sedoo-apirest/inc/sedoo-wppl-apirest-acf-fields.php:11
 msgid "Title"
 msgstr ""
@@ -507,7 +479,7 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: blocks/sedoo-iframe/inc/sedoo-wppl-iframe-acf-fields.php:67
+#: blocks/sedoo-iframe/inc/sedoo-wppl-iframe-acf-fields.php:66
 msgid "Width"
 msgstr ""
 
