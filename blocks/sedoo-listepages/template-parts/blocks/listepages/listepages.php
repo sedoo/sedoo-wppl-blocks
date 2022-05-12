@@ -28,8 +28,7 @@ if(!empty($pages_a_afficher)) {
     $args = array(
         'post_type'      => 'page',
         'post__in'       => $pages_a_afficher,
-        'order'          => $order,
-        'orderby'        => $orderby
+        'orderby'        => 'post__in'
     );
     
     $displayed = new WP_Query( $args );
