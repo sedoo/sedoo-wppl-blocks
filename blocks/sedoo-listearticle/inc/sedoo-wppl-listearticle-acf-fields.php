@@ -38,7 +38,7 @@ if( function_exists('acf_add_local_field_group') ):
 				),
 				'choices' => array(
 					'category' => 'Catégories',
-					'cestag' => 'CES Tags',
+					'cestag' => 'CES Tags (only for Theia website)',
 					'post_tag' => 'Tags',
 				),
 				'default_value' => array(
@@ -56,7 +56,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => 'Categories',
 				'name' => 'sedoo-block-post-list-categories',
 				'type' => 'taxonomy',
-				'instructions' =>  __('No filter on categories will be done if this field is empty.', 'sedoo-wppl-blocks'),
+				'instructions' =>  __('No filter if empty field', 'sedoo-wppl-blocks'),
 				'required' => 0,'conditional_logic' => array(
 					array(
 						array(
@@ -85,7 +85,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => 'Tags',
 				'name' => 'sedoo-block-post-list-tags',
 				'type' => 'taxonomy',
-				'instructions' =>  __('No filter on CES tags will be done if this field is empty.', 'sedoo-wppl-blocks'),
+				'instructions' =>  __('No filter if empty field', 'sedoo-wppl-blocks'),
 				'required' => 0,
 				'conditional_logic' => array(
 					array(
@@ -115,7 +115,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => 'Tags',
 				'name' => 'sedoo-block-post-list-posttags',
 				'type' => 'taxonomy',
-				'instructions' => __('No filter on tags will be done if this field is empty.', 'sedoo-wppl-blocks'),
+				'instructions' => __('No filter if empty field', 'sedoo-wppl-blocks'),
 				'required' => 0,
 				'conditional_logic' => array(
 					array(
@@ -156,7 +156,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'choices' => array(
 					'list' => __('List', 'sedoo-wppl-blocks'),
 					'grid' => __('Grid', 'sedoo-wppl-blocks'),
-					'grid-noimage' => __('Grid noimage', 'sedoo-wppl-blocks'),
+					'grid-noimage' => __('Grid no image', 'sedoo-wppl-blocks'),
 				),
 				'allow_null' => 0,
 				'other_choice' => 0,
@@ -170,7 +170,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => __('Limit', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-limit',
 				'type' => 'number',
-				'instructions' => 'Default 6 items, max allowed 18 items ',
+				'instructions' => __('Default 6 items, max allowed 18 items', 'sedoo-wppl-blocks'),
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -208,27 +208,8 @@ if( function_exists('acf_add_local_field_group') ):
 				'step' => '',
 			),
 			array(
-				'key' => 'field_5ddfed8767c61',
-				'label' => __('Show more button label', 'sedoo-wppl-blocks'),
-				'name' => 'sedoo-block-post-list-showmore-button-label',
-				'type' => 'text',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => __('Show more', 'sedoo-wppl-blocks'),
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'maxlength' => '',
-			),
-			array(
 				'key' => 'field_5dd6a71dc219d',
-				'label' => __('Show "Show more" button ?', 'sedoo-wppl-blocks'),
+				'label' => __('Display "Show more" button ?', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-showmore-button',
 				'type' => 'true_false',
 				'instructions' => '',
@@ -246,8 +227,27 @@ if( function_exists('acf_add_local_field_group') ):
 				'ui_off_text' => '',
 			),
 			array(
+				'key' => 'field_5ddfed8767c61',
+				'label' => __('"Show more" button label', 'sedoo-wppl-blocks'),
+				'name' => 'sedoo-block-post-list-showmore-button-label',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => __('Show more', 'sedoo-wppl-blocks'),
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
 				'key' => 'field_5dd6a71dc225d',
-				'label' => __('Show categories ?', 'sedoo-wppl-blocks'),
+				'label' => __('Display categories ?', 'sedoo-wppl-blocks'),
 				'name' => 'sedoo-block-post-list-showterms-button',
 				'type' => 'true_false',
 				'instructions' => '',

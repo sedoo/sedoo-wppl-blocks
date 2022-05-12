@@ -26,26 +26,6 @@
     <div class="group-content">
         <div class="entry-content">
             <?php the_excerpt(); ?>
-            <p class="date"><?php the_date('M / d / Y') ?>
-            <a href="<?php the_permalink(); ?>"><?php echo __('Read more', 'sedoo-wpth-labs'); ?> →</a>
         </div><!-- .entry-content -->
-        <?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'labs-by-sedoo' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
     </div>
 </article><!-- #post-->

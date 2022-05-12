@@ -83,10 +83,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5e6b96cac2e28',
-                'label' => __('Block Q&A', 'sedoo-wppl-blocks' ),
+                'label' => __('Block FAQ', 'sedoo-wppl-blocks' ),
                 'name' => 'sedoo_activation_faq',
                 'type' => 'true_false',
-                'instructions' => __( 'Activate or deactivate Q&A block', 'sedoo-wppl-blocks' ),
+                'instructions' => __( 'Activate or deactivate FAQ block', 'sedoo-wppl-blocks' ),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
