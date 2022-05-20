@@ -48,27 +48,66 @@ $questions = get_posts(array(
     <?php 
     foreach($questions as $question) {
     ?>
-        <section id="<?php echo $question->ID;?>_section">
-            <input type="radio" name="tabs" class="input_<?php echo $question->ID;?>" id="<?php echo $question->ID;?>" />
-            <label data_q="<?php echo $question->ID;?>" for="<?php echo $question->ID;?>" id="<?php echo $question->ID;?>Tab" role="tab" aria-controls="<?php echo $question->ID;?>panel"><span class="dashicons dashicons-arrow-right-alt2"></span><?php echo $question->post_title;?></label>
-            <article id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
-                <p><?php echo $question->post_content; ?></p>
-            </article>
+        <section id="<?php echo $question->ID;?>_section" class="intranet-tile-faq faq_<?php echo $question->ID;?>" >
+
+                <div class="accordion"  onclick="JouerSon()">
+
+                    <span class="plusIcon">+</span>
+
+                    <!--<span class="toggleButton">
+                        <span>+</span>
+                    </span>-->
+                    <span class="arrowButton material-icons"">
+                    arrow_circle_up
+                    </span>
+
+                    <h2 id="<?php echo $question->ID;?>Tab"><?php echo $question->post_title;?></h2>
+                 
+
+                </div>
+                <article class="panel">
+
+                    <p><?php echo $question->post_content; ?></p>
+
+                    <a class="bouton" href="<?php echo get_permalink($question->ID); ?>">En savoir plus</a>
+
+                </article>
         </section>
     <?php 
     }
     ?>
 </nav>
-<script>
+<audio autoplay="false" id="beep" src="http://localhost/INTRANET/wp-content/plugins/sedoo-wppl-blocks/blocks/sedoo-faq/sound/191238-Modular_UI_-Confirm_ToneFM-063.mp3">
+<audio autoplay="false" id="beep2" src="http://localhost/INTRANET/wp-content/plugins/sedoo-wppl-blocks/blocks/sedoo-faq/sound/mixkit-retro-game-notification-212.mp3">
 
-// jQuery('.sedoo_blocks_faq label').click(function() {
-//     var faq_id = jQuery(this).attr('data_q');
-//     if(jQuery( "#"+faq_id+"panel" ).css('display') !== 'none') {
-//         jQuery( "#"+faq_id+"panel" ).hide();
-//         jQuery( this).children('span').css('transform', 'rotate(0deg)');
-//     } else {
-//         jQuery( "#"+faq_id+"panel" ).show();
-//         jQuery( this).children('span').css('transform', 'rotate(90deg)');
-//     }
-// });
+<script>
+    function JouerSon() {
+            var sound = document.getElementById("beep");
+            var sound2 = document.getElementById("beep2");
+            const divActiv = document.querySelector(".accordion");
+            if (divActiv.classList.contains('activeFaq')) {
+                sound2.play();
+               
+            }else{
+                sound.play();
+            }
+            
+        }
+</script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("activeFaq");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
 </script>

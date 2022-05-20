@@ -1,64 +1,164 @@
-
-/*************    TABS    **************/
-
-.faq-tabs {
-	list-style-type:none;
-	position:relative;
-	margin-bottom: 40px;
-}
-
-.faq-tabs label {
-	display:flex;
-	padding:5px 20px;
+.accordion {
+    cursor: pointer;
+    transition: ease all 0.3s;
+    padding: 10px;
+    box-sizing:border-box;
+    color:rgb(60,60,60);
+    font-size:25px;
+    border-radius:10px;
+    background-color:rgb(230,230,230);
+    }
+    .panel {
+    padding: 0 12px;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
+    background-color: rgb(240, 240, 240);
+    transition: max-height 0.2s ease-out;
+    color:rgb(60,60,60);
+    margin-top:5px;
+    }
+    /* Tile FAQ - Foire aux questions */
+    .intranet-tile-faq {
+    position:relative;
+    margin:20px 0; 
+    }
+    .intranet-tile-faq:hover .accordion {
+        background-color:rgb(210,210,210);
+    }
+    .activeFaq {
+        background-color:rgb(210,210,210);
+    }
+    .intranet-tile-faq .bouton{
+    padding:10px;
+    display:inline-block;
     border-radius:5px;
-    background: #DDD;
-	margin-top:5px;
-    cursor:pointer;
-}
-
-[type="radio"]:checked + label {
-	border-radius:5px 5px 0 0;
-}
-
-.faq-tabs label:hover {
-    color:#FFF;
-}
-.faq-tabs [type="radio"]:checked + label {
+    background-color:rgb(230,230,230);
+    color:rgb(100,100,100);
+    margin: 0 0 20px 0;
+    float:right;
+    }
+    .intranet-tile-faq .plusIcon{
+    color:rgb(240,240,240);
+    display:inline-block;
+    line-height:20px;
+    text-align:center;
+    font-size:22px;
+    line-height:19px;
+    width:20px;
+    height:20px;
+    border-radius:100%;
+    background:white;
+    float:right;
+    transition:ease all 0.3s;
+    display:none;
+    }
+    .intranet-tile-faq:hover .plusIcon{
+    color:rgb(220,220,220);
+    background:rgb(240,240,240);
+    /* transform:rotate(45deg); */
+    transform-origin: center;
+    }
+    .activeFaq > .plusIcon{
+    transform:rotate(45deg)!important;
+    transform-origin: center;
+    }
+    .intranet-tile-faq .tag{
+    font-size: 15px;
+    position: absolute;
+    top: -21px;
+    right: 90px;
+    background:rgb(240,240,240);
     font-weight: bold;
-}
-
-.faq-tabs article,
-.faq-page .faq-tabs [type="radio"] {
-	display:none;
-	padding:10px 20px;
-}
-
-.faq-tabs label span {
-    vertical-align: baseline;
-    margin-left: -10px;
-    margin-right: 10px;
-}
-
-.faq-tabs article {
-	border-radius:0 0 5px 5px;
-    margin-bottom:10px;
-    background: white;
-    /* transform: rotate(0deg); */
-}
-
-.faq-tabs [type="radio"]:checked+label span {
-    transform: rotate(90deg);
-}
-
-.faq-tabs [type="radio"]:checked ~ article {
-	display:block;
-}
-
-
-.faq-tabs section {
-    padding: 0;
-}
-    
-.faq-tabs input {
-    display: none;
-}
+    color: rgb(219, 219, 219);
+    z-index:-1;
+    transition:ease all 0.3s;
+    }
+    .intranet-tile-faq .tag::before{
+    content:'';
+    display:inline-block;
+    position: absolute;
+    left:-22px;
+    bottom:0;
+    width: 0;
+    height: 0;
+    border-left: 22px solid transparent;
+    background-color:transparent;
+    border-bottom: 22px solid rgb(240,240,240);
+    transition:ease all 0.3s;
+    }
+    .intranet-tile-faq .tag::after {
+    content:'';
+    display:inline-block;       
+    position: absolute;
+    right:-22px;
+    bottom:0;
+    width: 0;
+    height: 0;
+    border-right: 22px solid transparent;
+    background-color:transparent;
+    border-bottom: 22px solid rgb(240,240,240); 
+    transition:ease all 0.3s;
+    }
+    .intranet-tile-faq:hover .tag{
+    transition:ease all 0.3s;
+    /* right: 50px; */
+    }
+    .intranet-tile-faq .accordion h2{
+    margin:5px 0 0 0; 
+    }
+    .intranet-tile-faq .subtitleFaq{
+    font-size:14px;
+    color:rgb(100,100,100);
+    }
+    /* toggleButton */
+    .toggleButton{
+    float: right;
+    width: 75px;
+    height: 40px;
+    position: relative;
+    border: solid 2px rgb(176, 176, 176);
+    border-radius: 50px;
+    background-color: rgb(204, 204, 204);
+    transform: scale(0.5);
+    transition: ease all 0.3s;
+    }
+    .toggleButton > span{
+    width: 45px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    transition: ease all 0.3s;
+    font-size:50px;
+    line-height: 50px;
+    text-align: center;
+    line-height: 40px;
+    color:rgba(232, 232, 232, 1);
+    transform-origin:center;
+    }
+    .activeFaq .toggleButton > span {
+    left: 35px;
+    transform:rotate(135deg);
+    transform-origin:center;
+    }
+    .activeFaq  .toggleButton{
+    background-color: rgb(162, 162, 162);
+    }
+   .accordion .arrowButton {
+        color:white;
+        font-size:35px;
+        float:right;
+        transform:rotate(0);
+        transform-origin:center;
+        transition: ease all 0.3s;
+    }
+    .activeFaq  .arrowButton  {
+        float:right;
+        transform:rotate(180deg);
+        transform-origin:center;
+        transition: ease all 0.3s;
+   
+    }
