@@ -1,64 +1,46 @@
-
-/*************    TABS    **************/
-
-.faq-tabs {
-	list-style-type:none;
-	position:relative;
-	margin-bottom: 40px;
+.sedoo_blocks_faq section {
+    position:relative;
+    margin:20px 0; 
+}
+.sedoo_blocks_faq .accordion {
+    cursor: pointer;
+    transition: ease all 0.3s;
+    padding: 10px;
+    border-radius:10px;
+    background-color:rgb(230,230,230);
 }
 
-.faq-tabs label {
-	display:flex;
-	padding:5px 20px;
-    border-radius:5px;
-    background: #DDD;
-	margin-top:5px;
-    cursor:pointer;
+.sedoo_blocks_faq .accordion:hover,
+.sedoo_blocks_faq .accordion.activeFaq  {
+        background-color:rgb(210,210,210);
 }
 
-[type="radio"]:checked + label {
-	border-radius:5px 5px 0 0;
+.sedoo_blocks_faq .accordion.activeFaq {
+    border-radius:10px 10px 0 0;
 }
 
-.faq-tabs label:hover {
-    color:#FFF;
-}
-.faq-tabs [type="radio"]:checked + label {
-    font-weight: bold;
+.sedoo_blocks_faq .accordion h3 {
+    margin:5px 0 0 0;
 }
 
-.faq-tabs article,
-.faq-page .faq-tabs [type="radio"] {
-	display:none;
-	padding:10px 20px;
+.sedoo_blocks_faq .panel {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+    background-color: rgb(240, 240, 240);
+    transition: max-height 0.2s ease-out;
+    margin-top:2px;
 }
 
-.faq-tabs label span {
-    vertical-align: baseline;
-    margin-left: -10px;
-    margin-right: 10px;
+.sedoo_blocks_faq .accordion .arrowButton {
+        color:white;
+        font-size:35px;
+        float:right;
+        transform:rotate(0);
+        transform-origin:center;
+        transition: ease all 0.3s;
 }
-
-.faq-tabs article {
-	border-radius:0 0 5px 5px;
-    margin-bottom:10px;
-    background: white;
-    /* transform: rotate(0deg); */
-}
-
-.faq-tabs [type="radio"]:checked+label span {
-    transform: rotate(90deg);
-}
-
-.faq-tabs [type="radio"]:checked ~ article {
-	display:block;
-}
-
-
-.faq-tabs section {
-    padding: 0;
-}
-    
-.faq-tabs input {
-    display: none;
+.sedoo_blocks_faq .accordion.activeFaq .arrowButton  {
+        transform:rotate(180deg);
 }
