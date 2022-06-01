@@ -48,18 +48,13 @@ $questions = get_posts(array(
     foreach($questions as $question) {
     ?>
         <section id="<?php echo $question->ID;?>_section" class="faq<?php echo $question->ID;?>" >
-
-                <div id="<?php echo $question->ID;?>Tab" class="accordion" role="tab" aria-controls="<?php echo $question->ID;?>panel">
-
-                    <span class="arrowButton material-icons">arrow_circle_up</span>
-
-                    <h3 id="<?php echo $question->ID;?>Tab"><?php echo $question->post_title;?></h3>
-                 
-
-                </div>
-                <article class="panel" id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
-                    <?php echo $question->post_content; ?>
-                </article>
+            <div id="<?php echo $question->ID;?>Tab" class="accordion" role="tab" aria-controls="<?php echo $question->ID;?>panel">
+                <span class="arrowButton material-icons">arrow_circle_up</span>
+                <h3 id="<?php echo $question->ID;?>Tab"><?php echo $question->post_title;?></h3>
+            </div>
+            <article class="panel" id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
+                <?php echo $question->post_content; ?>
+            </article>
         </section>
     <?php 
     }
