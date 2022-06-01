@@ -39,20 +39,21 @@ $questions = get_posts(array(
     'orderby' => 'title',
     'order'          => 'ASC',
     'numberposts' => $nombre,
-    'tax_query' => array( $tax_query
-    )
-));
+    'tax_query' => array( $tax_query),
+    )); 
 ?>
 
 <nav class="faq-tabs <?php echo $className; ?>" role="tablist">
     <?php 
     foreach($questions as $question) {
     ?>
-        <section id="<?php echo $question->ID;?>_section">
-            <input type="radio" name="tabs" class="input_<?php echo $question->ID;?>" id="<?php echo $question->ID;?>" />
-            <label data_q="<?php echo $question->ID;?>" for="<?php echo $question->ID;?>" id="<?php echo $question->ID;?>Tab" role="tab" aria-controls="<?php echo $question->ID;?>panel"><span class="dashicons dashicons-arrow-right-alt2"></span><?php echo $question->post_title;?></label>
-            <article id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
-                <p><?php echo $question->post_content; ?></p>
+        <section id="<?php echo $question->ID;?>_section" class="faq<?php echo $question->ID;?>" >
+            <div id="<?php echo $question->ID;?>Tab" class="accordion" role="tab" aria-controls="<?php echo $question->ID;?>panel">
+                <span class="arrowButton material-icons">arrow_circle_up</span>
+                <h3 id="<?php echo $question->ID;?>Tab"><?php echo $question->post_title;?></h3>
+            </div>
+            <article class="panel" id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
+                <?php echo $question->post_content; ?>
             </article>
         </section>
     <?php 
@@ -60,15 +61,19 @@ $questions = get_posts(array(
     ?>
 </nav>
 <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-// jQuery('.sedoo_blocks_faq label').click(function() {
-//     var faq_id = jQuery(this).attr('data_q');
-//     if(jQuery( "#"+faq_id+"panel" ).css('display') !== 'none') {
-//         jQuery( "#"+faq_id+"panel" ).hide();
-//         jQuery( this).children('span').css('transform', 'rotate(0deg)');
-//     } else {
-//         jQuery( "#"+faq_id+"panel" ).show();
-//         jQuery( this).children('span').css('transform', 'rotate(90deg)');
-//     }
-// });
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("activeFaq");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
 </script>
