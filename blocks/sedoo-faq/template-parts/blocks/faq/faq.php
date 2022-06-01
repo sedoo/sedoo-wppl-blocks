@@ -47,14 +47,24 @@ $questions = get_posts(array(
     <?php 
     foreach($questions as $question) {
     ?>
-        <section id="<?php echo $question->ID;?>_section" class="faq<?php echo $question->ID;?>" >
-            <div id="<?php echo $question->ID;?>Tab" class="accordion" role="tab" aria-controls="<?php echo $question->ID;?>panel">
+        <section id="<?php echo $question->ID;?>_section">
+            <input type="checkbox" name="tabs" class="input_<?php echo $question->ID;?>" id="<?php echo $question->ID;?>" />
+            <label data_q="<?php echo $question->ID;?>" for="<?php echo $question->ID;?>" id="<?php echo $question->ID;?>Tab" role="tab" aria-controls="<?php echo $question->ID;?>panel">
                 <span class="arrowButton material-icons">arrow_circle_up</span>
-                <h3 id="<?php echo $question->ID;?>Tab"><?php echo $question->post_title;?></h3>
-            </div>
-            <article class="panel" id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
+                <?php echo $question->post_title;?>
+            </label>
+            <article id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
                 <?php echo $question->post_content; ?>
             </article>
+
+        <!-- <section id="<?php //echo $question->ID;?>_section" class="faq<?php //echo $question->ID;?>" >
+            <div id="<?php //echo $question->ID;?>Tab" class="accordion" role="tab" aria-controls="<?php //echo $question->ID;?>panel">
+                <span class="arrowButton material-icons">arrow_circle_up</span>
+                <h3 id="<?php //echo $question->ID;?>Tab"><?php //echo $question->post_title;?></h3>
+            </div>
+            <article class="panel" id="<?php //echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php //echo $question->ID;?>Tab">
+                <?php //echo $question->post_content; ?>
+            </article> -->
         </section>
     <?php 
     }
@@ -67,6 +77,7 @@ var i;
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("activeFaq");
+    console.log(this);
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;

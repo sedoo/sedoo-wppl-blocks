@@ -1,8 +1,19 @@
+
+/*************    TABS    **************/
+
+.sedoo_blocks_faq  {
+	list-style-type:none;
+	position:relative;
+	margin-bottom: 40px;
+}
+
 .sedoo_blocks_faq section {
     position:relative;
     margin:20px 0; 
 }
-.sedoo_blocks_faq .accordion {
+
+.sedoo_blocks_faq  label {
+    display: block;
     cursor: pointer;
     transition: ease all 0.3s;
     padding: 10px;
@@ -10,37 +21,61 @@
     background-color:rgb(230,230,230);
 }
 
-.sedoo_blocks_faq .accordion:hover,
-.sedoo_blocks_faq .accordion.activeFaq  {
-        background-color:rgb(210,210,210);
+.sedoo_blocks_faq  label span {
+    position: absolute;
+    right:10px;
+    top:4px;
 }
 
-.sedoo_blocks_faq .accordion.activeFaq {
+.sedoo_blocks_faq label .arrowButton {
+    vertical-align: baseline;
+    color:white;
+    font-size:35px;
+    transform:rotate(0);
+    transform-origin:center;
+    transition: ease all 0.3s;
+  }
+
+.sedoo_blocks_faq [type="checkbox"]:checked + label{
     border-radius:10px 10px 0 0;
 }
 
-.sedoo_blocks_faq .accordion h3 {
-    margin:5px 0 0 0;
+.sedoo_blocks_faq [type="checkbox"]:checked + label,
+.sedoo_blocks_faq label:hover {
+    background-color:rgb(210,210,210);
 }
 
-.sedoo_blocks_faq .panel {
+.sedoo_blocks_faq  [type="checkbox"]:checked + label {
+    font-weight: bold;
+}
+
+.faq-page .sedoo_blocks_faq  [type="checkbox"] {
+	display:none;
+}
+
+.sedoo_blocks_faq  article {
     padding: 0 20px;
-    max-height: 0;
+    height: 0;
     overflow: hidden;
     border-radius: 0 0 10px 10px;
     background-color: rgb(240, 240, 240);
-    transition: max-height 0.2s ease-out;
+    transition: height 0.2s ease-out;
     margin-top:2px;
 }
 
-.sedoo_blocks_faq .accordion .arrowButton {
-        color:white;
-        font-size:35px;
-        float:right;
-        transform:rotate(0);
-        transform-origin:center;
-        transition: ease all 0.3s;
+.sedoo_blocks_faq  [type="checkbox"]:checked+label span {
+    transform: rotate(180deg);
 }
-.sedoo_blocks_faq .accordion.activeFaq .arrowButton  {
-        transform:rotate(180deg);
+
+.sedoo_blocks_faq  [type="checkbox"]:checked ~ article {
+	height: auto;
+}
+
+
+.sedoo_blocks_faq  section {
+    padding: 0;
+}
+    
+.sedoo_blocks_faq  input {
+    display: none;
 }
