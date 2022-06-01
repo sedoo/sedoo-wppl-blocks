@@ -39,38 +39,26 @@ $questions = get_posts(array(
     'orderby' => 'title',
     'order'          => 'ASC',
     'numberposts' => $nombre,
-    'tax_query' => array( $tax_query
-    )
-));
+    'tax_query' => array( $tax_query),
+    )); 
 ?>
 
 <nav class="faq-tabs <?php echo $className; ?>" role="tablist">
     <?php 
     foreach($questions as $question) {
     ?>
-        <section id="<?php echo $question->ID;?>_section" class="intranet-tile-faq faq_<?php echo $question->ID;?>" >
+        <section id="<?php echo $question->ID;?>_section" class="faq<?php echo $question->ID;?>" >
 
                 <div id="<?php echo $question->ID;?>Tab" class="accordion" role="tab" aria-controls="<?php echo $question->ID;?>panel">
 
-                    <span class="plusIcon">+</span>
-
-                    <!--<span class="toggleButton">
-                        <span>+</span>
-                    </span>-->
-                    <span class="arrowButton material-icons"">
-                    arrow_circle_up
-                    </span>
+                    <span class="arrowButton material-icons">arrow_circle_up</span>
 
                     <h3 id="<?php echo $question->ID;?>Tab"><?php echo $question->post_title;?></h3>
                  
 
                 </div>
-                <article class="panel" id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">>
-
-                    <p><?php echo $question->post_content; ?></p>
-
-                    <!-- <a class="bouton" href="<?php //echo get_permalink($question->ID); ?>">En savoir plus</a> -->
-
+                <article class="panel" id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
+                    <?php echo $question->post_content; ?>
                 </article>
         </section>
     <?php 

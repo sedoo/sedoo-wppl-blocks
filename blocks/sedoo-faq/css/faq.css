@@ -1,35 +1,45 @@
-.accordion {
+.sedoo_blocks_faq section {
+    margin-bottom:20px;
+}
+.sedoo_blocks_faq .accordion {
     cursor: pointer;
-    transition: ease all 0.3s;
+    /* transition: ease all 0.3s; */
     padding: 10px;
-    box-sizing:border-box;
+    /* box-sizing:border-box;
     color:rgb(60,60,60);
-    font-size:25px;
+    font-size:25px; */
     border-radius:10px;
     background-color:rgb(230,230,230);
-    }
-    .panel {
-    padding: 0 12px;
+}
+.sedoo_blocks_faq .accordion.activeFaq {
+    border-radius:10px 10px 0 0;
+}
+.sedoo_blocks_faq .accordion h3 {
+    margin:5px 0 0 0;
+}
+
+.sedoo_blocks_faq .panel {
+    padding: 0 20px;
     max-height: 0;
     overflow: hidden;
     border-radius: 0 0 5px 5px;
     background-color: rgb(240, 240, 240);
     transition: max-height 0.2s ease-out;
     color:rgb(60,60,60);
-    margin-top:5px;
-    }
+    /* margin-top:5px; */
+}
     /* Tile FAQ - Foire aux questions */
-    .intranet-tile-faq {
+.sedoo_blocks_faq .faq {
     position:relative;
     margin:20px 0; 
-    }
-    .intranet-tile-faq:hover .accordion {
+}
+.sedoo_blocks_faq .faq:hover .accordion {
         background-color:rgb(210,210,210);
-    }
-    .activeFaq {
+}
+.sedoo_blocks_faq .activeFaq {
         background-color:rgb(210,210,210);
-    }
-    .intranet-tile-faq .bouton{
+}
+.sedoo_blocks_faq .faq .bouton{
     padding:10px;
     display:inline-block;
     border-radius:5px;
@@ -37,8 +47,8 @@
     color:rgb(100,100,100);
     margin: 0 0 20px 0;
     float:right;
-    }
-    .intranet-tile-faq .plusIcon{
+}
+.sedoo_blocks_faq .faq .plusIcon{
     color:rgb(240,240,240);
     display:inline-block;
     line-height:20px;
@@ -52,67 +62,22 @@
     float:right;
     transition:ease all 0.3s;
     display:none;
-    }
-    .intranet-tile-faq:hover .plusIcon{
+}
+.sedoo_blocks_faq .faq:hover .plusIcon{
     color:rgb(220,220,220);
     background:rgb(240,240,240);
     /* transform:rotate(45deg); */
     transform-origin: center;
-    }
-    .activeFaq > .plusIcon{
+}
+.sedoo_blocks_faq .activeFaq > .plusIcon{
     transform:rotate(45deg)!important;
     transform-origin: center;
-    }
-    .intranet-tile-faq .tag{
-    font-size: 15px;
-    position: absolute;
-    top: -21px;
-    right: 90px;
-    background:rgb(240,240,240);
-    font-weight: bold;
-    color: rgb(219, 219, 219);
-    z-index:-1;
-    transition:ease all 0.3s;
-    }
-    .intranet-tile-faq .tag::before{
-    content:'';
-    display:inline-block;
-    position: absolute;
-    left:-22px;
-    bottom:0;
-    width: 0;
-    height: 0;
-    border-left: 22px solid transparent;
-    background-color:transparent;
-    border-bottom: 22px solid rgb(240,240,240);
-    transition:ease all 0.3s;
-    }
-    .intranet-tile-faq .tag::after {
-    content:'';
-    display:inline-block;       
-    position: absolute;
-    right:-22px;
-    bottom:0;
-    width: 0;
-    height: 0;
-    border-right: 22px solid transparent;
-    background-color:transparent;
-    border-bottom: 22px solid rgb(240,240,240); 
-    transition:ease all 0.3s;
-    }
-    .intranet-tile-faq:hover .tag{
-    transition:ease all 0.3s;
-    /* right: 50px; */
-    }
-    .intranet-tile-faq .accordion h2{
-    margin:5px 0 0 0; 
-    }
-    .intranet-tile-faq .subtitleFaq{
-    font-size:14px;
-    color:rgb(100,100,100);
-    }
+}
+
+
+
     /* toggleButton */
-    .toggleButton{
+.sedoo_blocks_faq .toggleButton{
     float: right;
     width: 75px;
     height: 40px;
@@ -122,8 +87,8 @@
     background-color: rgb(204, 204, 204);
     transform: scale(0.5);
     transition: ease all 0.3s;
-    }
-    .toggleButton > span{
+}
+.sedoo_blocks_faq .toggleButton > span{
     width: 45px;
     height: 45px;
     border-radius: 40px;
@@ -138,27 +103,28 @@
     line-height: 40px;
     color:rgba(232, 232, 232, 1);
     transform-origin:center;
-    }
-    .activeFaq .toggleButton > span {
+}
+.sedoo_blocks_faq .activeFaq .toggleButton > span {
     left: 35px;
     transform:rotate(135deg);
     transform-origin:center;
-    }
-    .activeFaq  .toggleButton{
+}
+
+.sedoo_blocks_faq .activeFaq .toggleButton{
     background-color: rgb(162, 162, 162);
-    }
-   .accordion .arrowButton {
+}
+.sedoo_blocks_faq .accordion .arrowButton {
         color:white;
         font-size:35px;
         float:right;
         transform:rotate(0);
         transform-origin:center;
         transition: ease all 0.3s;
-    }
-    .activeFaq  .arrowButton  {
+}
+.sedoo_blocks_faq .activeFaq .arrowButton  {
         float:right;
         transform:rotate(180deg);
         transform-origin:center;
         transition: ease all 0.3s;
    
-    }
+}
