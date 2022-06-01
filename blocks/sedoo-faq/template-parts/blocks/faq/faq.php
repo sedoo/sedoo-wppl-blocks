@@ -50,7 +50,7 @@ $questions = get_posts(array(
     ?>
         <section id="<?php echo $question->ID;?>_section" class="intranet-tile-faq faq_<?php echo $question->ID;?>" >
 
-                <div class="accordion"  onclick="JouerSon()">
+                <div id="<?php echo $question->ID;?>Tab" class="accordion" role="tab" aria-controls="<?php echo $question->ID;?>panel">
 
                     <span class="plusIcon">+</span>
 
@@ -61,15 +61,15 @@ $questions = get_posts(array(
                     arrow_circle_up
                     </span>
 
-                    <h2 id="<?php echo $question->ID;?>Tab"><?php echo $question->post_title;?></h2>
+                    <h3 id="<?php echo $question->ID;?>Tab"><?php echo $question->post_title;?></h3>
                  
 
                 </div>
-                <article class="panel">
+                <article class="panel" id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">>
 
                     <p><?php echo $question->post_content; ?></p>
 
-                    <a class="bouton" href="<?php echo get_permalink($question->ID); ?>">En savoir plus</a>
+                    <!-- <a class="bouton" href="<?php //echo get_permalink($question->ID); ?>">En savoir plus</a> -->
 
                 </article>
         </section>
@@ -77,23 +77,6 @@ $questions = get_posts(array(
     }
     ?>
 </nav>
-<audio autoplay="false" id="beep" src="http://localhost/INTRANET/wp-content/plugins/sedoo-wppl-blocks/blocks/sedoo-faq/sound/191238-Modular_UI_-Confirm_ToneFM-063.mp3">
-<audio autoplay="false" id="beep2" src="http://localhost/INTRANET/wp-content/plugins/sedoo-wppl-blocks/blocks/sedoo-faq/sound/mixkit-retro-game-notification-212.mp3">
-
-<script>
-    function JouerSon() {
-            var sound = document.getElementById("beep");
-            var sound2 = document.getElementById("beep2");
-            const divActiv = document.querySelector(".accordion");
-            if (divActiv.classList.contains('activeFaq')) {
-                sound2.play();
-               
-            }else{
-                sound.play();
-            }
-            
-        }
-</script>
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
