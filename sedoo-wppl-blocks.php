@@ -63,6 +63,22 @@ if ( ! function_exists('get_field') ) {
 		$menu[95][2] = site_url()."/wp-admin/edit.php?post_type=wp_block";
     }
 
+	/**
+	 * Set default options
+	 */
+	if(get_field('sedoo_activation_iframe', 'option') == "") {
+		update_field('sedoo_activation_iframe', '1', 'option');
+	}
+	if(get_field('sedoo_activation_listearticle', 'option') == "") {
+		update_field('sedoo_activation_listearticle', '1', 'option');
+	}
+	if(get_field('sedoo_activation_listepages', 'option') == "") {
+		update_field('sedoo_activation_listepages', '1', 'option');
+	}
+	if(get_field('sedoo_activation_juxtapose', 'option') == "") {
+		update_field('sedoo_activation_juxtapose', '1', 'option');
+	}
+
 	if(get_field('sedoo_activation_iframe', 'option') == 1) {
 		include 'blocks/sedoo-iframe/sedoo-wppl-iframe.php';
 	}
@@ -96,6 +112,10 @@ if ( ! function_exists('get_field') ) {
 
 	if(get_field('sedoo_activation_listecpt', 'option') == 1) {
 		include 'blocks/sedoo-listecpt/sedoo-wppl-listecpt.php';
+	}
+
+	if(get_field('sedoo_activation_juxtapose', 'option') == 1) {
+		include 'blocks/sedoo-juxtapose/sedoo-wppl-juxtapose.php';
 	}
 
 	function sedoo_block_category( $block_categories, $editor_context ) {
