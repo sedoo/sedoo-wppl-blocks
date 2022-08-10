@@ -176,6 +176,25 @@ if( function_exists('acf_add_local_field_group') ):
                 'ui_on_text' => '',
                 'ui_off_text' => '',
             ),
+            array(
+                'key' => 'field_5e74656833b94',
+                'label' => __('Block juxtapose images', 'sedoo-wppl-blocks' ),
+                'name' => 'sedoo_activation_juxtapose',
+                'type' => 'true_false',
+                'instructions' => __( 'Activate or deactivate buttons block', 'sedoo-wppl-blocks' ),
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
         ),
         'location' => array(
             array(
