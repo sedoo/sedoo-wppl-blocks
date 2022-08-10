@@ -47,9 +47,10 @@ $alt2 = $image2['alt'];
 $caption2 = $image2['caption'];
 
 ?>
-<link rel="stylesheet" href="//s3.amazonaws.com/cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+<!-- <link rel="stylesheet" href="https://s3.amazonaws.com/cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"> -->
 <div class="juxtapose sedoo_juxtapose" data-startingposition="<?php the_field('sedoo_juxtapose_startingposition');?>" data-showlabels="<?php echo $showLegend;?>" data-showcredits="true" data-animate="<?php echo $animate;?>" data-mode="<?php the_field('sedoo_juxtapose_mode');?>">
   <img src="<?php echo $url1;?>" data-label="<?php echo $caption1;?>" data-credit="crédit 1">
   <img src="<?php echo $url2;?>" data-label="<?php echo $caption2;?>" data-credit="crédit 2">
 </div>
-<script src="https://s3.amazonaws.com/cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.js"></script>
+<!-- <script src="https://s3.amazonaws.com/cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.js"></script> -->
+
