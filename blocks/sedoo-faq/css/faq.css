@@ -12,7 +12,7 @@
     margin:20px 0; 
 }
 
-.sedoo_blocks_faq  label {
+.sedoo_blocks_faq label {
     display: block;
     cursor: pointer;
     transition: ease all 0.3s;
@@ -21,10 +21,15 @@
     background-color:rgb(230,230,230);
 }
 
+.sedoo_blocks_faq label div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .sedoo_blocks_faq  label span {
-    position: absolute;
+    /* position: absolute;
     right:10px;
-    top:4px;
+    top:4px; */
 }
 
 .sedoo_blocks_faq label .arrowButton {
@@ -63,7 +68,7 @@
     margin-top:2px;
 }
 
-.sedoo_blocks_faq  [type="checkbox"]:checked+label span {
+.sedoo_blocks_faq  [type="checkbox"]:checked+label span:nth-child(2) {
     transform: rotate(180deg);
 }
 
