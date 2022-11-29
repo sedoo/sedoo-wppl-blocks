@@ -50,21 +50,14 @@ $questions = get_posts(array(
         <section id="<?php echo $question->ID;?>_section">
             <input type="checkbox" name="tabs" class="input_<?php echo $question->ID;?>" id="<?php echo $question->ID;?>" />
             <label data_q="<?php echo $question->ID;?>" for="<?php echo $question->ID;?>" id="<?php echo $question->ID;?>Tab" role="tab" aria-controls="<?php echo $question->ID;?>panel">
-                <span class="arrowButton material-icons">arrow_circle_up</span>
-                <?php echo $question->post_title;?>
+                <div>
+                    <span><?php echo $question->post_title;?></span>
+                    <span class="arrowButton material-icons">arrow_circle_up</span>
+                </div>
             </label>
             <article id="<?php echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php echo $question->ID;?>Tab">
                 <?php echo $question->post_content; ?>
             </article>
-
-        <!-- <section id="<?php //echo $question->ID;?>_section" class="faq<?php //echo $question->ID;?>" >
-            <div id="<?php //echo $question->ID;?>Tab" class="accordion" role="tab" aria-controls="<?php //echo $question->ID;?>panel">
-                <span class="arrowButton material-icons">arrow_circle_up</span>
-                <h3 id="<?php //echo $question->ID;?>Tab"><?php //echo $question->post_title;?></h3>
-            </div>
-            <article class="panel" id="<?php //echo $question->ID;?>panel" role="tabpanel" aria-labelledby="<?php //echo $question->ID;?>Tab">
-                <?php //echo $question->post_content; ?>
-            </article> -->
         </section>
     <?php 
     }
