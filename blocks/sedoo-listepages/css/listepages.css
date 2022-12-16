@@ -10,3 +10,11 @@
 .listpages_list .entry-content p {
     margin-top:0;
 }
+
+section.post-wrapper.sedoo_blocks_listepages {
+    display: flex;
+    justify-content: flex-start;
+}
+section.post-wrapper.sedoo_blocks_listepages article {
+    flex:0 1 350px;
+}
