@@ -16,7 +16,7 @@ function sedoo_blocks_listearticle_render_callback( $block ) {
 
 
 
-function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $term_displayed, $tag, $filter) {
+function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $term_displayed, $filter) {
     global $post;
     if ($limit == 0) {
         $limit = -1;
