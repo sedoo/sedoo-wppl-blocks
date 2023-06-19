@@ -10,7 +10,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('listpages_list'); ?>>
 <?php //the_permalink(); ?>
 	<header class="entry-header">
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 		<?php
         if ($term_displayed == 1 && $term_displayed != false) {
         ?>
@@ -25,7 +25,7 @@
 	</header><!-- .entry-header -->
     <div class="group-content">
         <div class="entry-content">
-            <?php the_excerpt(); ?>
+            <?php //the_excerpt(); ?>
         </div><!-- .entry-content -->
     </div>
 </article><!-- #post-->
