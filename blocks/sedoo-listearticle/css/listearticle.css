@@ -58,8 +58,13 @@
 
 .content-list.sedoo_blocks_listearticle .entry-header p{
     display: inline;
-    top: initial;
     position: initial;
+    background-color: transparent;
+    color:#333;
+    font-weight: 700;
+}
+.content-list.sedoo_blocks_listearticle .entry-header p:before{
+    content:"#";
 }
 
 .sedoo_blocks_listearticle article:hover .entry-content h3 {
