@@ -199,6 +199,7 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
         'posts_per_page'        => $post_number,            // -1 no limit
         'orderby'               => $orderby,
         'order'                 => $order,
+        'offset'                => $post_offset,
         'tax_query'             => array(
                                 array(
                                     'taxonomy' => $taxonomy,
@@ -223,12 +224,16 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
 
             <?php
             $layout = $parameters['layout'];
+            // var_dump($layout);
+            $template_arg=array('layout' => $layout);
             while ( $the_query->have_posts() ) {
                 $the_query->the_post();
                 $titleItem=mb_strimwidth(get_the_title(), 0, 65, '...');
-                get_template_part('template-parts/content', 'sedoo-cpt');
+                get_template_part('template-parts/content', 'sedoo-cpt', $template_arg);
                 $offset_for_js++;
             }
+            
+            echo '</section>';
             if($show_more == 1 && $the_query->max_num_pages > 1) {
                 $sm_taxo = $args['tax_query'][0]['taxonomy'];
                 $sm_order = $args['order'];
@@ -237,7 +242,6 @@ if(!function_exists('sedoo_labtools_get_associate_content_arguments')) {
                 $sm_terms = implode(", ", $args['tax_query'][0]['terms']);
                 echo '<div class="wp-block-button aligncenter sedoo_load_more" id="show_more"><a class="wp-block-button__link" order="'.$sm_order.'" layout="'.$layout.'" terms="'.$sm_terms.'" orderby="'.$sm_order_by.'"  post_number="'.$sm_post_number.'" taxo="'.$sm_taxo.'" offset="'.$offset_for_js.'" sm="'.$show_more.'" smt="'.$show_more_text.'" cpt="'.$type_of_content.'"> '.$show_more_text.'</a></div>';
             }
-            echo '</section>';
             /* Restore original Post Data */
             wp_reset_postdata();
         } else {
