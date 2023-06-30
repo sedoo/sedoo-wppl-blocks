@@ -2,56 +2,6 @@
     display: flex;
 }
 
-.sedoo_flexdirection-list {
-    flex-direction: column;
-}
-
-.sedoo_flexdirection-gridded {
-    flex-direction: row;  
-    align-items: stretch;
-}
-
-.sedoo_flexdirection-gridded article {
-    flex: 1;
-    margin: 0px 10px;
-}
-
-.sedoo_flexdirection-gridded h2 {
-    font-size: 0.9em;
-    font-size: 0.9em;
-    margin: 10px 0px !important;
-}
-
-.sedoo_flexdirection-gridded span.date {
-    font-size: .7em;
-}
-
-.sedoo_flexdirection-gridded p {
-    margin-bottom: 5px;
-}
-
-.sedoo_flexdirection-gridded img {
-    margin: 0;  
-}
-
-.sedoo_flexdirection-gridded .btn {
-    font-size: .7em;
-    padding: 5px 10px;
-    margin-bottom: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.sedoo_flexdirection-gridded .date span {
-    opacity: .5;
-    margin-top: 6px;
-}
-
-.sedoo_flexdirection-gridded .article_container {
-    padding: 0px 15px;
-}
-
 .sedoo_liste_article_container article {
     background-color: white;
 }
