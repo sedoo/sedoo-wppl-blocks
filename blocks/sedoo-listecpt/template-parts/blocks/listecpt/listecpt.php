@@ -27,11 +27,11 @@
                 $term = get_field('sedoo_listecpt_categories_liste');
             }
             
-            $limit = -1;
+            // $limit = 6;
             if(get_field('sedoo_listecpt_limit')) {
                 $limit = get_field('sedoo_listecpt_limit');
             }
-            $display = get_field('sedoo_listecpt_mode_daffichage');
+            $layout = get_field('sedoo_listecpt_mode_daffichage');
             
             if($term != NULL) {
                 $tax_query = array(
@@ -77,14 +77,14 @@
             
                     $the_query = new WP_Query( $args );
                     if ( $the_query->have_posts() ) {
-                        if($display == 'minilist') {
+                        if($layout == 'minilist') {
                             echo '<ul>';
                         }
                         while ( $the_query->have_posts() ) {
                             $the_query->the_post();
-                            echo sedoo_listcpt_display_items($display);
+                            sedoo_layout_display_items($layout, $term);
                         }
-                        if($display == 'minilist') {
+                        if($layout == 'minilist') {
                             echo '</ul>';
                         }
                     wp_reset_postdata();

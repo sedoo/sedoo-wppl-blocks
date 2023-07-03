@@ -16,7 +16,7 @@ function sedoo_blocks_listearticle_render_callback( $block ) {
 
 
 
-function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $term_displayed, $filter) {
+function sedoo_list_post_display($title, $term, $layout, $limit, $offset, $buttonLabel, $button, $className, $term_displayed, $filter) {
     global $post;
     if ($limit == 0) {
         $limit = -1;
@@ -84,8 +84,7 @@ function sedoo_listeposte_display($title, $term, $layout, $limit, $offset, $butt
                 ?>
                 <?php
                     setup_postdata( $post );
-                    include plugin_dir_path(__FILE__) ."../../template-parts/content-".$layout.".php";
-                    // get_template_part('template-parts/content', $layout);
+                    sedoo_layout_display_items($layout, $term_displayed);
                     wp_reset_postdata();
                 ?>
                 <?php

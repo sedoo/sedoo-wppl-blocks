@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sedoo - Blocks
  * Description: Blocs d'édition : annuaire, boutons SVG, FAQ, liste d'articles, iframe, contenus en relation
- * Version: 1.8.0
+ * Version: 1.8.1
  * Author: Pierre Vert, Nicolas Gruwe - SEDOO DATA CENTER
  * Author URI:      https://www.sedoo.fr 
  * GitHub Plugin URI: sedoo/sedoo-wppl-blocks
@@ -136,8 +136,6 @@ if ( ! function_exists('get_field') ) {
 		return $block_categories;
 	}
 	add_filter( 'block_categories_all', 'sedoo_block_category', 10, 2 );
-	
-
 
 }
 
@@ -146,3 +144,24 @@ function sedoo_blocks_load_language() {
 	load_plugin_textdomain( 'sedoo-wppl-blocks', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
 }
 add_action( 'init', 'sedoo_blocks_load_language' );
+
+// load template part layout
+function sedoo_layout_display_items($layout, $term_displayed) {
+	$template_arg=array( 'term_displayed' => $term_displayed);
+	get_template_part('template-parts/content', $layout, $template_arg);
+    // switch ($layout) {
+    //     case 'grid':
+    //         // include plugin_dir_path(__FILE__) ."template-parts/content-grid.php";
+	// 		// get_template_part('template-parts/content', 'grid', $template_arg);
+	// 		get_template_part('template-parts/content', 'grid', $template_arg);
+    //         break;
+    //     case 'grid-noimage':
+    //         include plugin_dir_path(__FILE__) ."template-parts/content-grid-noimage.php";
+    //         break;
+    //     case 'list':
+    //         include plugin_dir_path(__FILE__) ."template-parts/content-list.php";
+    //     break;
+    //     default:
+    //         break;
+    // }
+}
