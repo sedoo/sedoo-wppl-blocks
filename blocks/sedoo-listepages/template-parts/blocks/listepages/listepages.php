@@ -35,7 +35,7 @@ if(!empty($pages_a_afficher)) {
 
     if ( $displayed->have_posts() ) :
         while ( $displayed->have_posts() ) : $displayed->the_post();
-            sedoo_listpages_display_items($layout);
+            sedoo_layout_display_items($layout, false);
         endwhile;
     endif; 
     wp_reset_postdata();
@@ -56,7 +56,7 @@ if($afficher_enfants == true) {
 
     if ( $parent->have_posts() ) :
         while ( $parent->have_posts() ) : $parent->the_post();
-            sedoo_listpages_display_items($layout);
+            sedoo_layout_display_items($layout, false);
         endwhile;
     endif; 
     wp_reset_postdata();

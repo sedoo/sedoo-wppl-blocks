@@ -13,19 +13,3 @@ function sedoo_blocks_listepages_render_callback( $block ) {
 		include $templateURL;
     }
 }
-
-function sedoo_listpages_display_items($layout) {
-    switch ($layout) {
-        case 'grid':
-            include plugin_dir_path(__FILE__) ."../../template-parts/content-grid.php";
-            break;
-        case 'grid-noimage':
-            include plugin_dir_path(__FILE__) ."../../template-parts/content-grid-noimage.php";
-            break;
-        case 'list':
-            include plugin_dir_path(__FILE__) ."../../template-parts/content-list.php";
-        break;
-        default:
-            break;
-    }
-}
